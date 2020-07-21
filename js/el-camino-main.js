@@ -452,6 +452,11 @@ const page = document.querySelector('.ec-page'),
           g.way = hash.split('-')[0];
           g.started = this.static.day = true;
           this.static.toggle = false;
+        } else if(hash.split('_').length === 3) {
+          g.status = hash.split('-')[0];
+          c.cur = g.status;
+          g.testComics = true;
+          this.modalShow(hash);
         }
       },
       modalShow(name) {
