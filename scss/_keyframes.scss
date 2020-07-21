@@ -1,0 +1,99 @@
+@keyframes opacityHalf0 {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacityHalf1 {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity1 {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes transRight {
+   100% {
+     transform: translateX(-100%);
+   }
+}
+
+@keyframes transNone {
+   100% {
+     transform: none;
+   }
+}
+
+@keyframes right {
+   100% {
+     right: 100%;
+   }
+}
+
+@keyframes bottom {
+   100% {
+     bottom: 100%;
+   }
+}
+
+@keyframes left {
+   100% {
+     left: 100%;
+   }
+}
+
+@keyframes left10x {
+   100% {
+     left: 1000%;
+   }
+}
+
+@keyframes transHalfNone {
+  50% {
+    transform: none;
+  }
+}
+
+@keyframes shadHalfNone {
+  50% {
+    box-shadow: none;
+  }
+}
+
+// COMICS
+@keyframes moveComicsPart {
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes moveComicsSteps {
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes ScaleComics {
+
+  0% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes pulse {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}

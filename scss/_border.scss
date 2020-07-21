@@ -1,0 +1,119 @@
+.ec {
+
+  &-sign {
+
+    &_border {
+      position: absolute;
+      left: 50%;
+      background: #f6cd05;
+      color: #000003;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: 700;
+      font-size: em(18px, $mfs);
+      box-shadow: 0 0 1px 0 #222;
+      z-index: -1;
+
+      @include em((
+        width: 172px,
+        height: 72px,
+        margin-left: 410px,
+        top: 330px,
+        border-radius: 12px,
+        padding: 10px
+      ), 18px);
+
+      & .ec-sign__in:after {
+        content: '';
+        position: absolute;
+
+        @include em((
+          left: 2px,
+          top: 2px,
+          bottom: 2px,
+          right: 2px,
+          border: 2px solid #fff,
+          border-radius: 10px
+        ), $mfs);
+      }
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAaCAYAAABhJqYYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEFEMzRBRjk5RThBMTFFQUJFOTU4NTU4QzcwNUM5QTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEFEMzRBRkE5RThBMTFFQUJFOTU4NTU4QzcwNUM5QTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4QUQzNEFGNzlFOEExMUVBQkU5NTg1NThDNzA1QzlBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4QUQzNEFGODlFOEExMUVBQkU5NTg1NThDNzA1QzlBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PlyOpnAAAAIqSURBVHjaZFJLrtNAEOz5eewEhISQuAELFogdbLkWe86B2HAfrgCrt3l6JE7izK+p7kkih2fZnvG4urq6ug0z0+cP775++fT+21wcxRdvKG5fUmqeaPCUTgf68f3nx6fHh1+WcA2BQ6uJxkg0RSbvWfdcj+RsxpmJglMwkaGGDMY4SqkC4Oh4XPSc2JBkv4Hlw3tPrRIYI8CG4jBQKQ14g9so2MvLWQsOQ9b1RLU2GuJIDQQ1L9R5r8x4Gki4MVkJNBasIsdTFvY7Ga3rFpCAdQ/dOeeOu8i4aRaNcYgosNCynMgB4H3oRa5lCJswCFD2IURI62C3CtACCwoyEgc20UqmUG2JCieq8r1mFieWc1ZPRc52s9FVsvFzGUZ9ds6Rd7ALrggohEGLvgO3xno4okC1DEHitbqD4DufRWsGSJ5Su78SMM9zJ7oDMymLaLRYE/yN6GAcR/htb24oWDWyrA2NgH3IVEuh4Aft6rMC5QrwVAapIYjV0qLrderUZ0ntnVNWE5qkIBeMBhP0m3W7exFW51hYgncKkAxS8L0b1PWKA5tpUq/FQjmzK5/9deNc3zZhgowqBSOg6RSYNRjV46+7jGllvsx0JsDvma/VSnzjLiefEw3oaOb/ZgNpvGgTKTJUwXcHLAruTeldUeb94fTncbd/eD1Mo2NG6zZRggtTOszzrpSyaASrPmO20/QWDXk1jnE01kdRilk5p5T2u79Pv1ur5Z8AAwDDiRrQPKOnKgAAAABJRU5ErkJggg==');
+        background-size: 100% 100%;
+
+        @include em((
+          width: 9px,
+          height: 26px
+        ), 18px);
+      }
+
+      &:before {
+        left: 27%;
+      }
+
+      &:after {
+        right: 27%;
+      }
+
+      &_shad {
+        position: absolute;
+        top: 100%;
+        background: url(#{$imgDir}/border/sign-border-shad.png) no-repeat;
+        background-size: 100% 100%;
+
+        @include em((
+          width: 213px,
+          height: 39px,
+          margin-top: 18px,
+          margin-left: 45px
+        ), $mfs);
+      }
+    }
+
+    &__in {
+      margin: 0;
+    }
+  }
+
+  &-scale {
+
+    &_border {
+      z-index: 1;
+    }
+  }
+
+  &-section {
+
+    &_border {
+
+      & .ec-car-wrap {
+        z-index: 2;
+      }
+    }
+  }
+
+  &-border {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(#{$imgDir}/border/border-stop.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+
+    @include em((
+      width: 960px,
+      height: 265px,
+      top: 825px
+    ), $mfs);
+  }
+}

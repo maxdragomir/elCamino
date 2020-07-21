@@ -1,0 +1,1251 @@
+
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+@import 'keyframes';
+@import  'slider';
+@import  'modal';
+@import 'base';
+@import 'comics';
+
+.ec {
+
+  &-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    transition: opacity 1s linear, visibility 1s linear;
+
+    &_hide {
+      display: none;
+    }
+
+    &.fade-enter-active,
+    &.fade-leave-active {
+      transition: opacity 1s linear, visibility 1s linear;
+    }
+
+    &.fade-enter,
+    &.fade-leave-to {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    padding-top: em(24px, $mfs);
+
+    &_active {
+      position: relative;
+      // visibility: visible;
+      // opacity: 1;
+    }
+
+    &_move {
+      overflow: hidden;
+    }
+  }
+
+  &-header {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+  }
+
+  &-logo {
+    margin: auto;
+    text-align: center;
+    color: #2d2e2d;
+    transition: color $sunRiseTime/2 0s linear;
+    font-weight: 900;
+    position: relative;
+
+    .ec-static_toggle & {
+      color: #fff;
+      transition-delay: $sunRiseTime/2;
+    }
+
+    @include em((
+      width: 445px
+    ), $mfs);
+
+    &__triangle {
+      position: absolute;
+      left: 0;
+      transition: fill $sunRiseTime/2 0s linear;
+      transform: scale(0);
+      opacity: 0;
+      animation: opacity1 2s forwards,  transNone 1s forwards;
+      fill: #2d2e2d;
+
+      @include em((
+        width: 400px,
+        top: 22px,
+        left: 25px
+      ), $mfs);
+
+      .ec-static_toggle & {
+        fill: #fff;
+        transition-delay: $sunRiseTime/2;
+      }
+    }
+
+    &__txt {
+      line-height: .89;
+      font-size: em(20px, $mfs);
+      margin: 0;
+
+      @include em((
+        letter-spacing: 17px,
+      ), 20px);
+
+      span {
+        display: block;
+        font-size: em(60px, 20px);
+
+        @include em((
+          letter-spacing: 2px,
+          margin-left: -10px,
+          margin-bottom: -2px
+        ), 60px);
+      }
+    }
+
+    &__car-name {
+      text-transform: uppercase;
+      color: #c4c6ba;
+      line-height: .95;
+      font-size: em(140px, $mfs);
+      transition: color $sunRiseTime/2 0s linear;
+
+      .ec-static_toggle & {
+        color: #3282e6;
+        transition-delay: $sunRiseTime/2;
+      }
+
+      @include em((
+        margin: 30px 0 -15px,
+        margin-left: -30px
+      ), 140px);
+    }
+
+    &__title {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      font-size: em(24px, $mfs);
+      margin: em(5px 0 0, $mfs);
+    }
+
+    &__canvas {
+      position: absolute;
+      transition: opacity $sunRiseTime/2 0s linear;
+
+      @include em((
+        top: 55px,
+        left: -30px,
+        width: 488px,
+        height: 164px
+      ), $mfs);
+
+      &-white {
+        opacity: 0;
+        .ec-static_toggle & {
+          opacity: 1;
+          transition-delay: $sunRiseTime/2;
+        };
+      }
+
+      &-black {
+        .ec-static_toggle & {
+          opacity: 0;
+          transition-delay: $sunRiseTime/2;
+        };
+      }
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    &__top {
+      position: relative;
+      height: 45%;
+    }
+
+    &__bot {
+      // height: 55%;
+      height: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
+
+    &__frame {
+      position: absolute;
+      left: 50%;
+      background: url(../img/el-camino/signs-frame.png) no-repeat center top;
+      background-size: 100% auto;
+
+      @include em((
+        width: 1290px,
+        margin-left: -645px,
+        height: 550px,
+        top: 685px
+      ), $mfs);
+    }
+  }
+
+  &-frame {
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+
+      @include em((
+        width: 762px,
+        margin: 10px auto 0
+      ), $mfs);
+    }
+
+    &__btn {
+      border: none;
+      position: relative;
+      color: #000;
+      font-family: $robotoC !important;
+      text-align: center;
+      font-size: em($mfs, $mfs);
+      outline: none;
+      cursor: pointer;
+      transition: .2s linear;
+      overflow: visible;
+
+      &:hover {
+        box-shadow: 0 0 em(20px, $mfs) 0 #3c3c3c;
+        transform: translateZ(0) scale(1.05);
+      }
+
+      &:disabled {
+        cursor: default;
+        transform: none;
+        box-shadow: none;
+      }
+
+      @include em((
+        width: 208px,
+        height: 164px,
+        border-radius: 20px
+      ), $mfs);
+
+      &:before {
+        content: '';
+        position: absolute;
+        border: 2px solid #fff;
+
+        @include em((
+          left: 8px,
+          right: 8px,
+          top: 8px,
+          bottom: 8px,
+          border-radius: 14px
+        ), $mfs);
+      }
+
+      &_theme {
+
+        &_green {
+          background: linear-gradient(to right, #47834a 0%, #346c37 100%);
+
+          &:hover {
+            background: linear-gradient(to right, #326134 0%, #245027 100%);
+          }
+
+          &:disabled {
+            background: linear-gradient(to right, #47834a 0%, #346c37 100%);
+          }
+        }
+
+        &_blue {
+          background: linear-gradient(to right, #1f93f7 0%, #1364f5 100%);
+
+          &:hover {
+            background: linear-gradient(to right, #0b76d2 0%, #0049cd 100%);
+          }
+
+          &:disabled {
+            background: linear-gradient(to right, #1f93f7 0%, #1364f5 100%);
+          }
+        }
+
+        &_orange {
+          background: linear-gradient(to right, #fe9936 0%, #dd5e00 100%);
+
+          &:hover {
+            background: linear-gradient(to right, #f56800 0%, #dd5e00 100%);
+          }
+
+          &:disabled {
+            background: linear-gradient(to right, #fe9936 0%, #dd5e00 100%);
+          }
+
+          & .ec-frame__btn-lvl {
+            box-shadow: em(0 4px 13px, $mfs) #272727;
+          }
+        }
+      }
+
+      &-lvl {
+        display: block;
+        text-transform: uppercase;
+        background-color: #fff;
+        position: relative;
+
+        @include em((
+          width: 120px,
+          border-radius: 5px,
+          padding: 6px 5px 5px,
+          margin: -11px auto 0,
+          box-shadow: 0 4px 13px #264e1c
+        ), $mfs);
+      }
+
+      &-type {
+        font-weight: 700;
+        font-size: em(24px, $mfs);
+        text-transform: uppercase;
+        color: #fff;
+        display: block;
+
+        @include em((
+          margin-top: 4px
+        ), 24px);
+      }
+
+      &-dir {
+        fill: #fff;
+
+        @include em((
+          margin: -4px auto 0,
+          width: 69.27px,
+          height: 88.92px
+        ), $mfs);
+
+        &_mid {
+          @include em((
+            width: 44.89px,
+            height: 88.88px
+          ), $mfs);
+        }
+      }
+
+      &-coef {
+        display: block;
+        background: #fff;
+        text-transform: uppercase;
+        position: relative;
+
+        @include em((
+          width: 120px,
+          margin: 5px auto 0,
+          border-radius: 50px,
+          padding: 6px 0 5px
+        ), $mfs);
+      }
+
+      &-stop {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(#{$imgDir}/border/stop-sign.png) no-repeat center;
+        background-size: contain;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        @include em((
+          width: 208px,
+          height: 193px
+        ), $mfs);
+      }
+
+      &-stxt {
+        display: block;
+        color: $black;
+        background-color: #fff;
+        transform: rotate(-5deg);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: $robotoC;
+        box-sizing: border-box;
+
+        @include em((
+          min-width: 120px,
+          padding: 8px 10px,
+          border-radius: 5px,
+          box-shadow: 0 -2px 4px rgba(#4f4f4f, .5),
+          margin-bottom: -10px
+        ), $mfs);
+      }
+    }
+  }
+
+  &-turns {
+    position: absolute;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+
+    @include em((
+      width: 238px,
+      left: 166px,
+      top: 23px
+    ), $mfs);
+
+    &__item {
+      background: url(../img/el-camino/torpedo/turn-signal.png) no-repeat left center;
+      background-size: 200% 100%;
+      opacity: 0;
+
+      &.ec-turns__item_on {
+        animation: opacityHalf1 1s steps(1) infinite;
+      }
+
+      @include em((
+        width: 40px,
+        height: 40px
+      ), $mfs);
+
+      &_right {
+        background-position: right center;
+      }
+    }
+  }
+
+  &-car {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-52%,-91%);
+    left: 74.5%;
+
+    @include em((
+      top: 169px
+    ), $mfs);
+
+    &__svg {
+      position: relative;
+      // stroke: #000;
+      width: 100%;
+      left: 0;
+
+      @include em((
+        height: 169.2px
+      ), $mfs);
+
+      path {
+        fill: none;
+      }
+    }
+
+    // @include em((
+    //   margin-left: -320px,
+    //   margin-top: -160px
+    // ), $mfs);
+
+    &-wrap {
+      position: absolute;
+      // z-index: 1;
+      left: 50%;
+      top: 48%;
+      width: em(588.5px, $mfs);
+
+      .fade-enter-to & {
+        z-index: 1;
+      }
+
+      @include em((
+        height: 169px,
+        margin-left: -310px
+      ), $mfs);
+    }
+
+    &_static {
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../img/el-camino/car/car.png) no-repeat center top;
+        background-size: 100% auto;
+        z-index: 1;
+
+        .ec-bg_transition & {
+          background-position: 0 50%;
+        }
+
+        .ec-bg_night & {
+          background-position: 0 100%;
+        }
+      }
+    }
+
+    @include em((
+      width: 640px,
+      height: 320px
+    ), $mfs);
+
+    &_road {
+      overflow: hidden;
+
+      @include em((
+      ), $mfs);
+    }
+
+    &__sprite {
+      position: relative;
+      width: 1000%;
+      height: 500%;
+      top: 0%;
+      left: 0%;
+      background: url(../img/el-camino/car/sprite.png) no-repeat;
+      background-size: 100% 100%;
+      z-index: 1;
+    }
+
+    &__light {
+      position: absolute;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: opacity .1s $sunRiseTime/2 linear;
+      opacity: 0;
+
+      &_front {
+        background-image: url(../img/el-camino/car/front-light.png);
+        @include em((
+          top: 80px,
+          left: 125px,
+          width: 400px,
+          height: 230px
+        ), $mfs);
+      }
+
+      &_back {
+        background-image: url(../img/el-camino/car/back-light.png);
+        z-index: 2;
+
+        @include em((
+          top: 196px,
+          left: 203px,
+          width: 312px,
+          height: 77px
+        ), $mfs);
+      }
+
+      .ec-static_toggle & {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-scale {
+    position: absolute;
+    right: 0;
+    left: -50%;
+    bottom: -52.5%;
+    width: 200%;
+    height: 218%;
+    z-index: 0;
+    transform: translateZ(0) scale(.5);
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
+    transition-property: transform;
+    will-change: transform;
+
+    .ec-section_static & {
+      transition-duration: 1.5s;
+      transition-timing-function: ease-in;
+      transition-property: transform;
+    }
+
+    &_2 {
+      transform: translateZ(0) scale(.2);
+    }
+
+    &_3 {
+      transform: translateZ(0) scale(.3);
+    }
+
+    &_7 {
+      transform: translateZ(0) scale(.7);
+    }
+
+    &_9 {
+      transform: translateZ(0) scale(.9);
+    }
+
+    &_turns {
+      margin-bottom: em(12px, $mfs);
+    }
+
+    &_lights {
+      margin-bottom: em(12px, $mfs);
+    }
+
+    .ec-section_move & {
+      transform: none;
+    }
+
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   left: 50%;
+    //   top: 50%;
+    //   margin: -2px -2px;
+    //   width: 4px;
+    //   height: 4px;
+    //   border-radius: 50%;
+    //   background: red;
+    // }
+
+    &__in {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 50%;
+      z-index: 1;
+    }
+  }
+
+  &-road {
+    position: absolute;
+    left: 0;
+    right: 0;
+    // bottom: 8%;
+    top: em(-32px, $mfs);
+    // height: 100%;
+    background: url(../img/el-camino/static/day/road.png) no-repeat center bottom;
+    background-size: auto 99.8%;
+    height: em(495px, $mfs);
+    width: 100%;
+
+    .ec-bg_night & {
+      background-image: url(../img/el-camino/static/night/road.png);
+    }
+  }
+
+  &-road-line {
+    position: absolute;
+    left: 50%;
+    background: url(../img/el-camino/static/day/road-line.png) no-repeat;
+    background-size: contain;
+
+    @include em((
+      width: 38px,
+      height: 495px,
+      margin-left: -18px,
+      top: 25px
+    ), $mfs);
+  }
+
+  &-bet {
+    text-transform: uppercase;
+    font-style: normal;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    &_rem,
+    &_add {
+      & .ec-bet__change {
+        margin-top: 0;
+      }
+
+      &:before {
+        animation: pulse 1s 3 ease-in-out forwards;
+      }
+    }
+
+    &_rem {
+
+      & .ec-bet__change {
+        text-shadow: 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
+                    0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000;
+      }
+
+      &:before {
+        background-image: url(#{$imgDir}sum-rem-bg.png);
+      }
+    }
+
+    &_add {
+
+      & .ec-bet__change {
+        text-shadow: 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
+                    0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000;
+      }
+
+      &:before {
+        background-image: url(#{$imgDir}sum-add-bg.png);
+      }
+    }
+
+    &__change,
+    &__main {
+      position: relative;
+      height: 100%;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__change {
+      transition: .2s ease-out;
+      margin-top: em(-37px, $mfs);
+    }
+  }
+
+  &-cur-coef {
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  &-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition-timing-function: linear;
+    transition-duration: .5s;
+    transition-delay: .5s;
+    transition-property: transform;
+    // bottom: em(-210px, $mfs);
+    bottom: 0;
+    padding-bottom: em(23px, $mfs);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: em(295px, $mfs);
+      background: url(../img/el-camino/torpedo/torpedo-start.png) no-repeat center;
+      background-size: auto 100%;
+    }
+
+    &__top {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      align-items: center;
+      margin-bottom: em(96px, $mfs);
+      text-align: center;
+
+      @include em((
+        width: 1080px,
+        padding-right: 10px
+      ), $mfs);
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: em(24px, $mfs);
+      font-family: $robotoC;
+      font-style: normal;
+      font-weight: 700;
+
+      @include em((
+        flex-basis: 492px
+      ), 24px);
+    }
+
+    &__bet {
+      flex: 1 1 auto;
+      overflow: hidden;
+      position: relative;
+
+      @include em((
+        height: 37px,
+        margin-left: 7px,
+        margin-top: 6px
+      ), $mfs);
+    }
+
+    &__coef {
+      @include em((
+        flex-basis: 300px,
+        padding-top: 12px
+      ), $mfs);
+    }
+
+    &__in {
+      width: em(1320px, $mfs);
+      margin: auto;
+      position: relative;
+    }
+
+    &__row {
+      width: em(902px, $mfs);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: em(17px, $mfs);
+
+      @include dir((
+        margin-right: auto
+      ));
+    }
+
+    &__cel {
+
+      &_right {
+        align-items: center;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: space-between;
+        width: em(276px, $mfs);
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      @include em((
+        width: 80px,
+        height: 80px
+      ), $mfs);
+
+      svg {
+        fill: #f60808;
+        fill: #362736;
+        stroke-width: 0;
+        // animation: fIcon 22s steps(1) infinite;
+      }
+
+      @keyframes fIcon {
+        50% {
+          fill: #362736;
+          stroke-width: 0;
+        }
+      }
+
+      &_engine {
+
+        @include em((
+          left: 578px,
+          top: 107px
+        ), $mfs);
+
+        & svg {
+          fill: #d87007;
+          stroke: #f71414;
+            fill: #362736;
+            stroke-width: 0;
+          stroke-width: 1px;
+          animation-duration: 18s;
+          animation-delay: 10s;
+
+          @include em((
+            width: 32px,
+            margin-top: -3px
+          ), $mfs);
+        }
+
+        // &.ec-footer__icon_active {
+        //   & svg {
+        //     fill: #d87007;
+        //     stroke: #f71414;
+        //     stroke-width: 1px;
+        //   }
+        //
+        // }
+      }
+
+      &_fuel {
+
+        @include em((
+          left: 578px,
+          top: 20px
+        ), $mfs);
+
+        & svg {
+          animation-duration: 20s;
+          animation-delay: 5s;
+
+          @include em((
+            width: 22px,
+            margin: 15px 0 0 10px
+          ), $mfs);
+        }
+      }
+
+      &_warning {
+
+        @include em((
+          left: 664px,
+          top: 65px
+        ), $mfs);
+
+        & svg {
+          width: em((32px), $mfs);
+        }
+      }
+
+      &_active {
+
+        svg {
+        }
+      }
+    }
+  }
+
+  &-radio {
+    position: absolute;
+    background: url(../img/el-camino/torpedo/radio-bg.png) no-repeat;
+    background-size: contain;
+
+    @include em((
+      width: 229px,
+      height: 108px,
+      bottom: 25px,
+      padding-top: 17px
+    ), $mfs);
+
+    @include dir((
+      right: em(280px, $mfs)
+    ));
+
+    &__prog {
+      background: url(../img/el-camino/torpedo/radio-prog.png) no-repeat;
+      background-size: contain;
+      margin: auto;
+
+      @include em((
+        width: 180px,
+        height: 11px
+      ), $mfs);
+
+      &-drag {
+        position: relative;
+        background-color: #f70808;
+        transition: left .5s;
+
+        &_count {
+
+          &_1 {
+            left: 20%
+          }
+
+          &_2 {
+            left: 50%
+          }
+
+          &_3 {
+            left: 75%
+          }
+        }
+
+        @include em((
+          width: 5px,
+          height: 12px
+        ), $mfs);
+      }
+    }
+
+    &__hint {
+      font-size: em(12px, $mfs);
+      background-color: #1b0d2d;
+      text-transform: uppercase;
+      text-align: center;
+      font-style: normal;
+      border-top: 1px solid #584253;
+      border-bottom: 1px solid #584253;
+      position: relative;
+
+      @include em((
+        width: 165px,
+        margin: 11px auto 7px,
+        padding: 3px 0,
+        box-shadow: inset 0 0 10px #000
+      ), 12px);
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #3f2a3f;
+      }
+
+      &:before {
+        top: 0;
+      }
+
+      &:after {
+        bottom: 0;
+      }
+
+      & p {
+        margin: 0;
+      }
+    }
+
+    &__list {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+
+      &-el {
+      }
+
+      &-btn {
+        cursor: pointer;
+        text-align: center;
+        font-size: em(14px, $mfs);
+        font-style: normal;
+        box-sizing: border-box;
+        transition: .2s linear;
+        display: block;
+        outline: none;
+        color: #fff;
+
+        @include em((
+          width: 54px,
+          margin: 0 5px,
+          padding: 2px 0 1px,
+        ), 14px);
+
+        &_active {
+          cursor: default;
+        }
+
+        &,
+        &:disabled:hover {
+          background: linear-gradient(to bottom, #362337 0%, #2c1834 100%);
+          border: 1px solid #3f3340;
+          border-bottom-color: #221c31;
+          border-right-color: #2c2436;
+          box-shadow: em(3px 3px 4px, 14px) #0d061a;
+        }
+
+        &:disabled {
+          cursor: default;
+        }
+
+        &:hover,
+        &_active,
+        &_active:disabled:hover {
+          background: linear-gradient(to bottom, #db2222 0%, #830606 100%);
+          box-shadow: em(1px 1px 3px, 14px) #f70808;
+          border-color: #db2222;
+          border-bottom-color: #b90808;
+          border-right-color: #be0808;
+        }
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      background: url(../img/el-camino/torpedo/radio-btn.png) no-repeat center;
+      background-size: contain;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1em;
+
+      @include em((
+        width: 74px,
+        height: 74px,
+        top: 10px
+      ), $mfs);
+
+      &_set_off {
+        right: em(-54px, $mfs);
+      }
+
+      &_set_on {
+        left: em(-54px, $mfs);
+      }
+
+      & svg {
+        fill: #fff;
+        transition: fill .2s linear;
+
+        @include em((
+          margin-top: 8px,
+          width: 32px,
+          height: 34px
+        ), $mfs);
+      }
+
+      &:hover {
+        & svg {
+          fill: #d87007;
+        }
+      }
+
+      &:disabled {
+        cursor: default;
+
+        svg {
+          fill: #655457;
+        }
+      }
+
+    }
+
+  }
+
+  &-speedometer {
+    position: absolute;
+    transition: 1.5s ease-out;
+
+    &.ec-speedometer_start {
+      transform: rotate(100deg)
+    }
+
+    @include em((
+      width: 108px,
+      height: 68px,
+      left: 240px,
+      top: 80px
+    ), $mfs);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: url(../img/el-camino/torpedo/speedometer-arr.png) no-repeat;
+      background-size: contain;
+
+      @include em((
+        width: 64px,
+        height: 44px
+      ), $mfs);
+    }
+  }
+
+
+  @keyframes speedometer {
+    50% {
+      transform: rotate(100deg);
+    }
+  }
+
+  &-tachometer {
+    position: absolute;
+    transition: 1.5s ease-out;
+
+
+    &.ec-tachometer_start {
+      transform: rotate(100deg)
+    }
+
+    @include em((
+      width: 105px,
+      height: 64px,
+      left: 60px,
+      top: 87px
+    ), $mfs);
+
+    &:before {
+      content: '';
+      background: url(../img/el-camino/torpedo/tachometer-arr.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(10deg);
+      animation: transHalfNone 5s ease-in-out infinite;
+    }
+  }
+
+  &-panel {
+    padding-bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: transform, opacity, visibility;
+    transition-delay: .5s, 0s, 0s;
+    transition-duration: .5s;
+    transform: translateY(82%) translateZ(0);
+
+    .ec-bet-added & {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    &:before {
+      background-image: url(../img/el-camino/torpedo/torpedo-choose.png);
+    }
+
+    & .ec-footer__top {
+      margin-bottom: em(45px, $mfs);
+    }
+
+    &__info {
+      position: relative;
+
+      @include em((
+        height: 180px
+      ), $mfs);
+    }
+  }
+}
+
+@import 'static';
+@import 'choose';
+@import 'border';
+@import 'city';
+@import 'village';

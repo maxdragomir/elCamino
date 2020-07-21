@@ -1,0 +1,1124 @@
+$dur: .2s;
+.ec-comics {
+  position: relative;
+  // height: 100vh;;
+  @include em((
+    width: 1514px,
+    height: 730px,
+    margin: 195px 0
+  ), $mfs);
+
+  &_cards {
+    width: 100%;
+    height: auto;
+    // margin-top: em(135px, $mfs);
+  }
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // opacity: 0;
+  // visibility: hidden;
+  // align-items: center;
+  // z-index: 2;
+  // background: rgba(#000, .55);
+  // transition: .8s linear;
+  // overflow: hidden;
+
+  // &_active {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   transition-duration: .2s;
+  // }
+
+  &_money {
+    @include em((
+      width: 1342px
+    ), $mfs);
+
+    &2 {
+      width: em(1440px, $mfs);
+    }
+  }
+
+  &_border {
+    @include em((
+      width: 1612px,
+      height: 740px
+    ), $mfs);
+  }
+
+  &__in {
+    position: relative;
+    margin: auto;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+
+    .ec-comics_money & {
+      height: em(782px, $mfs);
+    }
+  }
+
+  &__slide {
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    &__parts {
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+
+    &_end {
+      transform: none;
+    }
+
+
+    .ec-comics_start & {
+
+      &_1 {
+        @include em((
+          width: 257px,
+          height: 196px,
+          left: 0,
+          top: 0
+        ), $mfs);
+
+        &.ec-comics__slide_end {
+
+          @include em((
+          ), $mfs);
+        }
+      }
+
+      &_2 {
+
+        @include em((
+          width: 386px,
+          height: 196px,
+          left: 256px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_3 {
+
+        @include em((
+          width: 493px,
+          height: 196px,
+          left: 587px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_4 {
+
+        @include em((
+          width: 488px,
+          height: 195px,
+          left: 1026px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_5 {
+
+        @include em((
+          width: 527px,
+          height: 253px,
+          left: 0,
+          top: 192px
+        ), $mfs);
+      }
+
+      &_6 {
+
+        @include em((
+          width: 265px,
+          height: 253px,
+          left: 527px,
+          top: 192px
+        ), $mfs);
+      }
+
+      &_7 {
+
+        @include em((
+          width: 338px,
+          height: 253px,
+          left: 790px,
+          top: 192px
+        ), $mfs);
+      }
+
+      &_8 {
+
+        @include em((
+          width: 388px,
+          height: 253px,
+          left: 1125px,
+          top: 192px
+        ), $mfs);
+      }
+
+      &_9 {
+
+        @include em((
+          width: 657px,
+          height: 288px,
+          left: 0,
+          top: 442px
+        ), $mfs);
+      }
+
+      &_10 {
+
+        &_1 {
+          -webkit-transform: translate(-5%, 20%);
+          -ms-transform: translate(-5%, 20%);
+          transform: translate(-5%, 20%);
+        }
+
+        @include em((
+          width: 947px,
+          height: 288px,
+          left: 566px,
+          top: 442px
+        ), $mfs);
+      }
+    }
+
+    .ec-comics_money & {
+
+      &_1 {
+        @include em((
+          width: 667px,
+          height: 231px,
+          left: 0,
+          top: 0
+        ), $mfs);
+      }
+
+      &_2 {
+
+        @include em((
+          width: 555px,
+          height: 230px,
+          left: 560px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_3 {
+
+        @include em((
+          width: 242px,
+          height: 231px,
+          left: 1100px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_4 {
+
+        @include em((
+          width: 324px,
+          height: 550px,
+          left: 0,
+          top: 231px
+        ), $mfs);
+      }
+
+      &_5 {
+
+        @include em((
+          width: 320px,
+          height: 260px,
+          left: 310px,
+          top: 228px
+        ), $mfs);
+
+      }
+
+      &_6 {
+
+        @include em((
+          width: 350px,
+          height: 262px,
+          left: 536px,
+          top: 228px
+        ), $mfs);
+      }
+
+      &_7 {
+
+        @include em((
+          width: 256px,
+          height: 262px,
+          left: 872px,
+          top: 228px
+        ), $mfs);
+      }
+
+      &_8 {
+
+        @include em((
+          width: 460px,
+          height: 297px,
+          left: 311px,
+          top: 485px
+        ), $mfs);
+
+      }
+
+      &_9, &_12 {
+
+        @include em((
+          width: 410px,
+          height: 297px,
+          left: 717px,
+          top: 484px
+        ), $mfs);
+      }
+
+      &_10 {
+
+        @include em((
+          width: 225px,
+          height: 460px,
+          left: 1117px,
+          top: 229px
+        ), $mfs);
+      }
+
+      &_11 {
+
+        @include em((
+          width: 224px,
+          height: 256px,
+          left: 1118px,
+          top: 526px
+        ), $mfs);
+
+      }
+
+      &_13 {
+        @include em((
+          width: 327px,
+          height: 781px,
+          left: 1112px,
+          top: 0px
+        ), $mfs);
+      }
+    }
+
+    .ec-comics_border & {
+
+      &_1 {
+        @include em((
+          width: 451px,
+          height: 232px,
+          left: 0,
+          top: 0
+        ), $mfs);
+
+      }
+
+      &_2 {
+
+        @include em((
+          width: 515px,
+          height: 232px,
+          left: 440px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_3 {
+
+        @include em((
+          width: 328px,
+          height: 232px,
+          left: 869px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_4 {
+
+        @include em((
+          width: 334px,
+          height: 232px,
+          left: 1100px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_5 {
+
+        @include em((
+          width: 273px,
+          height: 232px,
+          left: 1339px,
+          top: 0
+        ), $mfs);
+      }
+
+      &_6 {
+        left: 0;
+
+        @include em((
+          width: 720px,
+          height: 254px,
+          top: 220px
+        ), $mfs);
+
+      }
+
+      &_7 {
+
+        @include em((
+          width: 920px,
+          height: 254px,
+          left: 692px,
+          top: 220px
+        ), $mfs);
+      }
+
+      &_8 {
+        left: 0;
+
+        @include em((
+          width: 1121px,
+          height: 281px,
+          top: 458px
+        ), $mfs);
+      }
+
+      &_9 {
+
+        @include em((
+          width: 755px,
+          height: 281px,
+          left: 858px,
+          top: 458px
+        ), $mfs);
+      }
+    }
+
+    &-part {
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+      animation-delay: $dur;
+
+      .ec-comics__slide_show &,
+      .ec-slider__item_anim & {
+        animation-name: moveComicsPart;
+      }
+
+      &_easing {
+
+        &_out {
+          animation-timing-function: ease-out;
+        }
+
+        &_in {
+          animation-timing-function: ease-in;
+        }
+
+        &_steps {
+          animation-timing-function: steps(3);
+        }
+      }
+
+      &_anim {
+
+        &_f {
+          opacity: 0;
+        }
+
+        &_ft {
+          transform: translate(0, 100%);
+        }
+
+        &_fr {
+          transform: translate(-100%, 0);
+        }
+
+        &_fb {
+          transform: translate(0, -100%);
+        }
+
+        &_fl {
+          transform: translate(100%, 0);
+        }
+
+        &_tf {
+          transform: translate(0, 10%);
+          opacity: 0;
+        }
+
+        &_rf {
+          transform: translate(-10%, 0);
+          opacity: 0;
+        }
+
+        &_rs {
+          transform: translate(-2%, 0);
+        }
+
+        &_rts {
+          transform: translate(-2%, 2%);
+        }
+
+        &_l {
+          transform: translate(10%, 0);
+        }
+
+        &_r {
+          transform: translate(-10%, 0);
+        }
+
+        &_lf {
+          transform: translate(10%, 0);
+          opacity: 0;
+        }
+
+        &_bf {
+          transform: translate(0, 10%);
+          opacity: 0;
+        }
+
+        &_lt {
+          transform: translate(10%, 10%);
+        }
+
+        &_rt {
+          transform: translate(-10%, 10%);
+        }
+
+        &_rt2 {
+          transform: translate(-10%, 15%);
+        }
+
+        &_rt20 {
+          transform: translate(-20%, 20%);
+        }
+
+        &_rb {
+          transform: translate(-10%, -10%);
+        }
+
+        &_p {
+          animation-iteration-count: 3;
+
+          .ec-comics__slide_show & {
+            animation-name: opacityHalf0;
+          }
+        }
+
+        &_rotr {
+          transform: rotate(-5deg);
+        }
+
+        &_sc,
+        &_scr {
+          transform: translate(-5%, -5%) scale(1.1);
+        }
+
+
+        &_sclt,
+        &_scltr {
+          transform: translate(0%, 0%) scale(1.1);
+        }
+
+        &_scr,
+        &_scltr {
+          animation-direction: reverse;
+        }
+
+        &_tt {
+          transform: translateY(-5%);
+        }
+
+        &_tr {
+          transform: translateX(-5%);
+        }
+
+        &_tl {
+          transform: translateX(5%);
+        }
+
+        &_tb {
+          transform: translateY(5%);
+        }
+
+        &_translate_0_m5Scale_8 {
+          transform: translate(0%, -5%) scale(.8);
+        }
+
+        &_translate_0_m5Scale_9 {
+          transform: translate(0%, -5%) scale(.9);
+        }
+
+      }
+
+      &_dur {
+
+        &_2 {
+          animation-duration: .2s;
+        }
+
+        &_4 {
+          animation-duration: .4s;
+        }
+
+        &_6 {
+          animation-duration: .6s;
+        }
+
+        &_8 {
+          animation-duration: .6s;
+        }
+
+        &_10 {
+          animation-duration: 1s;
+        }
+
+        &_12 {
+          animation-duration: 1.2s;
+        }
+
+        &_15 {
+          animation-duration: 1.5s;
+        }
+
+        &_16 {
+          animation-duration: 1.6s;
+        }
+
+        &_20 {
+          animation-duration: 2s;
+        }
+
+        &_22 {
+          animation-duration: 2.2s;
+        }
+
+        &_30 {
+          animation-duration: 3s;
+        }
+
+        &_32 {
+          animation-duration: 3.2s;
+        }
+
+        &_34 {
+          animation-duration: 3.4s;
+        }
+
+        &_36 {
+          animation-duration: 3.6s;
+        }
+
+        &_40 {
+          animation-duration: 4s;
+        }
+
+        &_44 {
+          animation-duration: 4s;
+        }
+
+        &_60 {
+          animation-duration: 6s;
+        }
+      }
+
+      &_delay {
+
+        &_2 {
+          animation-delay: $dur+.2s;
+        }
+
+        &_4 {
+          animation-delay: $dur+.4s;
+        }
+
+        &_6 {
+          animation-delay: $dur+.6s;
+        }
+
+        &_8 {
+          animation-delay: $dur+.6s;
+        }
+
+        &_10 {
+          animation-delay: $dur+1s;
+        }
+
+        &_16 {
+          animation-delay: $dur+1.6s;
+        }
+
+        &_20 {
+          animation-delay: $dur+2s;
+        }
+      }
+    }
+  }
+
+
+  &__int {
+    position: absolute;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+    @include em((
+      top: -40px,
+      right: -32px
+    ), $mfs);
+  }
+
+  &__btn {
+    outline: none;
+    cursor: pointer;
+    background: #000;
+    border-radius: 50%;
+    font-size: em($mfs, $mfs);
+    position: relative;
+
+    @include em((
+      width: 60px,
+      height: 60px,
+      border: 6px solid #fff,
+      margin: 0 5px,
+      padding-top: 5px,
+      padding-left: 7px
+    ), $mfs);
+
+    &_pause,
+    &_close {
+      border: none;
+
+      & svg {
+      }
+    }
+
+    &-svg {
+      fill-rule: evenodd;
+      fill: #fff;
+      transition: fill .2s linear;
+      position: relative;
+
+      @include em((
+        width: 15px,
+        height: 23px
+      ), $mfs);
+    }
+
+
+    &:hover,
+    &_active {
+
+      & .ec-comics__btn-svg {
+        fill: #197cf6
+      }
+    };
+
+    &:disabled {
+      border-color: #444342;
+      cursor: default;
+
+
+      & .ec-comics__btn-svg {
+        fill: #2a2a2a;
+      }
+    }
+
+    &_round {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+
+      & path {
+        stroke: #fff;
+        stroke-width: 6px;
+      }
+    }
+
+    &_end {
+      svg {
+        width: em(27px, $mfs);
+      }
+    }
+  }
+
+  &__txt {
+    font-size: em(14px, $mfs);
+    box-shadow: inset 0 0 0 1px #4e4c4d;
+    background-color: #b3b5b7;
+    position: absolute;
+    text-align: center;
+    font-weight: 700;
+    color: #201d1d;
+    box-sizing: border-box;
+    font-family: $chalkB;
+    max-width: 60%;
+
+    &_rt {
+      right: 8%;
+      top: 4%;
+    }
+
+    &_br {
+      right: 8%;
+      bottom: 4%;
+    }
+
+    &_bl {
+      left: 8%;
+      bottom: 8%;
+    }
+
+    &_br2 {
+      right: 16%;
+      bottom: 4%;
+    }
+
+    @include em((
+      width: 366px,
+      border: 6px solid #201d1d,
+      padding: 15px 10px
+    ), 21px);
+
+
+    &-in {
+      margin: 0;
+    }
+
+    &-top {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      font-size: em(18px, $mfs);
+      background: url(#{$imgDir}comics/txt-bg.png) no-repeat center;
+      background-size: 100% 100%;
+      color: #1e1614;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: normal;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      box-sizing: border-box;
+      font-family: $robotoC;
+
+      @include em((
+        width: 1227px,
+        min-height: 97px,
+        top: -90px,
+        padding: 15px 50px
+      ), 18px);
+    }
+  }
+
+  &__sign {
+    font-size: em(20px, 23px);
+    color: #040404;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: normal;
+    position: absolute;
+    left: 35%;
+    top: 26%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include em((
+      width: 248px,
+      height: 72px
+    ), 23px);
+  }
+}
+
+.ec {
+
+  &-slider {
+    margin: auto;
+    position: relative;
+    width: em(401px, $mfs);
+
+    &__tiny {
+      position: relative;
+    }
+
+    & .ec-comics__int {
+      top: em(-20px, $mfs);
+    }
+
+    &__in {
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: url(#{$imgDir}slider/slider-mask.png);
+        background-size: 100% 100%;
+
+        @include em((
+          width: 401px,
+          left: 0
+        ), $mfs);
+      }
+    }
+
+    &__top {
+      position: absolute;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      @include em((
+        left: -130px,
+        top: -130px,
+        width: 400px,
+        height: 400px
+      ), $mfs);
+    }
+
+    &__bot {
+      position: absolute;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      @include em((
+        right: -60px,
+        bottom: -30px,
+        width: 143px,
+        height: 143px
+      ), $mfs);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url(#{$imgDir}slider/back-cards.png) no-repeat;
+      background-size: 100% 100%;
+      top: 0;
+
+      @include em((
+        width: 479px,
+        height: 721px,
+        left: -40px
+      ), $mfs);
+    }
+
+    &__item {
+      width: 100%;
+      position: absolute;
+      opacity: 0;
+      overflow: hidden;
+
+      .tns-outer & {
+        position: relative;
+        opacity: 1;
+      }
+
+      &:first-child {
+        position: relative;
+        opacity: 1;
+      }
+
+      @include em((
+        height: 698px
+      ), $mfs);
+
+    }
+
+    & .tns {
+
+      &-controls {
+        display: none;
+      }
+
+      &-ovh {
+        position: relative;
+
+        @include em((
+          margin: auto
+        ), $mfs);
+      }
+
+      &-inner {
+        margin: auto;
+
+        &#tns1-iw {
+          margin: auto;
+        }
+
+        @include em((
+          width: 374px
+        ), $mfs);
+      }
+
+      &-nav {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: em(19px, $mfs);
+        width: 100%;
+        z-index: 1;
+
+        // &:after {
+        //   content: '';
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0;
+        //   right: 0;
+        //   bottom: 0;
+        // }
+
+        & button {
+          position: relative;
+          border-radius: 50%;
+          border: 2px solid transparent;
+          font-size: em($mfs, $mfs);
+          transition: .2s linear;
+          outline: none;
+          background: none;
+          padding: 0;
+          width: 18px;
+          height: 18px;
+          margin: 0 2px;
+
+          &:hover {
+            border-color: #fff;
+          }
+
+          &.tns-nav-active {
+            border-color: #f8ad33;
+
+            &:before {
+              background-color: #f8ad33;
+            }
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            width: 10px;
+            height: 10px;
+            left: 2px;
+            top: 2px;
+          }
+        }
+      }
+    }
+
+    &__txt {
+      position: absolute;
+      left: 0;
+      right: 0;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      background: url(#{$imgDir}slider/text-bg.png) center;
+      background-size: auto 100%;
+      font-size: em(14px, $mfs);
+      box-sizing: border-box;
+      line-height: 1.4;
+      font-family: $chalkB;
+
+      @include em((
+        height: 140px,
+        padding: 15px 75px 10px,
+        bottom: 40px
+      ), 14px);
+    }
+
+    &__sum {
+      font-size: em(24px, 14px);
+      color: #fff;
+      display: block;
+      text-align: center;
+      margin: em(5px 0, 24px);
+
+      &_rem {
+        text-shadow: 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324, 0 0 3px #d72324,
+                    0 0 5px #7b0001, 0 0 5px #7b0001, 0 0 5px #7b0001, 0 0 5px #7b0001,
+                    0 0 5px #7b0001, 0 0 5px #7b0001, 0 0 5px #7b0001, 0 0 5px #7b0001;
+      }
+
+      &_add {
+        text-shadow: 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00, 0 0 3px #466e00,
+                    0 0 5px #89d700, 0 0 5px #89d700, 0 0 5px #89d700, 0 0 5px #89d700,
+                    0 0 5px #89d700, 0 0 5px #89d700, 0 0 5px #89d700, 0 0 5px #89d700;
+      }
+    }
+  }
+}
+
+.v-leave-active {
+  opacity: 0;
+  transition: 10s ease;
+}
+
+.ec-card {
+  position: absolute;
+  top: 0;
+
+  @include em((
+    left: -28px,
+    width: 430px,
+    height: 698px
+  ), $mfs);
+
+  &__part {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}

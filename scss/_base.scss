@@ -1,0 +1,868 @@
+@font-face {
+    font-family: "ChalkboardSE-Bold";
+    src: local("WebFont"),
+         url("../fonts/chalkboardSE-Bold.eot?") format("eot"),
+         url("../fonts/chalkboardSE-Bold.woff") format("woff"),
+         url("../fonts/chalkboardSE-Bold.ttf") format("truetype"),
+        url("../fonts/chalkboardSE-Bold.svg#filename") format("svg");
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ec {
+
+  &-page {
+    font-size: $mfs;
+    font-family: $roboto;
+    font-style: italic;
+    color: $mainc;
+    line-height: 1.2;
+    background-color: #edf5fd;
+
+    @media #{$desktop} {
+      font-size: $mfs2;
+    }
+
+    @if($is_rtl == 0) {
+      direction: ltr;
+    } @else {
+      direction: rtl;
+    }
+  }
+
+  &-wrap {
+    position: relative;
+    margin: auto;
+    box-shadow: 0 0 30px #929292;
+
+    @include em((
+      max-width: 1920px,
+      height: 867px
+    ), $mfs);
+
+    &.ec-bet-added {
+      overflow: hidden;
+    }
+  }
+
+  &-bread {
+    position: absolute;
+    top: em(15px , $mfs);
+    z-index: 10;
+    list-style: none;
+    font-style: normal;
+
+    @include dir((
+      left: em(18px, $mfs)
+    ));
+
+    & li {
+      display: inline-block;
+      color: #2d2e2d;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 700;
+
+      .ec-static_toggle & {
+        color: $mainc;
+      }
+
+      @include dir((
+        margin-right: em(14px, $mfs)
+      ));
+
+      &::before {
+        content: "/";
+        position: absolute;
+        @include dir((
+          margin-left: 6px,
+          left: 100%
+        ));
+      }
+
+      &:last-child:before {
+        content: none;
+      }
+    }
+
+    & a {
+      color: inherit;
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+      transition: .2s linear;
+      font-weight: 400;
+
+      &:hover {
+        border-bottom-color: lighten(#2d2d2d, 50%);
+      }
+    }
+  }
+
+  &-scroll {
+
+    &.ps {
+
+      &-container {
+        & .ps {
+
+          &-scrollbar {
+
+            &-y {
+              width: 5px;
+              right: -1px;
+              border-radius: 0;
+
+              &-rail {
+                background-color: #515d56;
+                width: 3px;
+                opacity: 1;
+                cursor: pointer;
+              }
+
+              background-color: inherit;
+            }
+          }
+        }
+
+        &.ps-in-scrolling.ps-y {
+
+          .ps-scrollbar {
+
+            &-y-rail {
+              opacity: 1;
+              background-color: #515d56;
+            }
+
+            &-y {
+              background-color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-btn {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    color: $mainc;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    position: relative;
+    transition: .3s linear;
+    font-family: $roboto;
+    font-weight: 700;
+    overflow: hidden;
+    font-style: normal;
+    transform: translateZ(0);
+
+    span {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    &_size_s {
+      font-size: 1em;
+      @include em((
+        min-height: 46px,
+        min-width: 56px,
+        padding: 13px 22px,
+        border-radius: 50px
+      ), $mfs);
+    }
+
+    &_size_m {
+      font-size: em(18px, $mfs);
+      @include em((
+        min-height: 60px,
+        min-width: 130px,
+        padding: 20px 22px 16px,
+        border-radius: 50px
+      ), 18px);
+    }
+
+    &_theme_gray {
+      background-image: $grayGr;
+
+      &:hover {
+        background: $grayGrHover;
+      }
+
+      @media #{$ie} {
+        background: #9d9fa1;
+
+        &:hover {
+          background: #797979;
+        }
+      }
+
+      @supports #{$edge} {
+        background: #9d9fa1;
+
+        &:hover {
+          background: #797979;
+        }
+      }
+
+      @-moz-document url-prefix() {
+        & {
+          background-image: $grayGrFix;
+
+          &:hover {
+            background-image: $grayGrFixHover;
+          }
+        }
+      }
+    }
+
+    &_theme_grayB {
+      background: linear-gradient(to bottom, #fff 0%, #2a333c 100%);
+      font-family: $robotoC;
+
+      &:before {
+        content: '';
+        background: $grayGr;
+        position: absolute;
+
+        @media #{$ie} {
+          background: #9d9fa1;
+        }
+
+        @-moz-document url-prefix() {
+          & {
+            background: $grayGrFix;
+          }
+        }
+
+        @supports #{$edge} {
+          background: #9d9fa1;
+        }
+
+        @include em((
+          left: 5px,
+          top: 5px,
+          right: 5px,
+          bottom: 5px,
+          border-radius: 50px
+        ), 18px);
+      }
+
+      &:hover {
+        background: linear-gradient(to bottom, #fff 10%, #2a333c 30%);
+
+        &:before {
+          background: $grayGrHover;
+
+          @media #{$ie} {
+            background: #747577;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $grayGrFixHover;
+            }
+          }
+
+          @supports #{$edge} {
+            background: #747577;
+          }
+        }
+
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+
+    &_theme_greenB {
+      background: linear-gradient(to bottom, #a6e15d 0%, #2f4427 100%);
+      font-family: $robotoC;
+
+      &:before {
+        content: '';
+        background: $greenGr;
+        position: absolute;
+
+        @media #{$ie} {
+          background: #96c310;
+        }
+
+        @supports #{$edge} {
+          background: #96c310;
+        }
+
+        @-moz-document url-prefix() {
+          & {
+            background: $greenGrFix;
+          }
+        }
+
+        @include em((
+          left: 5px,
+          top: 5px,
+          right: 5px,
+          bottom: 5px,
+          border-radius: 50px
+        ), 18px);
+      }
+
+      &:hover {
+        background: linear-gradient(to bottom, #8bd147 10%, #22341b 30%);
+
+        &:before {
+          background: $greenGrHover;
+
+          @media #{$ie} {
+            background: #74980a;
+          }
+
+          @supports #{$edge} {
+            background: #74980a;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $greenGrFixHover;
+            }
+          }
+        }
+
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+
+    &_theme_blueB {
+      background: linear-gradient(to bottom, #bfe2ff 0%, #063e6e 100%);
+      font-family: $robotoC;
+
+      &:before {
+        content: '';
+        background: $blueGr;
+        position: absolute;
+
+        @media #{$ie} {
+          background: #03569d;
+        }
+
+        @supports #{$edge} {
+          background: #03569d;
+        }
+
+        @-moz-document url-prefix() {
+          & {
+            background: $blueGrFix;
+          }
+        }
+
+        @include em((
+          left: 5px,
+          top: 5px,
+          right: 5px,
+          bottom: 5px,
+          border-radius: 50px
+        ), 18px);
+      }
+
+      &:hover {
+        background: linear-gradient(to bottom, #bfe2ff 10%, #063e6e 30%);
+
+        &:before {
+          background: $blueGrHover;
+
+          @media #{$ie} {
+            background: #014580;
+          }
+
+          @supports #{$edge} {
+            background: #014580;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $blueGrFixHover;
+            }
+          }
+        }
+
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+
+    &-sound {
+      background: none;
+      margin: 0;
+
+      & svg {
+        width: 70%;
+        height: 70%;
+        left: 15%;
+        top: 15%;
+        margin: auto;
+        position: absolute;
+        transition: fill .2s;
+        fill: #6a6a6a;
+      }
+
+      &_active {
+        cursor: default;
+      }
+
+      &:disabled,
+      &:hover {
+        svg {
+          fill: #fff;
+        }
+      }
+
+      &_move {
+        position: absolute;
+        transition: dir(left) .2s;
+
+        @include dir((
+          left: 50%
+        ));
+
+        .ec-btn-sound_muted & {
+          @include dir((
+            left: em(1px, $mfs)
+          ));
+        }
+      }
+    }
+
+    &s-group {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      background: #312936;
+      position: relative;
+    }
+
+  }
+
+  &-group-wrap {
+    @include em((
+      border-radius: 50px,
+      border: 1px solid #8f9295,
+      padding: 2px 1px
+    ), $mfs);
+  }
+
+  &-sum {
+
+    &-wrap {
+      width: em(586px, $mfs);
+      background: #2d2e2d;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  &-select {
+    position: relative;
+    z-index: 1;
+    min-width: em(205px, $mfs);
+    font-size: em($mfs, $mfs);
+    text-align: dir(left);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    & .multiselect {
+      min-height: auto;
+      font-size: em($mfs, $mfs);
+
+      &__tags {
+        padding: 0;
+        border: none;
+        background: none;
+        min-height: auto;
+        font-size: em($mfs, $mfs);
+        position: relative;
+        z-index: 1;
+      }
+
+      &__single {
+        padding: em(13px 20px, $mfs);
+        margin: 0;
+        background-image: $grayGr;
+        color: $mainc;
+        text-shadow: em(1px 2px 0 rgba(#141615, .4), $mfs);
+        white-space: nowrap;
+        line-height: 1.2;
+        min-height: auto;
+        font-size: 1em;
+        cursor: pointer;
+
+        &:hover {
+          background-image: $grayGrHover;
+        }
+
+        @media #{$ie} {
+          background: #9d9fa1;
+
+          &:hover {
+            background: #797979;
+          }
+        }
+
+        @supports #{$edge} {
+          background: #9d9fa1;
+
+          &:hover {
+            background: #797979;
+          }
+        }
+
+        @-moz-document url-prefix() {
+          & {
+            background-image: $grayGrFix;
+
+            &:hover {
+              background-image: $grayGrFixHover;
+            }
+          }
+        }
+
+        @include em((
+          border-top: 1px solid rgba($mainc, .5),
+          border-radius: 50px
+        ), $mfs);
+
+        @include dir((
+          padding-right: em(50px, $mfs),
+          border-top-right-radius: em(10px, $mfs),
+          border-bottom-right-radius: em(10px, $mfs)
+        ));
+
+        &:before {
+          content: '';
+          background: url(../img/el-camino/arr.png) no-repeat;
+          background-size: 100% 100%;
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 50%;
+
+          @include em((
+            width: 16px,
+            height: 9px,
+            margin-top: -5px,
+            right: 20px
+          ), $mfs);
+        }
+      }
+
+      &__select {
+        display: none;
+      }
+
+      &--active {
+
+        & .multiselect {
+
+          &__single:before {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+
+      &__content-wrapper {
+        background-color: #1e242a;
+        z-index: 0;
+        border: none;
+        max-height: 200px !important;
+
+        @include em((
+          margin-top: -18px,
+          padding-top: 18px
+        ), $mfs);
+      }
+
+      &__content {
+        padding: em(3px 0 5px, $mfs);
+      }
+
+      & li {
+
+        &:hover {
+          background-color: #2b2e30;
+        }
+      }
+
+      &__option--highlight {
+        background: none;
+      }
+
+      &__option {
+        text-transform: inherit;
+        padding: em(12px 18px 10px, $mfs);
+        min-height: none;
+      }
+    }
+
+  }
+
+  &-iwrap {
+    flex: 1 1;
+    text-transform: uppercase;
+    position: relative;
+
+    @include em((
+      margin-left: 10px,
+      margin-right: 10px
+    ), $mfs);
+
+    &__inp {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: dir(left);
+      outline: none;
+      margin: 0;
+      box-sizing: border-box;
+      color: $mainc;
+      font-style: italic;
+
+      @include em((
+        font-size: 20px,
+        padding: 8px 10px
+      ), $mfs);
+    }
+  }
+
+  &-reset {
+    border: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: .2s linear;
+    padding: 0;
+    font-size: 1em;
+
+    @include em((
+      border-radius: 5px,
+      box-shadow: em(inset 0 1px 1px rgba($mainc, .5), $mfs),
+      width: 72px,
+      height: 46px
+    ), $mfs);
+
+    @include dir((
+      border-bottom-right-radius: 50px,
+      border-top-right-radius: 50px
+    ));
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: url(../img/el-camino/reset.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &-start {
+
+    &-btn {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      font-style: italic;
+
+      @include em((
+        font-size: 18px,
+        border-radius: 50px,
+        padding: 15px
+      ), $mfs);
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        animation: transNone 5s infinite linear;
+        transform: translate(-1000%);
+        background: url(#{$imgDir}/sparkle.png) no-repeat;
+        background-size: 100% 100%;
+        transition: opacity .2s linear;
+      }
+
+      &:disabled {
+        cursor: default;
+        background: linear-gradient(to bottom, #646668 0%, #3b3d3f 100%);
+
+        &:before {
+          background: $grayGrHover;
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      span {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+  &-hint {
+    position: relative;
+
+    @include em((
+      height: 56px
+    ), 24px);
+
+    & p {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s linear;
+      height: 100%;
+      margin: 0;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.ec-hint_choose .ec-hint__choose {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  &-sbtns {
+    $sbtnsFS: 20px;
+    background: #2d2e2d;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+
+    @include em((
+      width: 582px
+    ), $mfs);
+
+    &__btn {
+      box-sizing: border-box;
+      color: #fff;
+      border: none;
+      background: url(#{$imgDir}main/bet-btn.png) no-repeat;
+      background-size: 100% 200%;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      font-style: italic;
+      font-size: em($sbtnsFS, $mfs);
+      margin: em(0 3px, $sbtnsFS);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, #8ebe10 0%, #8ebe10 100%);
+        opacity: 0;
+        transition: .2s linear;
+
+        @include em((
+          border-top: 1px solid rgba($mainc, .5),
+          border-radius: 5px
+        ), $sbtnsFS);
+      }
+
+      &:first-of-type {
+        margin-left: 0;
+
+        &::before {
+          border-radius: em(20px 5px 5px 20px, $sbtnsFS);
+        }
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+
+        &::before {
+          border-radius: em(5px 20px 20px 5px, $sbtnsFS);
+        }
+      }
+
+      &+&:after {
+        content: '';
+        position: absolute;
+        background: #cbcbcb;
+
+        @include em((
+          width: 2px,
+          top: 5px,
+          bottom: 5px,
+          margin: 0 2px
+        ), $sbtnsFS);
+
+        @include dir((
+         right: 100%
+        ));
+      }
+
+      @include em((
+        width: 92px,
+        height: 40px,
+      ), $sbtnsFS);
+
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      & span {
+        position: relative;
+      }
+    }
+  }
+
+  &-preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#000, .95);
+    z-index: 111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #fff;
+  }
+}

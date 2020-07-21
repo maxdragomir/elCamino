@@ -1,0 +1,565 @@
+.ec {
+
+  &-static {
+
+    &__road {
+    }
+
+    &__road-line {
+    }
+
+    &__scale {
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        transition: $sunRiseTime linear;
+        // will-change: opacity;
+      }
+    }
+  }
+
+  &-section {
+
+    &_static {
+
+      & .ec-footer {
+        // bottom: 0;
+        transform: none;
+      }
+
+      &.ec-section_move {
+        & .ec-footer {
+          // bottom: em(-210px, $mfs);
+          transform: translateY(85%) translateZ(0);
+        }
+      }
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: opacity $sunRiseTime/2 0s linear;
+    z-index: 0;
+
+    &_day {
+      background: radial-gradient(#ecce60, #bc681e);
+    }
+
+    &_transition {
+      opacity: 0;
+      transition-delay: $sunRiseTime/2;
+      background: radial-gradient(#eb956d, #69272e);
+
+      .ec-static_toggle & {
+        opacity: 1;
+        transition-delay: 0s;
+      }
+    }
+
+    &_night {
+      opacity: 0;
+      background: radial-gradient(#003e72, #002e5a);
+
+      .ec-static_toggle & {
+        opacity: 1;
+        transition-delay: $sunRiseTime/2;
+      }
+    }
+
+    &__sun,
+    &__moon {
+      position: absolute;
+      background-size: 100% 100%;
+      // will-change: transform, bottom, left;
+      transition: transform 0s linear, bottom 0s linear, left 0s linear;
+    }
+
+    &__sun {
+      transform: translate(-10%, 100%);
+      left: 30%;
+      bottom: 0;
+      background-image: url(../img/el-camino/static/day/sun.png);
+
+      @include em((
+        width: 1150px,
+        height: 1150px
+      ), $mfs);
+
+      .ec-static_day & {
+        transform: none;
+        bottom: 100%;
+        transition-duration: $timeDur;
+      }
+    }
+
+    &__moon {
+      left: 60%;
+      top: 0;
+      background-image: url(../img/el-camino/static/night/moon.png);
+      border-radius: 50%;
+      transform: translate(0%, 100%);
+
+      @include em((
+        width: 186px,
+        height: 186px
+      ), $mfs);
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        box-shadow: em(0 0 76px 20px rgba($mainc, .76), $mfs);
+        border-radius: 50%;
+      }
+
+      .ec-static_night & {
+        transform: translate(400%, -100%);
+        opacity: 1;
+        transition-duration: $timeDur*2;
+      }
+    }
+  }
+
+  &-sky {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &-wrap {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &_day {
+      background: url(../img/el-camino/static/day/sky.jpg);
+      background-size: auto 100%;
+      width: em(3000px, $mfs);
+      transform: translateX(-10%);
+
+      .ec-static_day & {
+        animation: transNone $timeDur*2 linear;
+      }
+    }
+
+    &_transition {
+      background: url(../img/el-camino/static/transition/sky.jpg);
+      background-size: auto 100%;
+    }
+
+    &_night {
+      // will-change: background-position, visibility, opacity, transform;
+      transition: opacity $sunRiseTime linear, visibility $sunRiseTime linear;
+      transform: rotate(-30deg) translateY(2%);
+      background: url(../img/el-camino/static/night/sky.jpg);
+      background-size: cover;
+
+      .ec-static_night & {
+        animation: transNone $timeDur*2 linear;
+      }
+
+      @include em((
+        top: -1000px,
+        left: -500px,
+        width: 4000px,
+        height: 4000px
+      ), $mfs);
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../img/el-camino/static/night/stars.png) center;
+        transition: opacity $sunRiseTime/5 0s linear, visibility $sunRiseTime/5 0s linear;
+
+        .ec-static_night & {
+          transition-delay: $sunRiseTime/3;
+        }
+      }
+    }
+
+    &__cloud {
+      background-repeat: no-repeat;
+      // will-change: transform;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 60%;
+      transform: translateX(-100%);
+      background-position: right top;
+      background-size: auto 100%;
+      animation-name: transNone;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+
+      .ec-cloud-pause & {
+        animation-play-state: paused;
+      }
+
+      &.ec-sky__cloud_once {
+        width: 100%;
+        transform: none;
+      }
+
+      &_one {
+        background-image: url(../img/el-camino/static/day/cloud2.png);
+        animation-duration: 180s;
+
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/cloud2.png);
+        }
+
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/cloud2.png);
+        }
+      }
+
+      &_two {
+        background-image: url(../img/el-camino/static/day/cloud1.png);
+        animation-duration: 200s;
+        animation-delay: 140s;
+
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/cloud1.png);
+        }
+
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/cloud1.png);
+        }
+
+        &.ec-sky__cloud_once {
+          transform: translate(-100%);
+          animation-duration: 100s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-delay: 0s;
+          left: 50%;
+        }
+      }
+
+      &_three {
+        background-image: url(../img/el-camino/static/day/cloud3.png);
+        animation-duration: 240s;
+        animation-delay: 120s;
+
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/cloud3.png);
+        }
+
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/cloud3.png);
+        }
+
+        &.ec-sky__cloud_once {
+          transform: translate(-60%);
+          animation-duration: 90s;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-delay: 0s;
+          left: 50%;
+        }
+      }
+    }
+
+    &__clouds {
+      width: 100%;
+      height: em(240px, $mfs);
+      position: absolute;
+    }
+  }
+
+  &-mts {
+    position: absolute;
+    bottom: 98.5%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      transition: $sunRiseTime linear;
+      // will-change: opacity;
+    }
+
+    &_pos-l {
+      right: 53.2%;
+      bottom: 95.2%;
+
+      @include em((
+        width: 971px,
+        height: 223px
+      ), $mfs);
+
+      &:before {
+        background-image: url(../img/el-camino/static/day/mountian-left.png);
+
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/mountian-left.png);
+        }
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/mountian-left.png);
+        }
+      }
+    }
+
+    &_pos-c {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 96.7%;
+
+      @include em((
+        width: 2062px,
+        height: 175px
+      ), $mfs);
+
+      &:before {
+        background-image: url(../img/el-camino/static/day/mountians-back.png);
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/mountians-back.png);
+        }
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/mountians-back.png);
+        }
+      }
+    }
+
+    &_pos-r {
+      left: 52.5%;
+      bottom: 96.2%;
+
+      @include em((
+        width: 1176px,
+        height: 299px
+      ), $mfs);
+
+      &:before {
+        background-image: url(../img/el-camino/static/day/mountian-right.png);
+
+        .ec-bg_transition & {
+          background-image: url(../img/el-camino/static/transition/mountian-right.png);
+        }
+        .ec-bg_night & {
+          background-image: url(../img/el-camino/static/night/mountian-right.png);
+        }
+      }
+    }
+  }
+
+  &-car {
+
+  }
+
+  &-rock {
+    position: absolute;
+    left: 50%;
+    background-size: contain;
+
+    &_img1 {
+      background-image: url(../img/el-camino/static/day/rock1.png);
+
+      .ec-bg_transition & {
+        background-image: url(../img/el-camino/static/transition/rock1.png);
+      }
+
+      .ec-bg_night & {
+        background-image: url(../img/el-camino/static/night/rock1.png);
+      }
+    }
+
+    &_num1 {
+
+      @include em((
+        width: 266px,
+        height: 141px,
+        margin-left: -530px,
+        top: -50px
+      ), $mfs);
+    }
+
+    &_img2 {
+      background-image: url(../img/el-camino/static/day/rock2.png);
+
+      .ec-bg_transition & {
+        background-image: url(../img/el-camino/static/transition/rock2.png);
+      }
+
+      .ec-bg_night & {
+        background-image: url(../img/el-camino/static/night/rock2.png);
+      }
+    }
+
+    &_num2,
+    &_num9 {
+
+      @include em((
+        width: 539px,
+        height: 280px,
+        top: -150px,
+        margin-left: 300px
+      ), $mfs);
+    }
+
+    &_img3 {
+      background-image: url(../img/el-camino/static/day/rock3.png);
+
+      .ec-bg_transition & {
+        background-image: url(../img/el-camino/static/transition/rock3.png);
+      }
+
+      .ec-bg_night & {
+        background-image: url(../img/el-camino/static/night/rock3.png);
+      }
+    }
+
+    &_num3 {
+
+      @include em((
+        width: 465px,
+        height: 365px,
+        margin-left: -920px,
+        bottom: 750px
+      ), $mfs);
+    }
+
+    &_img4 {
+      background-image: url(../img/el-camino/static/day/rock4.png);
+
+      .ec-bg_transition & {
+        background-image: url(../img/el-camino/static/transition/rock4.png);
+      }
+
+      .ec-bg_night & {
+        background-image: url(../img/el-camino/static/night/rock4.png);
+      }
+    }
+
+    &_num4 {
+
+      @include em((
+        width: 431px,
+        height: 225px,
+        margin-left: 540px,
+        top: 0px
+      ), $mfs);
+    }
+
+    &_img5 {
+      background-image: url(../img/el-camino/static/day/rock5.png);
+
+      .ec-bg_transition & {
+        background-image: url(../img/el-camino/static/transition/rock5.png);
+      }
+
+      .ec-bg_night & {
+        background-image: url(../img/el-camino/static/night/rock5.png);
+      }
+    }
+
+    &_num5 {
+      left: auto;
+      right: 50%;
+
+      @include em((
+        width: 1282px,
+        height: 1352px,
+        bottom: 280px,
+        margin-right: 1330px
+      ), $mfs);
+    }
+
+    &_num6 {
+      transform: rotateY(-180deg);
+
+      @include em((
+        width: 1282px,
+        height: 1352px,
+        bottom: 400px,
+        margin-left: 1430px
+      ), $mfs);
+    }
+
+    &_num7 {
+      left: auto;
+      right: 50%;
+      transform: rotateY(-180deg);
+
+      @include em((
+        width: 800px,
+        height: 416px,
+        bottom: 600px,
+        margin-right: 850px
+      ), $mfs);
+    }
+
+    &_num8 {
+      transform: rotateY(-180deg);
+
+      @include em((
+        width: 700px,
+        height: 549px,
+        bottom: 550px,
+        margin-left: 850px
+      ), $mfs);
+    }
+
+    &_num9 {
+      margin-left: 370px;
+    }
+  }
+
+  &-field-part {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    background-position: center;
+  }
+
+  &-dirt {
+    background-image: url(../img/el-camino/static/day/dirt.png);
+
+    .ec-bg_transition & {
+      background-image: url(../img/el-camino/static/transition/dirt.png);
+    }
+
+    .ec-bg_night & {
+      background-image: url(../img/el-camino/static/night/dirt.png);
+    }
+  }
+
+  &-stones {
+    background-image: url(../img/el-camino/static/day/stones.png);
+
+    .ec-bg_transition & {
+      background-image: url(../img/el-camino/static/transition/stones.png);
+    }
+
+    .ec-bg_night & {
+      background-image: url(../img/el-camino/static/night/stones.png);
+    }
+  }
+}

@@ -1,0 +1,156 @@
+.ec {
+
+  &-bg {
+    &_city {
+      background: url(#{$imgDir}city/asphalt.jpg) center;
+    }
+  }
+
+  &-sky {
+
+    &_city {
+      background-color: #e9f9ff;
+    }
+  }
+
+  &-lanterns {
+    background: url(#{$imgDir}city/lanterns.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+
+    &_front {
+
+      @include em((
+        width: 906px,
+        height: 488px,
+        top: -307px,
+        margin-left: -457px
+      ), $mfs);
+
+      &:before {
+        content: '';
+        position: absolute;
+        background: url(#{$imgDir}city/lanterns.png) no-repeat center;
+        background-size: contain;
+        image-rendering: -webkit-optimize-contrast;
+
+        @include em((
+          width: 322px,
+          height: 175px,
+          left: 294px,
+          top: 200px
+        ), $mfs);
+      }
+    }
+
+    &_back {
+      transform: translateY(15%);
+      transition: transform 1.5s ease-out;
+      image-rendering: -webkit-optimize-contrast;
+
+      .ec-section_move & {
+        transform: none;
+      }
+
+      @include em((
+        width: 200px,
+        height: 108px,
+        top: -64px,
+        margin-left: -102px
+      ), $mfs);
+    }
+  }
+
+  &-city {
+
+    &_back {
+      width: 100%;
+      background: url(#{$imgDir}city/back.png) no-repeat center;
+      background-size: auto 100%;
+      position: absolute;
+      left: 0;
+      bottom: 96%;
+
+      @include em((
+        height: 499px
+      ), $mfs);
+    }
+  }
+
+  &-build {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+
+    &_img1 {
+      background-image: url(#{$imgDir}city/build1.png);
+      bottom: 100%;
+
+      @include em((
+        width: 206px,
+        height: 583px,
+        margin-bottom: -90px,
+        margin-left: -302px
+      ), $mfs);
+    }
+
+    &_img2 {
+      background-image: url(#{$imgDir}city/build2.png);
+      bottom: 100%;
+
+      @include em((
+        width: 140px,
+        height: 552px,
+        margin-bottom: -69px,
+        margin-left: 76px
+      ), $mfs);
+    }
+
+    &_img3 {
+      background-image: url(#{$imgDir}city/build3.png);
+
+      @include em((
+        width: 406px,
+        height: 468px,
+        margin-left: -770px,
+        top: -370px
+      ), $mfs);
+    }
+
+    &_img4 {
+      background-image: url(#{$imgDir}city/build4.png);
+
+      @include em((
+        width: 440px,
+        height: 438px,
+        margin-left: 375px,
+        top: -335px
+      ), $mfs);
+    }
+
+    &_img5 {
+      background-image: url(#{$imgDir}city/build5.png);
+
+      @include em((
+        width: 575px,
+        height: 589px,
+        margin-left: -1170px,
+        top: -375px
+      ), $mfs);
+    }
+
+    &_img6 {
+      background-image: url(#{$imgDir}city/build6.png);
+
+      @include em((
+        width: 551px,
+        height: 642px,
+        margin-left: 630px,
+        top: -400px
+      ), $mfs);
+    }
+  }
+}

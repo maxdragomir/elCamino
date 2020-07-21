@@ -1,0 +1,174 @@
+.ec {
+
+  &-bg {
+
+    &_village {
+      // background: url(#{$imgDir}village/grass.jpg) center bottom;
+
+      & .ec-bg__top {
+        height: 47%;
+      }
+    }
+
+  }
+
+  &-sky {
+
+    &_village {
+      background: url(#{$imgDir}village/bg.jpg) center;
+      background-size: auto 100%;
+    }
+
+    &__village {
+      height: em(420px, $mfs);
+
+      & .ec-sky__cloud_one {
+        background-image: url(#{$imgDir}village/cloud1.png);
+      }
+
+      & .ec-sky__cloud_two {
+        background-image: url(#{$imgDir}village/cloud2.png);
+      }
+
+      & .ec-sky__cloud_three {
+        background-image: url(#{$imgDir}village/cloud3.png);
+      }
+    }
+  }
+
+  &-road {
+
+    &_village {
+      background-image: url(#{$imgDir}village/road.png), url(#{$imgDir}village/grass.jpg);
+      // top: em(-100px, $mfs);
+    }
+
+    &_stones {
+
+      &:before {
+        content: '';
+        background: url(#{$imgDir}village/road-stones.png) no-repeat center;
+        background-size: 100% 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-45%);
+        top: 5%;
+
+        @include em((
+          width: 1032px,
+          height: 225px
+        ), $mfs);
+      }
+    }
+  }
+
+  &-village {
+
+    &_turns {
+
+      & .ec-road:before {
+        background-image: url(#{$imgDir}village/turns.png);
+        // height: em(200px, $mfs);
+      }
+    }
+  }
+
+  &-build {
+
+    &_img7 {
+      background-image: url(#{$imgDir}village/build1.png);
+      bottom: 100%;
+
+      @include em((
+        width: 130px,
+        height: 165px,
+        margin-bottom: -77px,
+        margin-left: -235px
+      ), $mfs);
+    }
+
+    &_img8 {
+      background-image: url(#{$imgDir}village/build2.png);
+      bottom: 100%;
+
+      @include em((
+        width: 165px,
+        height: 222px,
+        margin-bottom: -80px,
+        margin-left: 95px
+      ), $mfs);
+    }
+
+    &_img9 {
+      background-image: url(#{$imgDir}village/build3.png);
+      bottom: 100%;
+
+      @include em((
+        width: 364px,
+        height: 198px,
+        margin-bottom: -115px,
+        margin-left: -680px
+      ), $mfs);
+    }
+
+    &_img10 {
+      background-image: url(#{$imgDir}village/build4.png);
+      bottom: 100%;
+
+      @include em((
+        width: 184px,
+        height: 162px,
+        margin-bottom: -90px,
+        margin-left: 360px
+      ), $mfs);
+    }
+
+    &_img11 {
+      background-image: url(#{$imgDir}village/build5.png);
+      bottom: 100%;
+
+      @include em((
+        width: 1034px,
+        height: 762px,
+        margin-bottom: -440px,
+        margin-left: -1570px
+      ), $mfs);
+    }
+
+    &_img12 {
+      background-image: url(#{$imgDir}village/build6.png);
+      bottom: 100%;
+
+      @include em((
+        width: 521px,
+        height: 393px,
+        margin-bottom: -220px,
+        margin-left: 465px
+      ), $mfs);
+    }
+
+    &_img13 {
+      background-image: url(#{$imgDir}village/build7.png);
+      bottom: 100%;
+
+      @include em((
+        width: 542px,
+        height: 860px,
+        margin-bottom: -440px,
+        margin-left: -1230px
+      ), $mfs);
+    }
+
+    &_img14 {
+      background-image: url(#{$imgDir}village/build8.png);
+      bottom: 100%;
+
+      @include em((
+        width: 356px,
+        height: 469px,
+        margin-bottom: -350px,
+        margin-left: 690px
+      ), $mfs);
+    }
+  }
+}

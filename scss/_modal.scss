@@ -1,0 +1,117 @@
+.ec-page .v--modal  {
+
+  &-overlay {
+    background: rgba(0,0,0, .7);
+  }
+
+  &-box {
+    // transform: translateX(-50%);
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  &-background-click {
+    text-align: center;
+    display: block;
+  }
+}
+
+.ec-modal {
+  background-color: #fff;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  box-sizing: border-box;
+  font-style: normal;
+
+  & .ec-modal__close {
+    position: absolute;
+
+    @include em((
+      right: -25px,
+      top: -35px
+    ), $mfs);
+  }
+
+  &_size {
+
+    &_m {
+
+      @include em((
+        width: 820px,
+        min-height: 440px,
+        padding-top: 305px
+      ), $mfs);
+    }
+  }
+
+  &_safe {
+    background-image: url(#{$imgDir}/modal/bg1.png);
+
+    &__in {
+      flex-basis: 100%;
+
+      @include em((
+        margin-bottom: -25px
+      ), $mfs);
+    }
+  }
+
+  &__txt {
+    font-size: em(26px, $mfs);
+    color: $black;
+    font-family: $chalkB;
+    margin: em(18px 0, 26px);
+  }
+
+  &__foot {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+
+    @include em((
+      width: 220px,
+      margin: 0 10px
+    ), 18px);
+  }
+
+  &_win {
+    background-image: url(#{$imgDir}/modal/bg2.png);
+    font-family: $robotoC;
+  }
+
+  &__win {
+
+    &-title {
+      margin: 0;
+      font-size: em(46px, $mfs);
+      color: #000;
+
+      @include em((
+
+      ), 46px);
+    }
+
+    &-txt {
+      font-size: em(26px, $mfs);
+      color: #000;
+      font-weight: 400;
+      margin: em(0 0 10px, 26px);
+      text-transform: uppercase;
+
+      span {
+        font-size: em(46px, 26px);
+        display: block;
+        color: #197cf6;
+        font-weight: 700;
+      }
+    }
+  }
+}

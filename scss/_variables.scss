@@ -1,0 +1,32 @@
+$roboto: 'Roboto', sans-serif;
+$robotoC: 'Roboto Condensed', sans-serif;
+$chalkB: 'ChalkboardSE-Bold';
+
+$desktop: 'screen and (max-width: 1600px)';
+$ie: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)';
+$edge: '(-ms-accelerator:true) or (-ms-ime-align:auto)';
+
+$imgDir: '../img/el-camino/';
+
+$mainc: #fff;
+$black: #000;
+$colE2d: #2d2e2d;
+
+$mfs: 16px;
+$mfs2: 11px;
+
+$grayGr: conic-gradient(#9d9fa1, #626568, #9d9fa1, #626568, #9d9fa1);
+$grayGrFix: linear-gradient(to left, #626568 0%, #9d9fa1 49%, #9d9fa1 51%, #626568 100%);
+$grayGrHover: conic-gradient(#646668, #3b3d3f, #646668, #3b3d3f, #646668);
+$grayGrFixHover: linear-gradient(to left, #3b3d3f 0%, #646668 49%, #646668 51%, #3b3d3f 100%);
+$greenGr: conic-gradient(#96c310, #6c923a, #96c310, #6c923a, #96c310);
+$greenGrFix: linear-gradient(to left, #6c923a 0%, #96c310 49%, #96c310 51%, #6c923a 100%);
+$greenGrHover: conic-gradient(#80ac06, #3d5421, #80ac06, #3d5421, #80ac06);
+$greenGrFixHover: linear-gradient(to left, #3d5421 0%, #80ac06 49%, #80ac06 51%, #3d5421 100%);
+$blueGr: conic-gradient(#48e7ff, #0090ff, #48e7ff, #0090ff, #48e7ff);
+$blueGrFix: linear-gradient(to left, #0090ff 0%, #48e7ff 49%, #48e7ff 51%, #0090ff 100%);
+$blueGrHover: conic-gradient(#15b8d0, #0560a6, #15b8d0, #0560a6, #15b8d0);
+$blueGrFixHover: linear-gradient(to left, #0560a6 0%, #15b8d0 49%, #15b8d0 51%, #0560a6 100%);
+
+$timeDur: 16s;
+$sunRiseTime: $timeDur/2;
