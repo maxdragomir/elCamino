@@ -1,7 +1,8 @@
 $dur: .2s;
 .ec-comics {
   position: relative;
-  // height: 100vh;;
+  // height: 100vh;
+
   @include em((
     width: 1514px,
     height: 730px,
@@ -974,14 +975,11 @@ $dur: .2s;
 
       &-inner {
         margin: auto;
+        width: 100%;
 
         &#tns1-iw {
           margin: auto;
         }
-
-        @include em((
-          width: 374px
-        ), $mfs);
       }
 
       &-nav {

@@ -344,6 +344,7 @@ const page = document.querySelector('.ec-page'),
         }
 
         let cardsSlider = tns({
+          autoplayButtonOutput: false,
           container: '.ec-slider__content',
           mouseDrag: false,
           loop: false,
@@ -364,7 +365,7 @@ const page = document.querySelector('.ec-page'),
         cardsSlider.events.on('transitionEnd', (info, eventName) => {
           slides[info.index].classList.add('ec-slider__item_anim');
         });
-        
+
       },
       cardsClosed() {
         this.game.cardsClosed = true;
