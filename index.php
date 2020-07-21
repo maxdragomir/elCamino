@@ -1312,6 +1312,7 @@
       </section>
     </modal>
 
+
     <modal name="comics-cards1"
          :adaptive="true"
          height="auto"
@@ -1326,25 +1327,25 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards1">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img1.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/track/bikers/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards1/screen1/el1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen1/el1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen2/bg.jpg)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards1/screen2/el1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/bg.jpg)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen2/el1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen3/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards1/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards1/screen3/el2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
               </div>
             </div>
@@ -1370,7 +1371,6 @@
         </div>
       </section>
     </modal>
-
     <modal name="comics-cards2"
            :adaptive="true"
            height="auto"
@@ -1385,23 +1385,23 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards2">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img2.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/villagers/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards2/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards2/screen1/car.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/villagers/screen1/car.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen2/bg.jpg)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards2/screen2/el1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen2/bg.jpg)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen2/el1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards2/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/bg.png)"></div>
                 </div>
               </div>
             </div>
@@ -1428,8 +1428,6 @@
       </section>
 
     </modal>
-
-
     <modal name="comics-cards3"
            :adaptive="true"
            height="auto"
@@ -1444,21 +1442,26 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards3">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img3.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/сonstruction/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards3/screen1/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards3/screen2/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_11 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem2.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards3/screen3/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem2.png)"></div>
                 </div>
               </div>
             </div>
@@ -1485,9 +1488,6 @@
       </section>
 
     </modal>
-
-
-
     <modal name="comics-cards4"
            :adaptive="true"
            height="auto"
@@ -1502,25 +1502,25 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards4">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img4.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/city/crash/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen1/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen1/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen2/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen2/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen2/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen3/group1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group1/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group1/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen3/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group1/elem2.png)"></div>
                 </div>
               </div>
             </div>
@@ -1547,8 +1547,6 @@
       </section>
 
     </modal>
-
-
     <modal name="comics-cards5"
            :adaptive="true"
            height="auto"
@@ -1563,25 +1561,25 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards5">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img4.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/city/crash/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen1/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen1/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen2/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen2/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen2/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen3/group2/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group2/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group2/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/elem2.png)"></div>
                 </div>
               </div>
             </div>
@@ -1622,26 +1620,26 @@
       <section class="ec-comics ec-comics_cards ec-comics_cards6">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img4.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/city/crash/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen1/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_8 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen1/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen2/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards4/screen2/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/crash/screen2/elem1.png)"></div>
                 </div>
               </div>
 
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards4/screen3/group3/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group3/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards4/screen3/group3/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen3/group3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group3/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group3/elem2.png)"></div>
                 </div>
               </div>
             </div>
@@ -1668,6 +1666,7 @@
       </section>
 
     </modal>
+
 
     <modal name="comics-cards7"
          :adaptive="true"

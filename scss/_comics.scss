@@ -570,8 +570,13 @@ $dur: .2s;
         &_translate_0_m5Scale_8 {
           transform: translate(0%, -5%) scale(.8);
         }
-
         &_translate_0_m5Scale_9 {
+          transform: translate(0%, -5%) scale(.9);
+        }
+        &_translate_m15_3Scale_1 {
+          transform: translate(-15%, 3%) scale(1);
+        }
+        &_translate_m15_3Scale_11 {
           transform: translate(0%, -5%) scale(.9);
         }
 
@@ -986,7 +991,7 @@ $dur: .2s;
         display: flex;
         justify-content: center;
         position: absolute;
-        bottom: em(19px, $mfs);
+        bottom: em(16px, $mfs);
         width: 100%;
         z-index: 1;
 
