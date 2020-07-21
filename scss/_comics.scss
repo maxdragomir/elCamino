@@ -1052,15 +1052,25 @@ $dur: .2s;
       align-items: center;
       justify-content: center;
       font-style: normal;
-      background: url(#{$imgDir}slider/text-bg.png) center;
-      background-size: auto 100%;
       font-size: em(14px, $mfs);
       box-sizing: border-box;
       line-height: 1.4;
       font-family: $chalkB;
+      background-color: #fff;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        height: em(20px, 14px);
+        background: url(#{$imgDir}slider/text-bg.png) center;
+        background-size: auto 100%;
+      }
 
       @include em((
-        height: 140px,
+        height: 120px,
         padding: 15px 75px 10px,
         bottom: 40px
       ), 14px);

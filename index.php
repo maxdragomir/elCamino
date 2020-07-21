@@ -1412,7 +1412,7 @@
                 </div>
               </div>
             </div>
-            <div class="ec-slider__txt ec-slider__txt--no-bg">
+            <div class="ec-slider__txt">
               <p>
                 Селяни прострелили Вам колесо, и требут плату за проезд. Вы им заплатили.
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
@@ -1472,7 +1472,7 @@
                 </div>
               </div>
             </div>
-            <div class="ec-slider__txt ec-slider__txt--no-bg">
+            <div class="ec-slider__txt">
               <p>
                 Впереди ремонт дороги! Вас выбросило на обочину. Но дорожные работники Вам помогли!
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
@@ -1536,7 +1536,7 @@
                 </div>
               </div>
             </div>
-            <div class="ec-slider__txt ec-slider__txt--no-bg">
+            <div class="ec-slider__txt">
               <p>
                 Вы встретили автомобиль.И удачно выполнили маневр, и разьехались с ним.
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
@@ -1596,7 +1596,7 @@
                 </div>
               </div>
             </div>
-            <div class="ec-slider__txt ec-slider__txt--no-bg">
+            <div class="ec-slider__txt">
               <p>
                 Водитель встречного авто решил проскочить перед вами. Изза этого вы попали в ДТП.
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
@@ -1655,7 +1655,7 @@
                 </div>
               </div>
             </div>
-            <div class="ec-slider__txt ec-slider__txt--no-bg">
+            <div class="ec-slider__txt">
               <p>
                 Вас подрезал встречный автомобиль. Вы не справились с управлением и врезались в столб!
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
