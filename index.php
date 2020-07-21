@@ -1313,7 +1313,9 @@
     </modal>
 
 
-    <modal name="comics-cards1"
+
+    <!-- TRACK -->
+    <modal name="track_1_1"
          :adaptive="true"
          height="auto"
          width="100%"
@@ -1359,7 +1361,7 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards1')">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('track_1_1')">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
@@ -1371,7 +1373,12 @@
         </div>
       </section>
     </modal>
-    <modal name="comics-cards2"
+    <!-- TRACK -->
+
+
+
+    <!-- VILLAGE -->
+    <modal name="village_1_1"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1415,7 +1422,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards2')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_1_1')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1428,7 +1435,7 @@
       </section>
 
     </modal>
-    <modal name="comics-cards3"
+    <modal name="village_2_1"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1475,7 +1482,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards3')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_2_1')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1488,7 +1495,12 @@
       </section>
 
     </modal>
-    <modal name="comics-cards4"
+    <!-- VILLAGE -->
+
+
+
+    <!-- CITY -->
+    <modal name="city_1_1"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1534,7 +1546,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards4')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_1_1')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1547,7 +1559,7 @@
       </section>
 
     </modal>
-    <modal name="comics-cards5"
+    <modal name="city_1_2"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1593,7 +1605,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards5')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_1_2')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1606,7 +1618,7 @@
       </section>
 
     </modal>
-    <modal name="comics-cards6"
+    <modal name="city_1_3"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1653,7 +1665,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards6')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_1_3')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1666,66 +1678,11 @@
       </section>
 
     </modal>
+    <!-- CITY -->
 
 
-    <modal name="comics-cards7"
-         :adaptive="true"
-         height="auto"
-         width="100%"
-         :click-to-close="false"
-         @before-open="bCardsOpen"
-         @before-close="bCardsClose"
-         @opened="cardsOpened"
-         @closed="cardsClosed"
-         >
 
-      <section class="ec-comics ec-comics_cards ec-comics_cards7">
-        <div class="ec-slider">
-          <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/slider/top-img1.png)"></div>
-            <div class="ec-slider__content">
-              <div class="ec-slider__item">
-                <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards1/screen1/el1.png)"></div>
-                </div>
-              </div>
-              <div class="ec-slider__item">
-                <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen2/bg.jpg)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards1/screen2/el1.png)"></div>
-                </div>
-              </div>
-              <div class="ec-slider__item">
-                <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards1/screen3/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards1/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards1/screen3/el2.png)"></div>
-                </div>
-              </div>
-            </div>
-            <div class="ec-slider__txt">
-              <p>
-                Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.
-                <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
-              </p>
-            </div>
-            <div class="ec-slider__bot" style="background-image: url(img/el-camino/slider/bot-img1.png)"></div>
-          </div>
 
-          <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('comics-cards1')">
-             <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
-               <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
-             </svg>
-             <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
-               <use xlink:href="#ec-comics__close"></use>
-             </svg>
-           </button>
-          </div>
-        </div>
-      </section>
-    </modal>
 
     <modal name="modal-safe"
          :adaptive="true"
@@ -1746,7 +1703,6 @@
         </div>
       </div>
     </modal>
-
     <modal name="modal-win"
          :adaptive="true"
          height="auto"
