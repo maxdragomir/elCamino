@@ -362,7 +362,7 @@ const page = document.querySelector('.ec-page'),
 
         slides[0].classList.add('ec-slider__item_anim');
 
-        cardsSlider.events.on('transitionEnd', (info, eventName) => {
+        cardsSlider.events.on('transitionStart', (info, eventName) => {
           slides[info.index].classList.add('ec-slider__item_anim');
         });
 

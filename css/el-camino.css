@@ -1306,7 +1306,10 @@
   transform: translate(-15%, 3%) scale(1);
 }
 .ec-comics__slide-part_anim_translate_m15_3Scale_11 {
-  transform: translate(0%, -5%) scale(0.9);
+  transform: translate(-13%, -5%) scale(0.8);
+}
+.ec-comics__slide-part_anim_rev {
+  animation-direction: reverse;
 }
 .ec-comics__slide-part_dur_2 {
   animation-duration: 0.2s;
@@ -1527,6 +1530,7 @@
   height: 100%;
   background: url(../img/el-camino/slider/slider-mask.png);
   background-size: 100% 100%;
+  pointer-events: none;
   width: 25.0625em;
   left: 0;
 }
@@ -1536,6 +1540,7 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
+  pointer-events: none;
   left: -8.125em;
   top: -8.125em;
   width: 25em;
