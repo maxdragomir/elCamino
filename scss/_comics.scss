@@ -6,8 +6,9 @@ $dur: .2s;
   @include em((
     width: 1514px,
     height: 730px,
-    margin: 195px 0
+    //margin: 195px 0
   ), $mfs);
+  margin: 25% 0;
 
   &_cards {
     width: 100%;
@@ -510,6 +511,10 @@ $dur: .2s;
           transform: translate(0, 10%);
           opacity: 0;
         }
+        &_bf_5 {
+          transform: translate(0, 5%);
+          opacity: 0;
+        }
 
         &_lt {
           transform: translate(10%, 10%);
@@ -584,10 +589,14 @@ $dur: .2s;
         &_translate_m15_3Scale_1 {
           transform: translate(-15%, 3%) scale(1);
         }
-
-        &_translate_m15_3Scale_11 {
+        &_translate_m13_5Scale_8 {
           transform: translate(-13%, -5%) scale(.8);
         }
+
+        &_translate_m13_5Scale_81 {
+          transform: translate(5%, 10%) scale(1);
+        }
+
 
         &_rev {
           animation-direction: reverse;
