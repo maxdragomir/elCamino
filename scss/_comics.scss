@@ -6,9 +6,8 @@ $dur: .2s;
   @include em((
     width: 1514px,
     height: 730px,
-    //margin: 195px 0
+    margin: 195px 0
   ), $mfs);
-  margin: 25% 0;
 
   &_cards {
     width: 100%;
