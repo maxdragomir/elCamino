@@ -1632,7 +1632,7 @@
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/putana/screen3/group1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_6 ec-comics__slide-part_dur_20" style="background-image: url(img/el-camino/cards/city/putana/screen3/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_2 ec-comics__slide-part_dur_20" style="background-image: url(img/el-camino/cards/city/putana/screen3/group1/elem1.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 2">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/putana/screen3/group2/bg.png)"></div>
