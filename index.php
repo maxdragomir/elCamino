@@ -1523,13 +1523,12 @@
                 <div class="ec-card">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/cops/screen2/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_11 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/city/cops/screen2/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/cops/screen2/elem2.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_delay_10 ec-comics__slide-part_dur_12" style="background-image: url(img/el-camino/cards/city/crash/screen3/group2/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/city/cops/screen3/bg.png)"></div>
                 </div>
               </div>
             </div>

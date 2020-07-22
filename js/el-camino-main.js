@@ -21,6 +21,7 @@ const page = document.querySelector('.ec-page'),
     	Multiselect: window.VueMultiselect.default
   	},
     data: {
+      body: document.querySelector('body'),
       load: {
         images: false,
         audios: false,
@@ -233,9 +234,13 @@ const page = document.querySelector('.ec-page'),
 
         this.showSection(g.status);
         this.updateAfterChange();
+
+        this.body.classList.remove('no-scroll');
       },
       bCardsOpen() {
         this.game.cardsClosed = false;
+
+        this.body.classList.add('no-scroll');
       },
       beforeComicsClose() {
         let name = this.comics.beforeClose;

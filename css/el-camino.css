@@ -221,6 +221,10 @@
   float: left;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .ec-page .v--modal-overlay {
   background: rgba(0, 0, 0, 0.7);
 }
