@@ -584,9 +584,15 @@ $dur: .2s;
         &_translate_m15_3Scale_1 {
           transform: translate(-15%, 3%) scale(1);
         }
+
         &_translate_m15_3Scale_11 {
-          transform: translate(0%, -5%) scale(.9);
+          transform: translate(-13%, -5%) scale(.8);
         }
+
+        &_rev {
+          animation-direction: reverse;
+        }
+
 
       }
 
@@ -898,6 +904,7 @@ $dur: .2s;
         height: 100%;
         background: url(#{$imgDir}slider/slider-mask.png);
         background-size: 100% 100%;
+        pointer-events: none;
 
         @include em((
           width: 401px,
@@ -912,6 +919,7 @@ $dur: .2s;
       background-position: center;
       background-repeat: no-repeat;
       z-index: 1;
+      pointer-events: none;
 
       @include em((
         left: -130px,
