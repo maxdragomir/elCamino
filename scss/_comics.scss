@@ -481,8 +481,16 @@ $dur: .2s;
           transform: translate(-2%, 0);
         }
 
-        &_rts {
-          transform: translate(-2%, 2%);
+        &_t {
+          transform: translate(0, 10%);
+        }
+
+        &_trl {
+          transform: translate(-2%, 8%);
+        }
+
+        &_bll {
+          transform: translate(2%, -8%);
         }
 
         &_l {

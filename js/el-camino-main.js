@@ -105,7 +105,6 @@ const page = document.querySelector('.ec-page'),
         paused: false,
         slidesOff: false,
         open: false,
-        cardI: 0,
         audios: {
           start: {
             1: 'autoDodge'
@@ -118,6 +117,9 @@ const page = document.querySelector('.ec-page'),
           },
           border: {}
         }
+      },
+      cards: {
+        situation: 1
       },
       static: {
         toggle: false,
@@ -362,7 +364,7 @@ const page = document.querySelector('.ec-page'),
 
         slides[0].classList.add('ec-slider__item_anim');
 
-        cardsSlider.events.on('transitionEnd', (info, eventName) => {
+        cardsSlider.events.on('transitionStart', (info, eventName) => {
           slides[info.index].classList.add('ec-slider__item_anim');
         });
 
@@ -453,10 +455,9 @@ const page = document.querySelector('.ec-page'),
           g.started = this.static.day = true;
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
-          g.status = hash.split('-')[0];
-          c.cur = g.status;
+          this.cards.situation = Number(hash.split('_')[2]);
           g.testComics = true;
-          this.modalShow(hash);
+          this.modalShow(hash.split('_').slice(0,-1).join('_'));
         }
       },
       modalShow(name) {
