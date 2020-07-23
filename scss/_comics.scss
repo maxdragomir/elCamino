@@ -550,7 +550,6 @@ $dur: .2s;
         &_rotr {
           transform: rotate(-5deg);
         }
-
         &_sc,
         &_scr {
           transform: translate(-5%, -5%) scale(1.1);
@@ -612,8 +611,9 @@ $dur: .2s;
           animation-direction: reverse;
         }
 
-
       }
+
+
 
       &_dur {
 
@@ -1026,7 +1026,7 @@ $dur: .2s;
         display: flex;
         justify-content: center;
         position: absolute;
-        bottom: em(16px, $mfs);
+        bottom: em(20px, $mfs);
         width: 100%;
         z-index: 1;
 
@@ -1169,6 +1169,33 @@ $dur: .2s;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &_text {
+      text-align: center;
+      background: #89898a;
+      border: 1px solid #000;
+      color: #fff;
+      width: em(200px, $mfs);
+      height: auto;
+      padding: em(20px, $mfs);
+      font-size: em(15px, $mfs);
+      &-cop1 {
+        top: em(80px, $mfs);
+        left: auto;
+        right: em(60px, $mfs);
+      }
+      &-cop2 {
+        top: auto;
+        bottom: em(200px, $mfs);
+        left: em(90px, $mfs);
+      }
+      &-cop3 {
+        top: em(110px, $mfs);
+        left: auto;
+        right: em(60px, $mfs);
+      }
+    }
+
   }
 
 }
