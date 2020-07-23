@@ -722,7 +722,7 @@ $dur: .2s;
 
     @include em((
       top: -40px,
-      right: -32px
+      dir(right): -32px
     ), $mfs);
   }
 

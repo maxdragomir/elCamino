@@ -159,7 +159,7 @@
   color: #fff;
   line-height: 1.2;
   background-color: #edf5fd;
-  direction: ltr; }
+  direction: rtl; }
   @media screen and (max-width: 1600px) {
     .ec-page {
       font-size: 11px; } }
@@ -180,21 +180,21 @@
   z-index: 10;
   list-style: none;
   font-style: normal;
-  left: 1.125em; }
+  right: 1.125em; }
   .ec-bread li {
     display: inline-block;
     color: #2d2e2d;
     text-transform: uppercase;
     position: relative;
     font-weight: 700;
-    margin-right: 0.875em; }
+    margin-left: 0.875em; }
     .ec-static_toggle .ec-bread li {
       color: #fff; }
     .ec-bread li::before {
       content: "/";
       position: absolute;
-      margin-left: 6px;
-      left: 100%; }
+      margin-right: 6px;
+      right: 100%; }
     .ec-bread li:last-child:before {
       content: none; }
   .ec-bread a {
@@ -435,12 +435,12 @@
       fill: #fff; }
     .ec-btn-sound_move {
       position: absolute;
-      -webkit-transition: left 0.2s;
-      -o-transition: left 0.2s;
-      transition: left 0.2s;
-      left: 50%; }
+      -webkit-transition: right 0.2s;
+      -o-transition: right 0.2s;
+      transition: right 0.2s;
+      right: 50%; }
       .ec-btn-sound_muted .ec-btn-sound_move {
-        left: 0.0625em; }
+        right: 0.0625em; }
   .ec-btns-group {
     display: -webkit-flex;
     display: -ms-flex;
@@ -472,7 +472,7 @@
   z-index: 1;
   min-width: 12.8125em;
   font-size: 1em;
-  text-align: left;
+  text-align: right;
   font-weight: 700;
   text-transform: uppercase; }
   .ec-select .multiselect {
@@ -499,9 +499,9 @@
       cursor: pointer;
       border-top: 0.0625em solid rgba(255, 255, 255, 0.5);
       border-radius: 3.125em;
-      padding-right: 3.125em;
-      border-top-right-radius: 0.625em;
-      border-bottom-right-radius: 0.625em; }
+      padding-left: 3.125em;
+      border-top-left-radius: 0.625em;
+      border-bottom-left-radius: 0.625em; }
       .ec-select .multiselect__single:hover {
         background-image: conic-gradient(#646668, #3b3d3f, #646668, #3b3d3f, #646668); }
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -568,7 +568,7 @@
     width: 100%;
     background: none;
     border: none;
-    text-align: left;
+    text-align: right;
     outline: none;
     margin: 0;
     -webkit-box-sizing: border-box;
@@ -593,8 +593,8 @@
   box-shadow: inset 0 0.0625em 0.0625em rgba(255, 255, 255, 0.5);
   width: 4.5em;
   height: 2.875em;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 50px; }
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px; }
   .ec-reset:after {
     content: '';
     position: absolute;
@@ -720,13 +720,13 @@
       border-top: 0.05em solid rgba(255, 255, 255, 0.5);
       border-radius: 0.25em; }
     .ec-sbtns__btn:first-of-type {
-      margin-left: 0; }
-      .ec-sbtns__btn:first-of-type::before {
-        border-radius: 1em 0.25em 0.25em 1em; }
-    .ec-sbtns__btn:last-of-type {
       margin-right: 0; }
-      .ec-sbtns__btn:last-of-type::before {
+      .ec-sbtns__btn:first-of-type::before {
         border-radius: 0.25em 1em 1em 0.25em; }
+    .ec-sbtns__btn:last-of-type {
+      margin-left: 0; }
+      .ec-sbtns__btn:last-of-type::before {
+        border-radius: 1em 0.25em 0.25em 1em; }
     .ec-sbtns__btn + .ec-sbtns__btn:after {
       content: '';
       position: absolute;
@@ -735,7 +735,7 @@
       top: 0.25em;
       bottom: 0.25em;
       margin: 0 0.1em;
-      right: 100%; }
+      left: 100%; }
     .ec-sbtns__btn:hover:before {
       opacity: 1; }
     .ec-sbtns__btn span {
@@ -1429,7 +1429,7 @@
     display: -ms-flexbox;
     display: flex;
     top: -2.5em;
-    right: -2em; }
+    left: -2em; }
   .ec-comics__btn {
     outline: none;
     cursor: pointer;
@@ -2297,7 +2297,7 @@
   padding-bottom: 1.4375em;
   direction: ltr; }
   .ec-footer_main {
-    direction: ltr; }
+    direction: rtl; }
   .ec-footer:before {
     content: '';
     position: absolute;
@@ -2439,7 +2439,7 @@
   position: absolute;
   background: url(../img/el-camino/torpedo/radio-bg.png) no-repeat;
   background-size: contain;
-  direction: ltr;
+  direction: rtl;
   width: 14.3125em;
   height: 6.75em;
   bottom: 1.5625em;
@@ -2454,17 +2454,17 @@
     .ec-radio__prog-drag {
       position: relative;
       background-color: #f70808;
-      -webkit-transition: left 0.5s;
-      -o-transition: left 0.5s;
-      transition: left 0.5s;
+      -webkit-transition: right 0.5s;
+      -o-transition: right 0.5s;
+      transition: right 0.5s;
       width: 0.3125em;
       height: 0.75em; }
       .ec-radio__prog-drag_count_1 {
-        left: 20%; }
+        right: 20%; }
       .ec-radio__prog-drag_count_2 {
-        left: 50%; }
+        right: 50%; }
       .ec-radio__prog-drag_count_3 {
-        left: 75%; }
+        right: 75%; }
   .ec-radio__hint {
     font-size: 0.75em;
     background-color: #1b0d2d;

@@ -72,10 +72,18 @@ const page = document.querySelector('.ec-page'),
         val: 10,
         min: 10,
         tweenedVal: 10,
-        coef: 1.35,
+        coef: '',
         add: false,
         rem: false,
-        change: 0
+        change: 0,
+        coefs: {
+          cur: '',
+          win: {
+            track: 1.2,
+            village: 2.1,
+            city: 4
+          }
+        }
       },
       car: {
         end: false,
@@ -120,7 +128,29 @@ const page = document.querySelector('.ec-page'),
         }
       },
       cards: {
-        situation: 1
+        situation: 0,
+        ways: {
+          city: {
+            0: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
+            1: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
+            2: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            }
+          }
+        }
       },
       static: {
         toggle: false,
@@ -136,7 +166,6 @@ const page = document.querySelector('.ec-page'),
     watch: {
       'bet.val': function(newValue) {
         this.bet.val = +this.bet.val.toFixed(2);
-        console.log(this.bet.val);
         gsap.to(this.bet, { duration: 2, tweenedVal: +newValue });
       }
     },
@@ -297,7 +326,7 @@ const page = document.querySelector('.ec-page'),
         console.log('OPENED');
         let c = this.comics;
         c.open = true;
-        setTimeout(() => {this.Game.showComics(this.game.cur);}, 300);
+        setTimeout(() => {this.Game.showComics(c.cur);}, 300);
       },
       comicsClosed() {
         let c = this.comics;
@@ -387,10 +416,39 @@ const page = document.querySelector('.ec-page'),
       },
       dirChoosed() {
         let bet = this.bet,
-            change = (bet.val*.2).toFixed(2);
+            g = this.game,
+            cd = this.cards,
+            cardObj = this.getCard(),
+            win = this.Game.getRand(0,1);
 
-        bet.change = this.Game.getRand(0, 1) ? '+'+change : '-'+change;
-        this.modalShow('comics-cards1');
+        console.log(cardObj.id, cd);
+
+        cd.cur = g.way+'_'+cardObj.id;
+
+        if(win) cd.situation = 0;
+        else cd.situation = this.Game.getRand(1,2);
+
+        // console.log(cd, cardObj);
+
+        bet.coefs.cur = cardObj.card.lose[cd.situation-1];
+
+        bet.change = (bet.val-(bet.val*bet.coefs.cur)).toFixed(2);
+
+        console.log(cd.cur);
+
+        this.modalShow(cd.cur);
+      },
+      getCard() {
+        let g = this.game,
+            cards = this.cards.ways[g.way],
+            l = 0;
+
+        for (var key in cards) l++;
+        let id = this.Game.getRand(0, l-1);
+        return {
+          id: id,
+          card: cards[id]
+        }
       },
       gameWin() {
         let c = this.comics, g = this.game;
@@ -668,8 +726,11 @@ const page = document.querySelector('.ec-page'),
       //   }, 100);
       // },
     },
-    created() {
-      let s = this.sound;
+    mounted() {
+      let s = this.sound,
+          g = this.game,
+          c = this.comics,
+          cd = this.cards;
 
       window.onload = () => {
         this.load.images = true;
@@ -684,76 +745,78 @@ const page = document.querySelector('.ec-page'),
         if(this.load.images) this.loadReady();
       });
       // s.curBack = s.audios.radio[0][0];
+
+
+
+      this.Game.on('slidesOff', () => {
+        // console.log('SLIDES OFF');
+        c.slidesOff = true;
+        if(c.hasOwnProperty('curAudio')) c.curAudio.pause();
+      });
+
+      this.Game.on('slideStart', (id) => {
+        // console.log('SLIDE '+id);
+        var audios = c.audios[c.cur];
+        if(audios.hasOwnProperty(id)) {
+          if(c.hasOwnProperty('curAudio')) c.curAudio.pause();
+          this.playAudio(audios[id], (audio) => {
+            c.curAudio = audio;
+          });
+        }
+      });
+
+      this.Game.on('cardPartEnd', () => {
+        // if(g.cardsClosed) return;
+        // let info = this.$refs.tinySlider.slider.getInfo();
+        //
+        // if(info.slideCount-1 == info.index) {
+
+          // if(g.cardsEnd) {
+            this.modalHide(cd.cur);
+            g.cardsEnd = false;
+            // return;
+          // }
+          // g.cardsEnd = true;
+          // this.updateAfterChange();
+        // }
+
+        // this.$refs.tinySlider.slider.goTo('next');
+
+        // this.animComics({
+        //   start: performance.now(),
+        //   dur: 2000
+        // }, 'cards');
+      })
+
+      this.Game.on('comicsEnd', () => {
+
+        // if(!c.open) return;
+        this[c.fnName+'End']();
+
+        // this.modalHide('comics-'+g.curComics);
+        //
+        // this.showSection(g.status);
+        // this.nextSection(g.prevStatus, g.status);
+        // c.slidesOff = false;
+        // c.open = false;
+      });
+
+      // this.Game.on('sectionChanged', function() {
+      //
+      //   this.car.end = false;
+      //   this.car.dir = '';
+      //   // if(g.status === 'border') this.borderShow();
+      //   // this.moveCar(g.status);
+      // });
+
+      this.Game.on('carLeft', (name) => {
+        // console.log(name);
+        console.log(name);
+        if(name) return this[name]();
+        // else if(name === 'chooseCoef') return this.coefChoosed();
+
+        this.showSection(g.status);
+        // this.nextSection(g.prevStatus, g.status);
+      });
     }
   });
-let g = Camino.game, c = Camino.comics;
-
-Camino.Game.on('slidesOff', function() {
-  // console.log('SLIDES OFF');
-  c.slidesOff = true;
-  if(c.hasOwnProperty('curAudio')) c.curAudio.pause();
-});
-
-Camino.Game.on('slideStart', function(id) {
-  // console.log('SLIDE '+id);
-  var audios = c.audios[c.cur];
-  if(audios.hasOwnProperty(id)) {
-    if(c.hasOwnProperty('curAudio')) c.curAudio.pause();
-    Camino.playAudio(audios[id], (audio) => {
-      c.curAudio = audio;
-    });
-  }
-});
-
-Camino.Game.on('cardPartEnd', function() {
-  // if(g.cardsClosed) return;
-  // let info = Camino.$refs.tinySlider.slider.getInfo();
-  //
-  // if(info.slideCount-1 == info.index) {
-
-    // if(g.cardsEnd) {
-      Camino.modalHide('comics-cards1');
-      g.cardsEnd = false;
-      // return;
-    // }
-    // g.cardsEnd = true;
-    // Camino.updateAfterChange();
-  // }
-
-  // Camino.$refs.tinySlider.slider.goTo('next');
-
-  // this.animComics({
-  //   start: performance.now(),
-  //   dur: 2000
-  // }, 'cards');
-})
-
-Camino.Game.on('comicsEnd', function() {
-
-  // if(!c.open) return;
-  Camino[c.fnName+'End']();
-
-  // Camino.modalHide('comics-'+g.curComics);
-  //
-  // Camino.showSection(g.status);
-  // this.nextSection(g.prevStatus, g.status);
-  // c.slidesOff = false;
-  // c.open = false;
-});
-
-// Camino.Game.on('sectionChanged', function() {
-//
-//   Camino.car.end = false;
-//   Camino.car.dir = '';
-//   // if(g.status === 'border') Camino.borderShow();
-//   // Camino.moveCar(g.status);
-// });
-
-Camino.Game.on('carLeft', function(name) {
-  // console.log(name);
-  if(name) return Camino[name]();
-  // else if(name === 'chooseCoef') return Camino.coefChoosed();
-
-  Camino.showSection(g.status);
-  // this.nextSection(g.prevStatus, g.status);
-});
