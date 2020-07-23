@@ -1314,6 +1314,7 @@
 
 
 
+
     <!-- TRACK -->
     <modal name="track_0"
          :adaptive="true"
@@ -1377,7 +1378,7 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('track_1_2')">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('track_0')">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
@@ -1449,7 +1450,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_1_2')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_0')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1520,7 +1521,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_3_1')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('village_2')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1592,7 +1593,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_1')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_0')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1659,7 +1660,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_2')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_1')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1727,7 +1728,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_3_1')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_2')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1740,9 +1741,6 @@
       </section>
 
     </modal>
-
-
-
     <modal name="city_3"
            :adaptive="true"
            height="auto"
@@ -1797,7 +1795,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_2')">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards('city_3')">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
