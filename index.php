@@ -1314,6 +1314,7 @@
 
 
 
+
     <!-- TRACK -->
     <modal name="track_0"
          :adaptive="true"
@@ -1331,27 +1332,30 @@
             <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/track/bikers/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
-                <div class="ec-card" v-if="cards.situation === 0">
-                </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen1/el1.png)"></div>
-                </div>
-                <div class="ec-card" v-else="cards.situation === 2">
-                </div>
+                <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen1/bg.png)"></div>
+                <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen1/el1.png)"></div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group1/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/bg.jpg)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen2/el1.png)"></div>
                 </div>
                 <div class="ec-card" v-else="cards.situation === 2">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group3/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen2/group3/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
@@ -1359,6 +1363,8 @@
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else="cards.situation === 2">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/bg.jpg)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen2/el1.png)"></div>
                 </div>
               </div>
             </div>
@@ -1735,9 +1741,6 @@
       </section>
 
     </modal>
-
-
-
     <modal name="city_3"
            :adaptive="true"
            height="auto"
