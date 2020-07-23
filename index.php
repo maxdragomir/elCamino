@@ -1332,8 +1332,10 @@
             <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/track/bikers/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
-                <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen1/bg.png)"></div>
-                <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen1/el1.png)"></div>
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_rt ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/track/bikers/screen1/el1.png)"></div>
+                </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">

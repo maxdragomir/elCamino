@@ -130,6 +130,14 @@ const page = document.querySelector('.ec-page'),
       cards: {
         situation: 0,
         ways: {
+          track: {
+            0: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            }
+          },
           village: {
             0: {
               lose: {
