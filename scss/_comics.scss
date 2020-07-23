@@ -588,7 +588,6 @@ $dur: .2s;
           transform-origin: center;
         }
 
-
         &_translate_0_m5Scale_8 {
           transform: translate(0%, -5%) scale(.8);
         }
@@ -608,8 +607,6 @@ $dur: .2s;
         &_translate_m10_m15_rotate_m85 {
           transform: rotate(-85deg) translate(-10%, -15%);
         }
-
-
 
         &_rev {
           animation-direction: reverse;
