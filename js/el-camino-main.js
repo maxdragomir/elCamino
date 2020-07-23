@@ -130,6 +130,20 @@ const page = document.querySelector('.ec-page'),
       cards: {
         situation: 0,
         ways: {
+          village: {
+            0: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
+            2: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            }
+          },
           city: {
             0: {
               lose: {
@@ -144,6 +158,12 @@ const page = document.querySelector('.ec-page'),
               }
             },
             2: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
+            3: {
               lose: {
                 0: 0.8,
                 1: 0.5
@@ -421,30 +441,31 @@ const page = document.querySelector('.ec-page'),
             cardObj = this.getCard(),
             win = this.Game.getRand(0,1);
 
-        console.log(cardObj.id, cd);
-
         cd.cur = g.way+'_'+cardObj.id;
 
-        if(win) cd.situation = 0;
-        else cd.situation = this.Game.getRand(1,2);
+        if(win) {
+          cd.situation = 0;
+          bet.coefs.cur = bet.coefs.win[g.way];
+          console.log('WIN');
+        }
+        else {
+          cd.situation = this.Game.getRand(1,2);
+          bet.coefs.cur = cd.ways[g.way][cardObj.id].lose[cd.situation-1];
+          console.log("LOSE");
+        }
+        bet.change = ((bet.val*bet.coefs.cur)-bet.val).toFixed(2);
 
-        // console.log(cd, cardObj);
-
-        bet.coefs.cur = cardObj.card.lose[cd.situation-1];
-
-        bet.change = (bet.val-(bet.val*bet.coefs.cur)).toFixed(2);
-
-        console.log(cd.cur);
+        console.log(bet.change);
 
         this.modalShow(cd.cur);
       },
       getCard() {
         let g = this.game,
             cards = this.cards.ways[g.way],
-            l = 0;
+            arr = [];
 
-        for (var key in cards) l++;
-        let id = this.Game.getRand(0, l-1);
+        for (var key in cards) arr.push(key);
+        let id = this.Game.shuffle(arr)[0];
         return {
           id: id,
           card: cards[id]

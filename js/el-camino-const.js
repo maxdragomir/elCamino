@@ -406,20 +406,35 @@ class CaminoClass {
     });
   }
 
-  extend(out) {
-    out = out || {};
+  // extend(out) {
+  //   out = out || {};
+  //
+  //   for (var i = 1; i < arguments.length; i++) {
+  //     if (!arguments[i])
+  //       continue;
+  //
+  //     for (var key in arguments[i]) {
+  //       if (arguments[i].hasOwnProperty(key))
+  //         out[key] = arguments[i][key];
+  //     }
+  //   }
+  //
+  //   return out;
+  // };
 
-    for (var i = 1; i < arguments.length; i++) {
-      if (!arguments[i])
-        continue;
+  shuffle(array) {
+    var counter = array.length;
 
-      for (var key in arguments[i]) {
-        if (arguments[i].hasOwnProperty(key))
-          out[key] = arguments[i][key];
-      }
+    while (counter > 0) {
+      var index = Math.floor(Math.random() * counter);
+      counter--;
+
+      var temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
     }
 
-    return out;
+    return array;
   };
 
   // activeRandIcons() {
