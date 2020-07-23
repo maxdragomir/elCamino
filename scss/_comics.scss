@@ -429,7 +429,6 @@ $dur: .2s;
       .ec-slider__item_anim & {
         animation-name: moveComicsPart;
       }
-
       &_easing {
 
         &_out {
@@ -584,6 +583,12 @@ $dur: .2s;
           transform: translateY(5%);
         }
 
+        &_scale_8 {
+          transform: scale(.8);
+          transform-origin: center;
+        }
+
+
         &_translate_0_m5Scale_8 {
           transform: translate(0%, -5%) scale(.8);
         }
@@ -597,9 +602,13 @@ $dur: .2s;
           transform: translate(-13%, -5%) scale(.8);
         }
 
-        &_translate_m13_5Scale_81 {
+        &_translate_5_10Scale_1 {
           transform: translate(5%, 10%) scale(1);
         }
+        &_translate_m10_m15_rotate_m85 {
+          transform: rotate(-85deg) translate(-10%, -15%);
+        }
+
 
 
         &_rev {
