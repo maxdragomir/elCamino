@@ -3,9 +3,9 @@
 @import 'mixins';
 @import 'functions';
 @import 'keyframes';
+@import 'base';
 @import  'slider';
 @import  'modal';
-@import 'base';
 @import 'comics';
 
 .ec {
@@ -20,6 +20,7 @@
     background-size: cover;
     box-sizing: border-box;
     transition: opacity 1s linear, visibility 1s linear;
+    direction: ltr;
 
     &_hide {
       display: none;
@@ -756,6 +757,12 @@
     // bottom: em(-210px, $mfs);
     bottom: 0;
     padding-bottom: em(23px, $mfs);
+    direction: ltr;
+
+    &_main {
+      direction: dir(ltr);
+    }
+
 
     &:before {
       content: '';
@@ -827,10 +834,7 @@
       justify-content: space-between;
       align-items: center;
       margin-top: em(17px, $mfs);
-
-      @include dir((
-        margin-right: auto
-      ));
+      margin-right: auto;
     }
 
     &__cel {
@@ -947,16 +951,16 @@
     background: url(../img/el-camino/torpedo/radio-bg.png) no-repeat;
     background-size: contain;
 
+    direction: dir(ltr);
+
     @include em((
       width: 229px,
       height: 108px,
       bottom: 25px,
-      padding-top: 17px
+      padding-top: 17px,
+      right: 280px
     ), $mfs);
 
-    @include dir((
-      right: em(280px, $mfs)
-    ));
 
     &__prog {
       background: url(../img/el-camino/torpedo/radio-prog.png) no-repeat;
@@ -971,20 +975,26 @@
       &-drag {
         position: relative;
         background-color: #f70808;
-        transition: left .5s;
+        transition: dir(left) .5s;
 
         &_count {
 
           &_1 {
-            left: 20%
+            @include dir((
+              left: 20%
+            ));
           }
 
           &_2 {
-            left: 50%
+            @include dir((
+              left: 50%
+            ));
           }
 
           &_3 {
-            left: 75%
+            @include dir((
+              left: 75%
+            ));
           }
         }
 

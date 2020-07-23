@@ -105,7 +105,7 @@ class CaminoClass {
   //   }, 100);
   // }
 
-  showComics(fn) {
+  showComics(name) {
     let s = this.setts,
         c = s.comics,
         comics = c.wrap = this.page.querySelector(`.ec-comics`),
@@ -114,13 +114,11 @@ class CaminoClass {
 
     c.curStep = 0;
 
-    c.fn = fn;
+    // c.fn = fn;
 
     s.animOff = false;
 
     if(slides.length) this.startComics();
-
-    console.log(slides);
 
     this.endComics();
 
@@ -214,7 +212,7 @@ class CaminoClass {
 
     console.log('End Comics');
 
-    this.trigger('slidesOff');
+    // this.trigger('slidesOff');
 
     this.animate({
       start: performance.now(),
@@ -286,7 +284,7 @@ class CaminoClass {
       },
       duration: s.curDur,
       complete(stop) {
-        // self.trigger('cardPartEnd', stop);
+        self.trigger('cardPartEnd', stop);
       }
     });
 
@@ -309,30 +307,30 @@ class CaminoClass {
     // });
   }
 
-  animComics({start, dur}, name) {
-    let self = this,
-        s = self.setts,
-        c = s.comics;
-
-    this.animate({
-      start: start,
-      timing(tf) {
-        return tf;
-      },
-      draw(pr) {
-        // c.onDraw(pr);
-      },
-      duration: dur,
-      complete(stop) {
-        if(name === 'cards') return self.trigger('cardPartEnd', stop);
-        self.trigger('comicsPartEnd', stop);
-      }
-      // pause(start) {
-      //   c.startDate = start;
-      //   return s.comics.paused;
-      // }
-    });
-  }
+  // animComics({start, dur}, name) {
+  //   let self = this,
+  //       s = self.setts,
+  //       c = s.comics;
+  //
+  //   this.animate({
+  //     start: start,
+  //     timing(tf) {
+  //       return tf;
+  //     },
+  //     draw(pr) {
+  //       // c.onDraw(pr);
+  //     },
+  //     duration: dur,
+  //     complete(stop) {
+  //       if(name === 'cards') return self.trigger('cardPartEnd', stop);
+  //       self.trigger('comicsPartEnd', stop);
+  //     }
+  //     // pause(start) {
+  //     //   c.startDate = start;
+  //     //   return s.comics.paused;
+  //     // }
+  //   });
+  // }
 
   // skipSlide() {
   //   let s = this.setts,

@@ -23,11 +23,7 @@
       font-size: $mfs2;
     }
 
-    @if($is_rtl == 0) {
-      direction: ltr;
-    } @else {
-      direction: rtl;
-    }
+    direction: dir(ltr);
   }
 
   &-wrap {
@@ -802,18 +798,28 @@
       }
 
       &:first-of-type {
-        margin-left: 0;
+
+        @include dir((
+          margin-left: 0
+        ));
 
         &::before {
-          border-radius: em(20px 5px 5px 20px, $sbtnsFS);
+          @include dir((
+            border-radius: em(20px 5px 5px 20px, $sbtnsFS)
+          ));
         }
       }
 
       &:last-of-type {
-        margin-right: 0;
+
+        @include dir((
+          margin-right: 0
+        ));
 
         &::before {
-          border-radius: em(5px 20px 20px 5px, $sbtnsFS);
+          @include dir((
+            border-radius: em(5px 20px 20px 5px, $sbtnsFS)
+          ));
         }
       }
 
