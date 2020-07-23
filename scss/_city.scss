@@ -11,6 +11,21 @@
     &_city {
       background-color: #e9f9ff;
     }
+
+    &__city {
+
+      & .ec-sky__cloud_one {
+        background-image: url(#{$imgDir}city/cloud1.png);
+      }
+
+      & .ec-sky__cloud_two {
+        background-image: url(#{$imgDir}city/cloud2.png);
+      }
+
+      & .ec-sky__cloud_three {
+        background-image: url(#{$imgDir}city/cloud1.png);
+      }
+    }
   }
 
   &-lanterns {
