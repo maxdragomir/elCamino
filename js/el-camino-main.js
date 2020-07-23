@@ -81,7 +81,7 @@ const page = document.querySelector('.ec-page'),
           win: {
             track: 1.2,
             village: 2.1,
-            city: 4
+            city: 4.00
           }
         }
       },
@@ -307,6 +307,7 @@ const page = document.querySelector('.ec-page'),
         this.comics.beforeClose = false;
       },
       borderEnd() {
+        let c = this.comics;
         this.modalHide('comics-'+c.cur);
 
         this.status = 'win';
@@ -361,9 +362,11 @@ const page = document.querySelector('.ec-page'),
         c.open = false;
       },
       chooseWay(name, dir) {
-        let g = this.game, a = this.sound.audios;
+        let g = this.game, a = this.sound.audios, b = this.bet;
         g.prevStatus = g.status;
         this.car.dir = dir;
+
+        b.coefs.cur = b.coefs.win[name];
 
         g.status = 'dir';
         g.way = name;
@@ -527,7 +530,9 @@ const page = document.querySelector('.ec-page'),
 
         // test
         let hash = location.search.replace(/\?/,''),
-            g = this.game;
+            g = this.game,
+            c = this.comics;
+
         if(hash.split('-')[1] === 'comics') {
           g.status = hash.split('-')[0];
           c.cur = g.status;

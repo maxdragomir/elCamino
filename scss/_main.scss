@@ -20,7 +20,6 @@
     background-size: cover;
     box-sizing: border-box;
     transition: opacity 1s linear, visibility 1s linear;
-    direction: ltr;
 
     &_hide {
       display: none;
@@ -176,6 +175,7 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
+    direction: ltr;
 
     &__top {
       position: relative;
@@ -763,16 +763,16 @@
       direction: dir(ltr);
     }
 
-
     &:before {
       content: '';
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
-      height: em(295px, $mfs);
+      height: em(234px, $mfs);
       background: url(../img/el-camino/torpedo/torpedo-start.png) no-repeat center;
       background-size: auto 100%;
+      z-index: 1;
     }
 
     &__top {
@@ -782,8 +782,10 @@
       justify-content: center;
       margin: auto;
       align-items: center;
-      margin-bottom: em(96px, $mfs);
+      margin-bottom: em(50px, $mfs);
       text-align: center;
+      position: relative;
+      z-index: 0;
 
       @include em((
         width: 1080px,
@@ -792,15 +794,7 @@
     }
 
     &__title {
-      text-transform: uppercase;
-      font-size: em(24px, $mfs);
-      font-family: $robotoC;
-      font-style: normal;
-      font-weight: 700;
-
-      @include em((
-        flex-basis: 492px
-      ), 24px);
+      z-index: 1;
     }
 
     &__bet {
@@ -817,8 +811,7 @@
 
     &__coef {
       @include em((
-        flex-basis: 300px,
-        padding-top: 12px
+        flex-basis: 300px
       ), $mfs);
     }
 
@@ -835,6 +828,8 @@
       align-items: center;
       margin-top: em(17px, $mfs);
       margin-right: auto;
+      z-index: 1;
+      position: relative;
     }
 
     &__cel {
@@ -943,6 +938,64 @@
         svg {
         }
       }
+    }
+  }
+
+  &-finfo {
+    background: url(#{$imgDir}/torpedo/top-bg.png) repeat-x;
+    background-size: auto 100%;
+    font-size: em(24px, $mfs);
+    text-transform: uppercase;
+    font-family: $robotoC;
+    font-style: normal;
+    font-weight: 700;
+    position: relative;
+
+    &_size_low {
+      font-size: em(18px, $mfs);
+    }
+
+    @include em((
+      width: 460px,
+      height: 100px
+    ), 24px);
+
+    &::before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      @include em((
+        width: 40px
+      ), 24px);
+    }
+
+    &:before {
+      right: 100%;
+      background-image: url(#{$imgDir}torpedo/top-left-border.png);
+    }
+
+    &:after {
+      left: 100%;
+      background-image: url(#{$imgDir}torpedo/top-right-border.png);
+    }
+
+    &__in {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+
+      @include em((
+        height: 80px,
+        padding: 10px
+      ), 24px);
     }
   }
 
@@ -1241,11 +1294,12 @@
     }
 
     & .ec-footer__top {
-      margin-bottom: em(45px, $mfs);
+      margin-bottom: em(15px, $mfs);
     }
 
     &__info {
       position: relative;
+      z-index: 1;
 
       @include em((
         height: 180px

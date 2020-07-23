@@ -728,9 +728,9 @@
   &-hint {
     position: relative;
 
-    @include em((
-      height: 56px
-    ), 24px);
+    // @include em((
+    //   height: 56px
+    // ), 24px);
 
     & p {
       position: absolute;
