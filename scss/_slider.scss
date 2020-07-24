@@ -21,8 +21,11 @@
 .tns-horizontal {
   &.tns-subpixel {
     white-space: nowrap;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
     > .tns-item {
-      display: inline-block;
       vertical-align: top;
       white-space: normal;
     }

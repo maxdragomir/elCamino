@@ -230,6 +230,10 @@
       transition: .2s linear;
       overflow: visible;
 
+       * {
+        direction: dir(ltr);
+      }
+
       &:hover {
         box-shadow: 0 0 em(20px, $mfs) 0 #3c3c3c;
         transform: translateZ(0) scale(1.05);
@@ -667,6 +671,11 @@
     font-style: normal;
     position: relative;
 
+    @include em((
+      height: 44px,
+      margin-left: -25px
+    ), 18px);
+
     &:before {
       content: '';
       position: absolute;
@@ -732,17 +741,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: em(16px, 18px);
     }
 
     &__change {
       transition: .2s ease-out;
-      margin-top: em(-37px, $mfs);
+      margin-top: em(-44px, 16px);
     }
   }
 
-  &-cur-coef {
+  &-coef {
     text-transform: uppercase;
     font-style: normal;
+
+    &__in  {
+
+      span {
+        font-size: em(16px, 18px);
+        padding-top: em(5px, 16px);
+      }
+    }
   }
 
   &-footer {
@@ -757,11 +775,7 @@
     // bottom: em(-210px, $mfs);
     bottom: 0;
     padding-bottom: em(23px, $mfs);
-    direction: ltr;
-
-    &_main {
-      direction: dir(ltr);
-    }
+    // direction: ltr;
 
     &:before {
       content: '';
@@ -781,7 +795,6 @@
       display: flex;
       justify-content: center;
       margin: auto;
-      align-items: center;
       margin-bottom: em(50px, $mfs);
       text-align: center;
       position: relative;
@@ -795,18 +808,14 @@
 
     &__title {
       z-index: 1;
+      margin: em(0 15px, 24px);
     }
 
     &__bet {
-      flex: 1 1 auto;
       overflow: hidden;
       position: relative;
-
-      @include em((
-        height: 37px,
-        margin-left: 7px,
-        margin-top: 6px
-      ), $mfs);
+      flex-basis: 100%;
+      flex: 1 1 auto;
     }
 
     &__coef {
@@ -953,6 +962,8 @@
 
     &_size_low {
       font-size: em(18px, $mfs);
+      margin-top: em(14px, 18px);
+      flex-basis: em(270px, 18px);
     }
 
     @include em((
@@ -1281,7 +1292,12 @@
     transition-property: transform, opacity, visibility;
     transition-delay: .5s, 0s, 0s;
     transition-duration: .5s;
-    transform: translateY(82%) translateZ(0);
+    transform: translateY(78%) translateZ(0);
+    direction: ltr;
+
+    .ec-finfo {
+      direction: dir(ltr);
+    }
 
     .ec-bet-added & {
       opacity: 1;

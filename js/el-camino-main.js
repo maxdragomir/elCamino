@@ -292,7 +292,6 @@ const page = document.querySelector('.ec-page'),
 
 
         this.showSection(g.status);
-        this.updateAfterChange();
 
         this.body.classList.remove('no-scroll');
       },
@@ -399,17 +398,6 @@ const page = document.querySelector('.ec-page'),
             b = bet.change > 0;
         this.Game.animCard(60000);
 
-        if(bet.change > 0) {
-          bet.rem = false;
-          bet.add = true;
-        } else if (bet.change < 0) {
-          bet.rem = true;
-          bet.add = false;
-        } else {
-          bet.rem = false;
-          bet.add = false;
-        }
-
         let cardsSlider = tns({
           autoplayButtonOutput: false,
           container: '.ec-slider__content',
@@ -435,7 +423,22 @@ const page = document.querySelector('.ec-page'),
 
       },
       cardsClosed() {
+        let bet = this.bet;
+        if(bet.change > 0) {
+          bet.rem = false;
+          bet.add = true;
+        } else if (bet.change < 0) {
+          bet.rem = true;
+          bet.add = false;
+        } else {
+          bet.rem = false;
+          bet.add = false;
+        }
         this.game.cardsClosed = true;
+
+        setTimeout(() => {
+          this.updateAfterChange();
+        }, 3000);
       },
       startEnd() {
         let c = this.comics, g = this.game;
@@ -466,7 +469,7 @@ const page = document.querySelector('.ec-page'),
         }
         bet.change = ((bet.val*bet.coefs.cur)-bet.val).toFixed(2);
 
-        console.log(bet.change);
+        // console.log(bet.change);
 
         this.modalShow(cd.cur);
       },
@@ -748,7 +751,10 @@ const page = document.querySelector('.ec-page'),
         bet.rem = false;
         bet.add = false;
         bet.val += +bet.change;
-        bet.change = 0;
+
+        setTimeout( () => {
+          bet.change = 0;
+        }, 300);
       },
       // testShow(id) {
       //   var comics = ['comics-choose', 'comics-money', 'comics-border', 'comics-cards1'],

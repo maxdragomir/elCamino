@@ -207,9 +207,11 @@
         <div class="ec-footer">
           <div class="ec-footer__in">
             <div class="ec-footer__top">
+              <div class="ec-finfo ec-finfo_size_low"></div>
               <div class="ec-footer__title ec-finfo">
                 <div class="ec-finfo__in">сделайте свою ставку</div>
               </div>
+              <div class="ec-finfo ec-finfo_size_low"></div>
             </div>
 
             <div class="ec-footer__bot">
@@ -854,7 +856,7 @@
             </div>
           </div>
 
-          <div class="ec-scale ec-scale_3">
+          <div class="ec-scale ec-scale_3 ec-scale_border">
             <div class="ec-border ec-border_stop">
             </div>
           </div>
@@ -894,10 +896,14 @@
     <div class="ec-footer ec-panel" v-if="game.started">
       <div class="ec-footer__in">
         <div class="ec-footer__top">
-          <div class="ec-bet ec-footer__bet" v-bind:class="{'ec-bet_rem': bet.rem,
-                                                            'ec-bet_add': bet.add}">
-            <div class="ec-bet__change"><span>{{bet.change}}</span></div>
-            <div class="ec-bet__main"><span>Ставка: {{val}} руб</span></div>
+          <div class="ec-finfo ec-finfo_size_low">
+            <div class="ec-finfo__in">
+              <div class="ec-footer__bet ec-bet" v-bind:class="{'ec-bet_rem': bet.rem,
+                                                                'ec-bet_add': bet.add}">
+                <div class="ec-bet__change ec-bet__in"><span>{{bet.change}}</span></div>
+                <div class="ec-bet__main ec-bet__in"><span>Ставка: {{val}} руб</span></div>
+              </div>
+            </div>
           </div>
 
           <div class="ec-footer__title ec-finfo">
@@ -909,8 +915,8 @@
               <p class="ec-hint-reset">Минимальная сумма ставки составляет 10.00 RUB!</p>
             </div>
           </div>
-          <div class="ec-cur-coef ec-footer__coef ec-finfo ec-finfo_size_low">
-            <div class="ec-finfo__in">Текущий коэф: {{bet.coefs.cur}}</div>
+          <div class="ec-coef ec-footer__coef ec-finfo ec-finfo_size_low">
+            <div class="ec-finfo__in ec-coef__in"><span>Текущий коэф: {{bet.coefs.cur}}</span></div>
           </div>
         </div>
 

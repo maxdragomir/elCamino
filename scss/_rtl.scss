@@ -1,0 +1,24 @@
+
+.ec {
+
+  &-slider {
+    direction: ltr;
+
+    &__in {
+      transform: rotateY(180deg);
+
+      &:after {
+        transform: rotateY(-180deg);
+      }
+    }
+
+    &__item {
+      transform: rotateY(-180deg);
+    }
+
+    &__txt {
+      transform: rotateY(-180deg);
+      direction: dir(ltr);
+    }
+  }
+}

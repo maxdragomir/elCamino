@@ -207,66 +207,73 @@
         <div class="ec-footer">
           <div class="ec-footer__in">
             <div class="ec-footer__top">
-              <div class="ec-footer__title ec-footer__info">сделайте свою ставку</div>
+              <div class="ec-finfo ec-finfo_size_low"></div>
+              <div class="ec-footer__title ec-finfo">
+                <div class="ec-finfo__in">сделайте свою ставку</div>
+              </div>
+              <div class="ec-finfo ec-finfo_size_low"></div>
             </div>
 
-            <div class="ec-footer__row">
-              <div class="ec-sbtns ec-footer__cel ec-group-wrap ec-footer__cel_left">
-                <button class="ec-sbtns__btn ec-btn_theme_green" v-for="val in bet.quickSums" :key="val" @click="addUserVal(val)"><span>{{val}}</span></button>
-              </div>
+            <div class="ec-footer__bot">
 
-              <div class="ec-footer__cel ec-footer__cel_right">
-                <div class="ec-btns-group ec-group-wrap" v-bind:class="{ 'ec-btn-sound_muted': sound.muted}">
-                  <div class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-sound_move"></div>
-                  <button class="ec-btn ec-btn-sound ec-btn_size_s ec-btn-sound_set_off" :disabled="sound.muted" @click="soundMute(true)">
-                    <svg viewBox="0 0 144 144">
-                      <use xlink:href="#ec-sound_off"></use>
-                    </svg>
-                  </button>
-                  <button class="ec-btn ec-btn-sound ec-btn_size_s ec-btn-sound_set_on" :disabled="!sound.muted" @click="soundMute(false)">
-                    <svg viewBox="0 0 100 100">
-                      <use xlink:href="#ec-sound_on"></use>
-                    </svg>
-                  </button>
+              <div class="ec-footer__row">
+                <div class="ec-sbtns ec-footer__cel ec-group-wrap ec-footer__cel_left">
+                  <button class="ec-sbtns__btn ec-btn_theme_green" v-for="val in bet.quickSums" :key="val" @click="addUserVal(val)"><span>{{val}}</span></button>
                 </div>
-                <div class="ec-btns-group ec-group-wrap">
-                  <a href="#" class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-rules"><span>правила</span></a>
-                </div>
-              </div>
 
-            </div>
-
-            <div class="ec-footer__row">
-
-              <div class="ec-footer__cel ec-footer__cel_left">
-                <div class="ec-sum-wrap ec-group-wrap">
-                  <div class="ec-select" @click="onButtonClick()">
-                    <template>
-                        <multiselect
-                          v-model="select.value"
-                          :searchable="false"
-                          open-direction="below"
-                          :hide-selected="true"
-                          select-label= ''
-                          :allow-empty="false"
-                          :options="select.options"
-                          @select="onButtonClick()">
-                        </multiselect>
-                    </template>
+                <div class="ec-footer__cel ec-footer__cel_right">
+                  <div class="ec-btns-group ec-group-wrap" v-bind:class="{ 'ec-btn-sound_muted': sound.muted}">
+                    <div class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-sound_move"></div>
+                    <button class="ec-btn ec-btn-sound ec-btn_size_s ec-btn-sound_set_off" :disabled="sound.muted" @click="soundMute(true)">
+                      <svg viewBox="0 0 144 144">
+                        <use xlink:href="#ec-sound_off"></use>
+                      </svg>
+                    </button>
+                    <button class="ec-btn ec-btn-sound ec-btn_size_s ec-btn-sound_set_on" :disabled="!sound.muted" @click="soundMute(false)">
+                      <svg viewBox="0 0 100 100">
+                        <use xlink:href="#ec-sound_on"></use>
+                      </svg>
+                    </button>
                   </div>
-
-                  <div class="ec-iwrap">
-                    <input type="text" class="ec-iwrap__inp" v-model.number="bet.val" @focus="onButtonClick()" v-on:input="onButtonClick()">
+                  <div class="ec-btns-group ec-group-wrap">
+                    <a href="#" class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-rules"><span>правила</span></a>
                   </div>
-
-                  <button class="ec-reset ec-btn_theme_gray" @click="resetVal"></button>
                 </div>
+
               </div>
 
-              <div class="ec-footer__cel ec-footer__cel_right">
-                <button class="ec-btn ec-start-btn ec-btn_theme_greenB" :disabled="bet.val < bet.min" @click="startGame"><span>сделать ставку</span></button>
-              </div>
+              <div class="ec-footer__row">
 
+                <div class="ec-footer__cel ec-footer__cel_left">
+                  <div class="ec-sum-wrap ec-group-wrap">
+                    <div class="ec-select" @click="onButtonClick()">
+                      <template>
+                          <multiselect
+                            v-model="select.value"
+                            :searchable="false"
+                            open-direction="below"
+                            :hide-selected="true"
+                            select-label= ''
+                            :allow-empty="false"
+                            :options="select.options"
+                            @select="onButtonClick()">
+                          </multiselect>
+                      </template>
+                    </div>
+
+                    <div class="ec-iwrap">
+                      <input type="text" class="ec-iwrap__inp" v-model.number="bet.val" @focus="onButtonClick()" v-on:input="onButtonClick()">
+                    </div>
+
+                    <button class="ec-reset ec-btn_theme_gray" @click="resetVal"></button>
+                  </div>
+                </div>
+
+                <div class="ec-footer__cel ec-footer__cel_right">
+                  <button class="ec-btn ec-start-btn ec-btn_theme_greenB" :disabled="bet.val < bet.min" @click="startGame"><span>сделать ставку</span></button>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -849,7 +856,7 @@
             </div>
           </div>
 
-          <div class="ec-scale ec-scale_3">
+          <div class="ec-scale ec-scale_3 ec-scale_border">
             <div class="ec-border ec-border_stop">
             </div>
           </div>
@@ -889,19 +896,28 @@
     <div class="ec-footer ec-panel" v-if="game.started">
       <div class="ec-footer__in">
         <div class="ec-footer__top">
-          <div class="ec-bet ec-footer__bet" v-bind:class="{'ec-bet_rem': bet.rem,
-                                                            'ec-bet_add': bet.add}">
-            <div class="ec-bet__change"><span>{{bet.change}}</span></div>
-            <div class="ec-bet__main"><span>Ставка: {{val}} руб</span></div>
+          <div class="ec-finfo ec-finfo_size_low">
+            <div class="ec-finfo__in">
+              <div class="ec-footer__bet ec-bet" v-bind:class="{'ec-bet_rem': bet.rem,
+                                                                'ec-bet_add': bet.add}">
+                <div class="ec-bet__change ec-bet__in"><span>{{bet.change}}</span></div>
+                <div class="ec-bet__main ec-bet__in"><span>Ставка: {{val}} руб</span></div>
+              </div>
+            </div>
           </div>
-          <div class="ec-footer__title ec-hint ec-hint-drum" v-bind:class="'ec-hint_'+hint">
-            <p class="ec-hint__choose">Выберите дорогу</p>
-            <p class="ec-hint__win">Выигрыш: <br> <span class="ec-win-hsum"></span> RUB.<br> Играем еще?</p>
-            <p class="ec-hint__inp">Для начала игры нажмите “СТАРТ“</p>
-            <p class="ec-hint-lose">Попробуйте еще раз</p>
-            <p class="ec-hint-reset">Минимальная сумма ставки составляет 10.00 RUB!</p>
+
+          <div class="ec-footer__title ec-finfo">
+            <div class="ec-finfo__in ec-hint ec-hint-drum" v-bind:class="'ec-hint_'+hint">
+              <p class="ec-hint__choose">Выберите дорогу</p>
+              <p class="ec-hint__win">Выигрыш: <br> <span class="ec-win-hsum"></span> RUB.<br> Играем еще?</p>
+              <p class="ec-hint__inp">Для начала игры нажмите “СТАРТ“</p>
+              <p class="ec-hint-lose">Попробуйте еще раз</p>
+              <p class="ec-hint-reset">Минимальная сумма ставки составляет 10.00 RUB!</p>
+            </div>
           </div>
-          <div class="ec-cur-coef ec-footer__coef">Текущий коэф: {{bet.coefs.cur}}</div>
+          <div class="ec-coef ec-footer__coef ec-finfo ec-finfo_size_low">
+            <div class="ec-finfo__in ec-coef__in"><span>Текущий коэф: {{bet.coefs.cur}}</span></div>
+          </div>
         </div>
 
         <div class="ec-footer__bot ec-panel__info">
@@ -1451,7 +1467,80 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="cards.cur">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+             <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+               <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+             </svg>
+             <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+               <use xlink:href="#ec-comics__close"></use>
+             </svg>
+           </button>
+          </div>
+        </div>
+      </section>
+    </modal>
+    <modal name="track_2"
+         :adaptive="true"
+         height="auto"
+         width="100%"
+         :click-to-close="false"
+         @before-open="bCardsOpen"
+         @before-close="bCardsClose"
+         @opened="cardsOpened"
+         @closed="cardsClosed">
+
+      <section class="ec-comics ec-comics_cards">
+        <div class="ec-slider">
+          <div class="ec-slider__in">
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/city/cops/top-img.png)"></div>
+            <div class="ec-slider__content">
+              <div class="ec-slider__item">
+                <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_20" style="background-image: url(img/el-camino/cards/track/cops/screen1/bg.png)"></div>
+                <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_20" style="background-image: url(img/el-camino/cards/track/cops/screen1/elem1.png)"></div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen2/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/cops/screen2/group1/elem1.png)"></div>
+                </div>
+                <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/cops/screen2/group2/elem1.png)"></div>
+                </div>
+                <div class="ec-card" v-else="cards.situation === 2">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/cops/screen2/group2/elem1.png)"></div>
+                </div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen3/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/cops/screen3/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-card__part_text ec-card__part_text-cop1 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_delay_4 ec-comics__slide-part_dur_10">Хэх, успел. В следующий раз не отвертится.</div>
+                </div>
+                <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-card__part_text ec-card__part_text-cop2 ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_dur_10">На следующем посту остановят.</div>
+                </div>
+                <div class="ec-card" v-else="cards.situation === 2">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/cops/screen3/group3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/cops/screen3/group3/elem1.png)"></div>
+                  <div class="ec-card__part ec-card__part_text ec-card__part_text-cop3 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_delay_4 ec-comics__slide-part_dur_10">В следующий раз конфискую тачку!</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="ec-slider__txt">
+              <p>
+                Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.
+                <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
+              </p>
+            </div>
+            <div class="ec-slider__bot" style="background-image: url(img/el-camino/slider/bot-img1.png)"></div>
+          </div>
+
+          <div class="ec-comics__int">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
