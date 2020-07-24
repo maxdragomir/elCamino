@@ -2293,6 +2293,8 @@
     text-shadow: 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000; }
   .ec-bet_add:before {
     background-image: url(../img/el-camino/sum-add-bg.png); }
+  .ec-bet_add .ec-bet__change:before {
+    content: '+'; }
   .ec-bet__change, .ec-bet__main {
     position: relative;
     height: 100%;
@@ -2317,9 +2319,51 @@
 .ec-coef {
   text-transform: uppercase;
   font-style: normal; }
-  .ec-coef__in span {
+  .ec-coef__txt {
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     font-size: 0.88889em;
-    padding-top: 0.3125em; }
+    padding-top: 0.3125em;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0; }
+    .ec-coef__txt span {
+      position: relative;
+      z-index: 2; }
+    .ec-coef__txt:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: 100% 100%;
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      margin-right: -25px;
+      z-index: 1;
+      opacity: 0; }
+    .ec-coef__txt.ec-coef_change:before {
+      -webkit-animation: pulse 1s 3 ease-in-out forwards;
+      animation: pulse 1s 3 ease-in-out forwards; }
+  .ec-coef_up:before {
+    background-image: url(../img/el-camino/sum-add-bg.png); }
+  .ec-coef_down:before {
+    background-image: url(../img/el-camino/sum-rem-bg.png); }
 
 .ec-footer {
   position: absolute;
@@ -2379,9 +2423,6 @@
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto; }
-  .ec-footer__coef {
-    -ms-flex-preferred-size: 18.75em;
-    flex-basis: 18.75em; }
   .ec-footer__in {
     width: 82.5em;
     margin: auto;

@@ -78,10 +78,11 @@ const page = document.querySelector('.ec-page'),
         change: 0,
         coefs: {
           cur: '',
+          change: false,
           win: {
             track: 1.2,
             village: 2.1,
-            city: 4.00
+            city: 4.01
           }
         }
       },
@@ -196,10 +197,11 @@ const page = document.querySelector('.ec-page'),
     },
     watch: {
       'bet.coefs.cur': function(newValue) {
-        this.bet.coefs.change = true;
-
-        setTimeout(() => {
-          this.bet.coefs.change = false;
+        let b = this.bet;
+        b.coefs.change = true;
+        console.log(!b.coefs.time);
+        if(!b.coefs.time) return b.coefs.time = setTimeout(() => {
+          b.coefs.change = b.coefs.time = false;
         }, 3000);
       },
       'bet.val': function(newValue) {
@@ -534,6 +536,7 @@ const page = document.querySelector('.ec-page'),
         }, 1000);
 
         document.addEventListener('click',  () => {
+          // this.bet.coefs.cur = this.Game.getRand(0, 1000);
           if(s.curBack.paused) this.updateBack();
         });
 
@@ -562,8 +565,7 @@ const page = document.querySelector('.ec-page'),
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
           if(hash.split('_')[0].split('-')[1] == 'border') {
-            console.log(hash.split('_')[2]);
-            this.border.situation = hash.split('_')[1];
+            this.border.situation = hash.split('_')[2];
             this.modalShow(hash.split('_').slice(0,-1).join('_'));
             // g.way = hash.split('_')[0].split('-')[0];
             return;

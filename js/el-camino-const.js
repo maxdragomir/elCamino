@@ -210,8 +210,6 @@ class CaminoClass {
     // c.stop = false;
     s.curDur = c.durEnd;
 
-    console.log('End Comics');
-
     // this.trigger('slidesOff');
 
     this.animate({

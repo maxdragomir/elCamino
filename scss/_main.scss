@@ -760,11 +760,57 @@
     text-transform: uppercase;
     font-style: normal;
 
-    &__in  {
+    &__txt {
+      height: 100%;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      font-size: em(16px, 18px);
+      padding-top: em(5px, 16px);
+      flex: 1 1 auto;
+      position: relative;
+      justify-content: center;
+      margin: 0;
 
       span {
-        font-size: em(16px, 18px);
-        padding-top: em(5px, 16px);
+        position: relative;
+        z-index: 2;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size: 100% 100%;
+        transform: rotateY(180deg);
+        margin-right: -25px;
+        z-index: 1;
+        opacity: 0;
+      }
+
+
+
+      &.ec-coef_change:before {
+        animation: pulse 1s 3 ease-in-out forwards;
+      }
+    }
+
+    &_up {
+
+      &:before {
+        background-image: url(#{$imgDir}sum-add-bg.png);
+      }
+    }
+
+    &_down {
+
+      &:before {
+        background-image: url(#{$imgDir}sum-rem-bg.png);
       }
     }
   }
@@ -822,12 +868,6 @@
       position: relative;
       flex-basis: 100%;
       flex: 1 1 auto;
-    }
-
-    &__coef {
-      @include em((
-        flex-basis: 300px
-      ), $mfs);
     }
 
     &__in {

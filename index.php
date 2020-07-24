@@ -207,7 +207,13 @@
         <div class="ec-footer">
           <div class="ec-footer__in">
             <div class="ec-footer__top">
-              <div class="ec-finfo ec-finfo_size_low"></div>
+              <div class="ec-finfo ec-finfo_size_low">
+                <div class="ec-finfo__in">
+                  <div class="ec-footer__bet ec-bet">
+                    <div class="ec-bet__main ec-bet__in"><span>Ставка: {{val}} руб</span></div>
+                  </div>
+                </div>
+              </div>
               <div class="ec-footer__title ec-finfo">
                 <div class="ec-finfo__in">сделайте свою ставку</div>
               </div>
@@ -916,7 +922,11 @@
             </div>
           </div>
           <div class="ec-coef ec-footer__coef ec-finfo ec-finfo_size_low">
-            <div class="ec-finfo__in ec-coef__in"><span>Текущий коэф: {{bet.coefs.cur}}</span></div>
+            <div class="ec-finfo__in ec-coef__in">
+              <p class="ec-coef__txt" v-bind:class="{'ec-coef_up': bet.coefs.cur > 1,
+                                  'ec-coef_down': bet.coefs.cur < 1,
+                                  'ec-coef_change': bet.coefs.change}"><span>Текущий коэф: {{bet.coefs.cur}}</span></p>
+            </div>
           </div>
         </div>
 
@@ -1774,8 +1784,7 @@
            @before-open="bCardsOpen"
            @before-close="bCardsClose"
            @opened="cardsOpened"
-           @closed="cardsClosed"
-    >
+           @closed="cardsClosed">
 
       <section class="ec-comics ec-comics_cards ec-comics_cards4">
         <div class="ec-slider">
@@ -1971,15 +1980,11 @@
     <!-- CITY -->
 
 
-
-
-
     <modal name="modal-safe"
          :adaptive="true"
          height="auto"
          width="100%"
-         :click-to-close="false"
-         >
+         :click-to-close="false">
 
       <div class="ec-modal ec-modal_safe ec-modal_size_m">
 
@@ -1996,8 +2001,7 @@
     <modal name="modal-win"
          :adaptive="true"
          height="auto"
-         width="100%"
-         >
+         width="100%">
 
       <div class="ec-modal ec-modal_win ec-modal_size_m">
 
@@ -2023,7 +2027,6 @@
 
   <div class="ec-preloader" v-if="!load.ready">Preloader</div>
 </div>
-
 
 
 
