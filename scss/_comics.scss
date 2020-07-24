@@ -418,6 +418,52 @@ $dur: .2s;
           top: 458px
         ), $mfs);
       }
+
+
+      &_group1{
+        &_4 {
+          @include em((
+            width: 512px,
+          ), $mfs);
+        }
+        &_5 {
+          left: 0;
+
+          @include em((
+            width: 519px,
+            height: 254px,
+            top: 220px
+          ), $mfs);
+        }
+        &_6 {
+          @include em((
+            width: 686px,
+            height: 254px,
+            top: 220px,
+            left: 500px
+          ), $mfs);
+
+        }
+        &_7 {
+          @include em((
+            width: 455px,
+            height: 254px,
+            top: 220px,
+            left: 1155px
+          ), $mfs)
+        }
+        &_8 {
+          @include em((
+            width: 1050px,
+          ), $mfs);
+        }
+        &_9 {
+          @include em((
+            width: 578px,
+            left: 1030px
+          ), $mfs)
+        }
+      }
     }
 
     &-part {
@@ -613,8 +659,6 @@ $dur: .2s;
 
       }
 
-
-
       &_dur {
 
         &_2 {
@@ -715,6 +759,35 @@ $dur: .2s;
         &_20 {
           animation-delay: $dur+2s;
         }
+      }
+    }
+
+    &-text {
+      position: absolute;
+      top: em(25px, $mfs);
+      left: em(25px, $mfs);
+      z-index: 1;
+      background: #d1c7bd;
+      border: 2px solid #000;
+      padding: em(5px 10px, $mfs);
+      text-align: center;
+      font-weight: 900;
+      color: #000;
+      font-size: em(20px, $mfs);
+      &_7 {
+        width: em(250px, $mfs);
+        top: em(25px, $mfs);
+        left: auto;
+        right: em(50px, $mfs);
+        font-size: em(18px, $mfs);
+      }
+      &_9 {
+        top: em(15px, $mfs);
+        left: em(15px, $mfs);
+        color: #d1c7bd;
+        background: transparent;
+        border: 0;
+        width: em(180px, $mfs);
       }
     }
   }
