@@ -730,6 +730,12 @@
       &:before {
         background-image: url(#{$imgDir}sum-add-bg.png);
       }
+
+      .ec-bet__change {
+        &:before {
+          content: '+';
+        }
+      }
     }
 
     &__change,

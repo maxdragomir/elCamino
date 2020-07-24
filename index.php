@@ -1158,8 +1158,7 @@
          @before-open="beforeComicsOpen"
          @before-close="beforeComicsClose"
          @opened="comicsOpened"
-         @closed="comicsClosed"
-         >
+         @closed="comicsClosed">
 
       <section class="ec-comics ec-comics_money ec-comics_money2" v-bind:class="{'ec-comics_anim_stop' : comics.skip}">
         <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -1227,7 +1226,7 @@
       </section>
     </modal>
 
-    <modal name="comics-border"
+    <modal name="track-border_0"
          :adaptive="true"
          height="auto"
          width="100%"
@@ -1235,8 +1234,7 @@
          @before-open="beforeComicsOpen"
          @before-close="beforeComicsClose"
          @opened="comicsOpened"
-         @closed="comicsClosed"
-         >
+         @closed="comicsClosed">
 
       <section class="ec-comics ec-comics_border" v-bind:class="{'ec-comics_anim_stop' : comics.skip}">
         <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>

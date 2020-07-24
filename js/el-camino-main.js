@@ -111,7 +111,7 @@ const page = document.querySelector('.ec-page'),
         // status: 'choose',
       },
       comics: {
-        paused: false,
+        // paused: false,
         slidesOff: false,
         open: false,
         audios: {
@@ -126,6 +126,9 @@ const page = document.querySelector('.ec-page'),
           },
           border: {}
         }
+      },
+      border: {
+        situation: 0
       },
       cards: {
         situation: 0,
@@ -192,6 +195,9 @@ const page = document.querySelector('.ec-page'),
       }
     },
     watch: {
+      'bet.coef.cur': function(newValue) {
+        console.log(newValue);
+      },
       'bet.val': function(newValue) {
         this.bet.val = +this.bet.val.toFixed(2);
         gsap.to(this.bet, { duration: 2, tweenedVal: +newValue });
@@ -539,15 +545,10 @@ const page = document.querySelector('.ec-page'),
         if(hash.split('-')[1] === 'comics') {
           g.status = hash.split('-')[0];
           c.cur = g.status;
-          g.testComics = true;
           this.modalShow('comics-'+hash.split('-')[0]);
         }
         else if (hash.split('-')[0] === 'modal') this.modalShow(hash);
-        else if(hash.split('-')[0] === 'section') {
-          g.prevStatus = g.status;
-          g.status = hash.split('-')[1];
-          this.showSection(g.status);
-        } else if(hash.split('-')[1] === 'way') {
+        else if(hash.split('-')[1] === 'way') {
           g.prevStatus = g.status;
           g.status = 'dir';
           this.showSection(g.status);
@@ -555,8 +556,13 @@ const page = document.querySelector('.ec-page'),
           g.started = this.static.day = true;
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
+          if(hash.split('_')[0].split('-')[1] == 'border') {
+            this.border.situation = hash.split('_')[1];
+            this.modalShow(hash.split('_').slice(0,-1).join('_'));
+            // g.way = hash.split('_')[0].split('-')[0];
+            return;
+          }
           this.cards.situation = Number(hash.split('_')[2]);
-          g.testComics = true;
           this.modalShow(hash.split('_').slice(0,-1).join('_'));
         }
       },
@@ -621,7 +627,7 @@ const page = document.querySelector('.ec-page'),
         this.car.end = false;
         this.playAudio('start');
         setTimeout(() => {
-          this.modalShow('comics-'+c.fnName);
+          this.modalShow('comics-'+c.cur);
         }, 1000);
         this.onButtonClick();
       },
