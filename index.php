@@ -1272,7 +1272,17 @@
            </svg>
           </div>
           <div class="ec-comics__slide ec-comics__slide_3" style="background-image: url(img/el-camino/comics3/screen3.png)"></div>
-          <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/comics3/screen4.png)"></div>
+
+          <div v-if="border.situation === 0">
+            <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/comics3/screen4.png)"></div>
+          </div>
+          <div v-else-if="border.situation === 1">
+            1
+          </div>
+          <div v-else="border.situation === 2">
+            2
+          </div>
+
           <div class="ec-comics__slide ec-comics__slide_5" style="background-image: url(img/el-camino/comics3/screen5.png)"></div>
           <div class="ec-comics__slide ec-comics__slide_6" style="background-image: url(img/el-camino/comics3/screen6.jpg)"></div>
           <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_anim" data-dur="3000">
