@@ -561,9 +561,9 @@ const page = document.querySelector('.ec-page'),
           g.started = this.static.day = true;
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
-          if(hash.split('_')[0].split('-')[1] == 'border') {
+          if(hash.split('_')[0].split('-')[1] === 'border') {
             console.log(hash.split('_')[2]);
-            this.border.situation = hash.split('_')[1];
+            this.border.situation = hash.split('_')[2];
             this.modalShow(hash.split('_').slice(0,-1).join('_'));
             // g.way = hash.split('_')[0].split('-')[0];
             return;

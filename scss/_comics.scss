@@ -1179,8 +1179,10 @@ $dur: .2s;
       height: auto;
       padding: em(20px, $mfs);
       font-size: em(15px, $mfs);
+      direction: dir(ltr);
+
       &-cop1 {
-        top: em(80px, $mfs);
+        top: em(90px, $mfs);
         left: auto;
         right: em(60px, $mfs);
       }
