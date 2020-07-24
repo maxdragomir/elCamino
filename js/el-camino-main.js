@@ -195,10 +195,15 @@ const page = document.querySelector('.ec-page'),
       }
     },
     watch: {
-      'bet.coef.cur': function(newValue) {
-        console.log(newValue);
+      'bet.coefs.cur': function(newValue) {
+        this.bet.coefs.change = true;
+
+        setTimeout(() => {
+          this.bet.coefs.change = false;
+        }, 3000);
       },
       'bet.val': function(newValue) {
+        console.log('s');
         this.bet.val = +this.bet.val.toFixed(2);
         gsap.to(this.bet, { duration: 2, tweenedVal: +newValue });
       }
@@ -557,6 +562,7 @@ const page = document.querySelector('.ec-page'),
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
           if(hash.split('_')[0].split('-')[1] == 'border') {
+            console.log(hash.split('_')[2]);
             this.border.situation = hash.split('_')[1];
             this.modalShow(hash.split('_').slice(0,-1).join('_'));
             // g.way = hash.split('_')[0].split('-')[0];
