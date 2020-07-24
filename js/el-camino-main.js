@@ -76,14 +76,15 @@ const page = document.querySelector('.ec-page'),
         add: false,
         rem: false,
         change: 0,
-        coefs: {
-          cur: '',
-          change: false,
-          win: {
-            track: 1.2,
-            village: 2.1,
-            city: 4.01
-          }
+        isChange: false
+      },
+      coefs: {
+        cur: '',
+        change: false,
+        win: {
+          track: 1.2,
+          village: 2.1,
+          city: 4.01
         }
       },
       car: {
@@ -116,16 +117,16 @@ const page = document.querySelector('.ec-page'),
         slidesOff: false,
         open: false,
         audios: {
-          start: {
+          'comics-start': {
             1: 'autoDodge'
           },
-          money: {
+          'comics-money': {
             0: 'money'
           },
-          money2: {
+          'comics-money2': {
             0: 'money'
           },
-          border: {}
+          'track-border': {}
         }
       },
       border: {
@@ -196,16 +197,10 @@ const page = document.querySelector('.ec-page'),
       }
     },
     watch: {
-      'bet.coefs.cur': function(newValue) {
-        let b = this.bet;
-        b.coefs.change = true;
-        console.log(!b.coefs.time);
-        if(!b.coefs.time) return b.coefs.time = setTimeout(() => {
-          b.coefs.change = b.coefs.time = false;
-        }, 3000);
+      'coefs.cur': function(newValue) {
+        this.updateCoef();
       },
       'bet.val': function(newValue) {
-        console.log('s');
         this.bet.val = +this.bet.val.toFixed(2);
         gsap.to(this.bet, { duration: 2, tweenedVal: +newValue });
       }
@@ -293,8 +288,9 @@ const page = document.querySelector('.ec-page'),
         let g = this.game, c = this.comics;
 
         setTimeout(() => {
-          c.cur = c.fnName = 'border';
-          this.modalShow('comics-border');
+          c.name = 'border';
+          c.cur = 'track-border';
+          this.modalShow(c.cur);
         }, 2000);
       },
       bCardsClose() {
@@ -315,12 +311,14 @@ const page = document.querySelector('.ec-page'),
       },
       beforeComicsClose() {
         let name = this.comics.beforeClose;
-        if(name) this[name]();
+        if(name) {
+          this[name]();
+        }
         this.comics.beforeClose = false;
       },
       borderEnd() {
         let c = this.comics;
-        this.modalHide('comics-'+c.cur);
+        this.modalHide(c.cur);
 
         this.status = 'win';
         this.gameWin();
@@ -367,18 +365,18 @@ const page = document.querySelector('.ec-page'),
         console.log('OPENED');
         let c = this.comics;
         c.open = true;
-        setTimeout(() => {this.Game.showComics(c.cur);}, 300);
+        setTimeout(() => {this.Game.showComics(c.name);}, 300);
       },
       comicsClosed() {
         let c = this.comics;
         c.open = false;
       },
       chooseWay(name, dir) {
-        let g = this.game, a = this.sound.audios, b = this.bet;
+        let g = this.game, a = this.sound.audios, cs = this.coefs;
         g.prevStatus = g.status;
         this.car.dir = dir;
 
-        b.coefs.cur = b.coefs.win[name];
+        cs.cur = cs.win[name];
 
         g.status = 'dir';
         g.way = name;
@@ -437,26 +435,16 @@ const page = document.querySelector('.ec-page'),
       },
       cardsClosed() {
         let bet = this.bet;
-        if(bet.change > 0) {
-          bet.rem = false;
-          bet.add = true;
-        } else if (bet.change < 0) {
-          bet.rem = true;
-          bet.add = false;
-        } else {
-          bet.rem = false;
-          bet.add = false;
-        }
         this.game.cardsClosed = true;
 
-        setTimeout(() => {
-          this.updateAfterChange();
-        }, 3000);
+        this.updateCoef();
+
+        this.updateBet();
       },
       startEnd() {
         let c = this.comics, g = this.game;
 
-        this.modalHide('comics-'+c.cur);
+        this.modalHide(c.cur);
 
         this.showSection(g.status);
         // this.Game.nextSection(g.prevStatus, g.status);
@@ -465,6 +453,7 @@ const page = document.querySelector('.ec-page'),
         let bet = this.bet,
             g = this.game,
             cd = this.cards,
+            cs = this.coefs,
             cardObj = this.getCard(),
             win = this.Game.getRand(0,1);
 
@@ -472,15 +461,14 @@ const page = document.querySelector('.ec-page'),
 
         if(win) {
           cd.situation = 0;
-          bet.coefs.cur = bet.coefs.win[g.way];
+          cs.cur = cs.win[g.way];
           console.log('WIN');
         }
         else {
           cd.situation = this.Game.getRand(1,2);
-          bet.coefs.cur = cd.ways[g.way][cardObj.id].lose[cd.situation-1];
-          console.log("LOSE");
+          cs.cur = cd.ways[g.way][cardObj.id].lose[cd.situation-1];
         }
-        bet.change = ((bet.val*bet.coefs.cur)-bet.val).toFixed(2);
+        bet.change = ((bet.val*cs.cur)-bet.val).toFixed(2);
 
         // console.log(bet.change);
 
@@ -536,7 +524,7 @@ const page = document.querySelector('.ec-page'),
         }, 1000);
 
         document.addEventListener('click',  () => {
-          // this.bet.coefs.cur = this.Game.getRand(0, 1000);
+          // this.cs.cur = this.Game.getRand(0, 1000);
           if(s.curBack.paused) this.updateBack();
         });
 
@@ -552,8 +540,9 @@ const page = document.querySelector('.ec-page'),
 
         if(hash.split('-')[1] === 'comics') {
           g.status = hash.split('-')[0];
-          c.cur = g.status;
-          this.modalShow('comics-'+hash.split('-')[0]);
+          c.cur = 'comics-'+g.status;
+          c.name = ''
+          this.modalShow(c.cur);
         }
         else if (hash.split('-')[0] === 'modal') this.modalShow(hash);
         else if(hash.split('-')[1] === 'way') {
@@ -564,14 +553,13 @@ const page = document.querySelector('.ec-page'),
           g.started = this.static.day = true;
           this.static.toggle = false;
         } else if(hash.split('_').length === 3) {
-          if(hash.split('_')[0].split('-')[1] === 'border') {
-            this.border.situation = Number(hash.split('_')[2]);
-            this.modalShow(hash.split('_').slice(0,-1).join('_'));
-            // g.way = hash.split('_')[0].split('-')[0];
-            return;
-          }
           this.cards.situation = Number(hash.split('_')[2]);
           this.modalShow(hash.split('_').slice(0,-1).join('_'));
+        } else if (hash.split('_')[0].split('-')[1] === 'border') {
+          this.border.situation = Number(hash.split('_')[1]);
+          c.name = 'border';
+          c.cur = hash.split('_')[0];
+          this.modalShow(hash.split('_')[0]);
         }
       },
       modalShow(name) {
@@ -583,7 +571,7 @@ const page = document.querySelector('.ec-page'),
       moneyEnd() {
         let c = this.comics, g = this.game;
 
-        this.modalHide('comics-'+c.cur);
+        this.modalHide(c.cur);
 
         // console.log(g.status);
 
@@ -631,11 +619,12 @@ const page = document.querySelector('.ec-page'),
         g.prevStatus = g.status;
         // document.querySelector(`.ec-section_${g.status}`).classList.add('ec-section_move');
         g.status = 'choose';
-        c.cur = c.fnName = 'start';
+        c.name = 'start';
+        c.cur = 'comics-start';
         this.car.end = false;
         this.playAudio('start');
         setTimeout(() => {
-          this.modalShow('comics-'+c.cur);
+          this.modalShow(c.cur);
         }, 1000);
         this.onButtonClick();
       },
@@ -695,14 +684,14 @@ const page = document.querySelector('.ec-page'),
         this.modalHide(name);
         this.onButtonClick();
         c.beforeClose = 'borderShow';
-        c.fnName = 'money';
+        c.name = 'money';
         if(b) {
           this.bet.val /= 2;
-          c.cur = 'money';
-          this.modalShow('comics-money');
+          c.cur = 'comics-money';
+          this.modalShow(c.cur);
         } else {
-          c.cur = 'money2';
-          this.modalShow('comics-money2');
+          c.cur = 'comics-money2';
+          this.modalShow(c.cur);
         }
       },
       showSection(name, b) {
@@ -761,15 +750,30 @@ const page = document.querySelector('.ec-page'),
         }
        },
       updateAfterChange() {
-        let bet = this.bet;
-        bet.rem = false;
-        bet.add = false;
-        bet.val += +bet.change;
+        let b = this.bet;
+        b.val += +b.change;
 
         setTimeout( () => {
-          bet.change = 0;
+          b.change = 0;
         }, 300);
       },
+      updateCoef() {
+        if(!this.game.cardsClosed) return;
+        let cs = this.coefs;
+        cs.change = true;
+        if(!cs.time) return cs.time = setTimeout(() => {
+          cs.change = cs.time = false;
+        }, 3000);
+      },
+      updateBet() {
+        let b = this.bet;
+        b.isChange = true;
+
+        setTimeout(() => {
+          b.isChange = false;
+          this.updateAfterChange();
+        }, 3000);
+      }
       // testShow(id) {
       //   var comics = ['comics-choose', 'comics-money', 'comics-border', 'comics-cards1'],
       //       arr = id.split('.');
@@ -845,7 +849,7 @@ const page = document.querySelector('.ec-page'),
       this.Game.on('comicsEnd', () => {
 
         // if(!c.open) return;
-        this[c.fnName+'End']();
+        this[c.name+'End']();
 
         // this.modalHide('comics-'+g.curComics);
         //

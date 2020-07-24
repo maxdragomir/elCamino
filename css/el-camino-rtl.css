@@ -1748,9 +1748,10 @@
       width: 12.5em;
       height: auto;
       padding: 1.25em;
-      font-size: 0.9375em; }
+      font-size: 0.9375em;
+      direction: rtl; }
       .ec-card__part_text-cop1 {
-        top: 5em;
+        top: 5.625em;
         left: auto;
         right: 3.75em; }
       .ec-card__part_text-cop2 {
@@ -2279,12 +2280,8 @@
     right: 0;
     bottom: 0;
     background-size: 100% 100%;
-    background-repeat: no-repeat; }
-  .ec-bet_rem .ec-bet__change, .ec-bet_add .ec-bet__change {
-    margin-top: 0; }
-  .ec-bet_rem:before, .ec-bet_add:before {
-    -webkit-animation: pulse 1s 3 ease-in-out forwards;
-    animation: pulse 1s 3 ease-in-out forwards; }
+    background-repeat: no-repeat;
+    opacity: 0; }
   .ec-bet_rem .ec-bet__change {
     text-shadow: 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000; }
   .ec-bet_rem:before {
@@ -2315,6 +2312,11 @@
     -o-transition: .2s ease-out;
     transition: .2s ease-out;
     margin-top: -2.75em; }
+    .ec-bet_change .ec-bet__change {
+      margin-top: 0; }
+  .ec-bet_change:before {
+    -webkit-animation: pulse 1s 3 ease-in-out forwards;
+    animation: pulse 1s 3 ease-in-out forwards; }
 
 .ec-coef {
   text-transform: uppercase;

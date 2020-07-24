@@ -19,7 +19,7 @@
           mode="out-in"
           appear
           >
-      <section class="ec-section ec-section_static" v-bind:class="{'ec-section_move': game.status == 'choose', 'ec-section_hide' : game.testComics }" v-if="game.section.static">
+      <section class="ec-section ec-section_static" v-bind:class="{'ec-section_move': game.status == 'choose'}" v-if="game.section.static">
 
         <div class="ec-header">
           <div class="ec-logo ec-header__logo">
@@ -373,7 +373,7 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_left"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef">коэф: {{bet.coefs.win.track}}</span>
+                  <span class="ec-frame__btn-coef">коэф: {{coefs.win.track}}</span>
                 </button>
                 <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.sectionReady" @click="chooseWay('village', 'mid')">
                   <span class="ec-frame__btn-lvl">средний</span>
@@ -381,7 +381,7 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
                     <use xlink:href="#ec-frame_mid"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef">коэф: {{bet.coefs.win.village}}</span>
+                  <span class="ec-frame__btn-coef">коэф: {{coefs.win.village}}</span>
                 </button>
                 <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.sectionReady" @click="chooseWay('city', 'right')">
                   <span class="ec-frame__btn-lvl">тяжелый</span>
@@ -389,7 +389,7 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_right"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef">коэф: {{bet.coefs.win.city}}</span>
+                  <span class="ec-frame__btn-coef">коэф: {{coefs.win.city}}</span>
                 </button>
               </div>
             </div>
@@ -904,8 +904,9 @@
         <div class="ec-footer__top">
           <div class="ec-finfo ec-finfo_size_low">
             <div class="ec-finfo__in">
-              <div class="ec-footer__bet ec-bet" v-bind:class="{'ec-bet_rem': bet.rem,
-                                                                'ec-bet_add': bet.add}">
+              <div class="ec-footer__bet ec-bet" v-bind:class="{'ec-bet_rem': bet.change < 0,
+                                                                'ec-bet_add': bet.change > 0,
+                                                                'ec-bet_change' : bet.isChange}">
                 <div class="ec-bet__change ec-bet__in"><span>{{bet.change}}</span></div>
                 <div class="ec-bet__main ec-bet__in"><span>Ставка: {{val}} руб</span></div>
               </div>
@@ -923,9 +924,9 @@
           </div>
           <div class="ec-coef ec-footer__coef ec-finfo ec-finfo_size_low">
             <div class="ec-finfo__in ec-coef__in">
-              <p class="ec-coef__txt" v-bind:class="{'ec-coef_up': bet.coefs.cur > 1,
-                                  'ec-coef_down': bet.coefs.cur < 1,
-                                  'ec-coef_change': bet.coefs.change}"><span>Текущий коэф: {{bet.coefs.cur}}</span></p>
+              <p class="ec-coef__txt" v-bind:class="{'ec-coef_up': coefs.cur > 1,
+                                  'ec-coef_down': coefs.cur < 1,
+                                  'ec-coef_change': coefs.change}"><span>Текущий коэф: {{coefs.cur}}</span></p>
             </div>
           </div>
         </div>
@@ -1236,7 +1237,7 @@
       </section>
     </modal>
 
-    <modal name="track-border_0"
+    <modal name="track-border"
          :adaptive="true"
          height="auto"
          width="100%"
