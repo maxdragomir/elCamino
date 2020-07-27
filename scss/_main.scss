@@ -685,18 +685,16 @@
       bottom: 0;
       background-size: 100% 100%;
       background-repeat: no-repeat;
+      opacity: 0;
     }
 
-    &_rem,
-    &_add {
-      & .ec-bet__change {
-        margin-top: 0;
-      }
-
-      &:before {
-        animation: pulse 1s 3 ease-in-out forwards;
-      }
-    }
+    // &_rem,
+    // &_add {
+    //
+    //   &:before {
+    //     animation: pulse 1s 3 ease-in-out forwards;
+    //   }
+    // }
 
     &_rem {
 
@@ -753,6 +751,17 @@
     &__change {
       transition: .2s ease-out;
       margin-top: em(-44px, 16px);
+
+      .ec-bet_change & {
+        margin-top: 0;
+      }
+    }
+
+    &_change {
+
+      &:before {
+        animation: pulse 1s 3 ease-in-out forwards;
+      }
     }
   }
 

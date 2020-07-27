@@ -1774,6 +1774,40 @@
   top: 0;
   left: -1.75em;
   width: 26.875em;
+<<<<<<< HEAD
+  height: 43.625em; }
+  .ec-card__part {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .ec-card__part_text {
+      text-align: center;
+      background: #89898a;
+      border: 1px solid #000;
+      color: #fff;
+      width: 12.5em;
+      height: auto;
+      padding: 1.25em;
+      font-size: 0.9375em;
+      direction: rtl; }
+      .ec-card__part_text-cop1 {
+        top: 5.625em;
+        left: auto;
+        right: 3.75em; }
+      .ec-card__part_text-cop2 {
+        top: auto;
+        bottom: 12.5em;
+        left: 5.625em; }
+      .ec-card__part_text-cop3 {
+        top: 6.875em;
+        left: auto;
+        right: 3.75em; }
+=======
   height: 43.625em;
 }
 .ec-card__part {
@@ -1812,6 +1846,7 @@
   left: auto;
   right: 3.75em;
 }
+>>>>>>> 7df0c2e6ea0fcd1199a93c0454338378696ecc62
 
 .ec-section {
   position: absolute;
@@ -2278,6 +2313,56 @@
   text-transform: uppercase;
   font-style: normal;
   position: relative;
+<<<<<<< HEAD
+  height: 2.44444em;
+  margin-left: -1.38889em; }
+  .ec-bet:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0; }
+  .ec-bet_rem .ec-bet__change {
+    text-shadow: 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000; }
+  .ec-bet_rem:before {
+    background-image: url(../img/el-camino/sum-rem-bg.png); }
+  .ec-bet_add .ec-bet__change {
+    text-shadow: 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000; }
+  .ec-bet_add:before {
+    background-image: url(../img/el-camino/sum-add-bg.png); }
+  .ec-bet_add .ec-bet__change:before {
+    content: '+'; }
+  .ec-bet__change, .ec-bet__main {
+    position: relative;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 0.88889em; }
+  .ec-bet__change {
+    -webkit-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    transition: .2s ease-out;
+    margin-top: -2.75em; }
+    .ec-bet_change .ec-bet__change {
+      margin-top: 0; }
+  .ec-bet_change:before {
+    -webkit-animation: pulse 1s 3 ease-in-out forwards;
+    animation: pulse 1s 3 ease-in-out forwards; }
+
+=======
   height: 2.4444444444em;
   margin-left: -1.3888888889em;
 }
@@ -2325,6 +2410,7 @@
   transition: 0.2s ease-out;
   margin-top: -2.75em;
 }
+>>>>>>> 7df0c2e6ea0fcd1199a93c0454338378696ecc62
 .ec-coef {
   text-transform: uppercase;
   font-style: normal;
