@@ -319,6 +319,7 @@ const page = document.querySelector('.ec-page'),
         setTimeout(() => {
           c.name = 'border';
           c.cur = 'track-border';
+          this.border.situation = this.Game.getRand(0, 2);
           this.modalShow(c.cur);
         }, 2000);
       },
@@ -409,8 +410,9 @@ const page = document.querySelector('.ec-page'),
         // this.modalHide('comics-'+g.curComics);
       },
       closeCards(name) {
-        let g = this.game;
-        this.$modal.hide(name);
+        let g = this.game,
+            cd = this.cards;
+        this.$modal.hide(cd.cur);
       },
       comicsOpened() {
         let c = this.comics;

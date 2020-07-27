@@ -1323,8 +1323,6 @@
             </div>
           </div>
 
-
-
           <div v-else>
             <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/comics3/group2/screen4.png)"></div>
             <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen5.png)">
@@ -1439,7 +1437,7 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
@@ -1510,7 +1508,7 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
@@ -1583,7 +1581,7 @@
           </div>
 
           <div class="ec-comics__int">
-           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+           <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
              </svg>
@@ -1655,7 +1653,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1726,7 +1724,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1798,7 +1796,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1864,7 +1862,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1932,7 +1930,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
@@ -1999,7 +1997,7 @@
           </div>
 
           <div class="ec-comics__int">
-            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards(cards.cur)">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
               <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
                 <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
               </svg>
