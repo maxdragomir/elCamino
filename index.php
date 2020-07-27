@@ -776,7 +776,7 @@
               <div class="ec-sign_border_shad"></div>
             </div>
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[0]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[0]}" @click="changeCoef('left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[0]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[0]}" @click="changeCoef('left', 'track')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[0]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>
@@ -785,9 +785,9 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_left"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef" v-if="game.roadActive[0]">коэф: 1.2</span>
+                  <span class="ec-frame__btn-coef" v-if="game.roadActive[0]">коэф: {{coefs.win.track}}</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[1]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[1]}" @click="changeCoef('mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[1]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[1]}" @click="changeCoef('mid', 'village')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[1]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>
@@ -796,9 +796,9 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
                     <use xlink:href="#ec-frame_mid"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef" v-if="game.roadActive[1]">коэф: 2.1</span>
+                  <span class="ec-frame__btn-coef" v-if="game.roadActive[1]">коэф: {{coefs.win.village}}</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[2]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[2]}" @click="changeCoef('right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[2]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[2]}" @click="changeCoef('right', 'city')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[2]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>
@@ -807,7 +807,7 @@
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_right"></use>
                   </svg>
-                  <span class="ec-frame__btn-coef" v-if="game.roadActive[2]">коэф: 4.0</span>
+                  <span class="ec-frame__btn-coef" v-if="game.roadActive[2]">коэф: {{coefs.win.city}}</span>
                 </button>
               </div>
             </div>
@@ -2046,7 +2046,10 @@
 
         <div class="ec-modal__in ec-modal_safe__in">
           <h3 class="ec-modal__win-title">ПОЗДРАВЛЯЕМ!</h3>
-          <p class="ec-modal__win-txt">Ваш выигрыш: <span class="ec-modal__win-sum">{{val}} RUB</span></p>
+          <p class="ec-modal__win-txt">
+            <span v-if="bet.val > bet.user">Ваш выигрыш: </span>
+            <span v-else>Граница пройдена</span>
+            <span class="ec-modal__win-sum">{{val}} RUB</span></p>
 
 
           <div class="ec-modal__foot">
