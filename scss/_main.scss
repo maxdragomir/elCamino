@@ -473,6 +473,11 @@
       top: 48%;
       width: em(588.5px, $mfs);
 
+      &.ec-car_back {
+        transform: translateY(100%) scale(1.5);
+        animation: transNone 1.5s ease-out forwards;
+      }
+
       .fade-enter-to & {
         z-index: 1;
       }

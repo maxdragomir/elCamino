@@ -37,7 +37,7 @@ class CaminoClass {
           },
           mid: {
             steps: 1,
-            scale: .8,
+            scale: .78,
             coord: [
             // X  Y
                0, 0
@@ -303,6 +303,22 @@ class CaminoClass {
     //     return s.comics.paused;
     //   }
     // });
+  }
+
+  backCar() {
+    let self = this,
+        s = self.setts,
+        carW = self.page.querySelector(`.ec-section .ec-car-wrap`),
+        car = carW.querySelector('.ec-car'),
+        sprite = carW.querySelector('.ec-car__sprite');
+
+    car.removeAttribute('style');
+    sprite.removeAttribute('style');
+    carW.classList.add('ec-car_back');
+
+    carW.addEventListener("webkitAnimationEnd", () => {
+      carW.classList.remove('ec-car_back');
+    });
   }
 
   // animComics({start, dur}, name) {

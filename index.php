@@ -367,7 +367,7 @@
           <div class="ec-scale ec-scale_2">
             <div class="ec-frame ec-bg__frame">
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.sectionReady" @click="chooseWay('track', 'left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.dirReady" @click="chooseWay('track', 'left')">
                   <span class="ec-frame__btn-lvl">Легкий</span>
                   <span class="ec-frame__btn-type">Трасса</span>
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
@@ -375,7 +375,7 @@
                   </svg>
                   <span class="ec-frame__btn-coef">коэф: {{coefs.win.track}}</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.sectionReady" @click="chooseWay('village', 'mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.dirReady" @click="chooseWay('village', 'mid')">
                   <span class="ec-frame__btn-lvl">средний</span>
                   <span class="ec-frame__btn-type">Деревня</span>
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
@@ -383,7 +383,7 @@
                   </svg>
                   <span class="ec-frame__btn-coef">коэф: {{coefs.win.village}}</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.sectionReady" @click="chooseWay('city', 'right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_green" :disabled="!game.dirReady" @click="chooseWay('city', 'right')">
                   <span class="ec-frame__btn-lvl">тяжелый</span>
                   <span class="ec-frame__btn-type">Город</span>
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
@@ -463,17 +463,17 @@
           <div class="ec-scale ec-scale_2">
             <div class="ec-frame ec-bg__frame">
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('left')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_left"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('mid')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
                     <use xlink:href="#ec-frame_mid"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('right')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_right"></use>
                   </svg>
@@ -561,17 +561,17 @@
           <div class="ec-scale ec-scale_2">
             <div class="ec-frame ec-bg__frame">
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('left')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_left"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('mid')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
                     <use xlink:href="#ec-frame_mid"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('right')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_right"></use>
                   </svg>
@@ -655,17 +655,17 @@
           <div class="ec-scale ec-scale_2">
             <div class="ec-frame ec-bg__frame">
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('left')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_left" viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_left"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('mid')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_mid" viewBox="0 0 44.89 88.88">
                     <use xlink:href="#ec-frame_mid"></use>
                   </svg>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.sectionReady" @click="chooseDir('right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_blue" :disabled="!game.dirReady" @click="chooseDir('right')">
                   <svg class="ec-frame__btn-dir ec-frame__btn-dir_right"  viewBox="0 0 69.27 88.92">
                     <use xlink:href="#ec-frame_right"></use>
                   </svg>
@@ -776,7 +776,7 @@
               <div class="ec-sign_border_shad"></div>
             </div>
               <div class="ec-frame__top">
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.sectionReady || !game.roadActive[0]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[0]}" @click="changeCoef('left')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[0]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[0]}" @click="changeCoef('left')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[0]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>
@@ -787,7 +787,7 @@
                   </svg>
                   <span class="ec-frame__btn-coef" v-if="game.roadActive[0]">коэф: 1.2</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.sectionReady || !game.roadActive[1]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[1]}" @click="changeCoef('mid')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[1]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[1]}" @click="changeCoef('mid')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[1]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>
@@ -798,7 +798,7 @@
                   </svg>
                   <span class="ec-frame__btn-coef" v-if="game.roadActive[1]">коэф: 2.1</span>
                 </button>
-                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.sectionReady || !game.roadActive[2]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[2]}" @click="changeCoef('right')">
+                <button class="ec-frame__btn ec-frame__btn_theme_orange" :disabled="!game.dirReady || !game.roadActive[2]" v-bind:class="{'ec-frame__btn_stop': !game.roadActive[2]}" @click="changeCoef('right')">
                   <span class="ec-frame__btn-stop" v-if="!game.roadActive[2]">
                     <span class="ec-frame__btn-stxt">на ремонте</span>
                   </span>

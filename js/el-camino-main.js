@@ -92,9 +92,37 @@ const page = document.querySelector('.ec-page'),
         dir: ''
       },
       game: {
+        stages: {
+          track: {
+            length: 1,
+            curStage: 0,
+            roadActive: {
+              0: true,
+              1: true,
+              2: false
+            }
+          },
+          village: {
+            length: 2,
+            curStage: 0,
+            roadActive: {
+              0: true,
+              1: true,
+              2: true
+            }
+          },
+          city: {
+            length: 3,
+            curStage: 0,
+            roadActive: {
+              0: false,
+              1: true,
+              2: true
+            }
+          }
+        },
         started: false,
         status: 'static',
-        sectionReady: false,
         roadActive: {
           0: true,
           1: true,
@@ -107,8 +135,8 @@ const page = document.querySelector('.ec-page'),
           coef: false,
           border: false
         },
-        cardsEnd: false,
-        cardsClosed: true,
+        dirReady: false,
+        // cardsEnd: false,
         move: 'static'
         // status: 'choose',
       },
@@ -133,6 +161,7 @@ const page = document.querySelector('.ec-page'),
         situation: 0
       },
       cards: {
+        closed: true,
         situation: 0,
         ways: {
           track: {
@@ -202,7 +231,7 @@ const page = document.querySelector('.ec-page'),
       },
       'bet.val': function(newValue) {
         this.bet.val = +this.bet.val.toFixed(2);
-        gsap.to(this.bet, { duration: 2, tweenedVal: +newValue });
+        gsap.to(this.bet, { duration: 1, tweenedVal: +newValue });
       }
     },
     methods: {
@@ -294,18 +323,32 @@ const page = document.querySelector('.ec-page'),
         }, 2000);
       },
       bCardsClose() {
-        let g = this.game;
+        let g = this.game,
+            lvl = g.stages[g.way],
+            b = lvl.curStage < lvl.length;
+
+
+        this.cards.closed = true;
+
+        this.body.classList.remove('no-scroll');
+
+        g.status = 'dir';
+
+        this.updateCoef();
+
+        this.showChangeVal();
+
+        if(b) return this.Game.backCar();
+
+        lvl.curStage = 0;
 
         g.prevStatus = g.status;
         g.status = 'coef';
 
-
         this.showSection(g.status);
-
-        this.body.classList.remove('no-scroll');
       },
       bCardsOpen() {
-        this.game.cardsClosed = false;
+        this.cards.closed = false;
 
         this.body.classList.add('no-scroll');
       },
@@ -344,12 +387,20 @@ const page = document.querySelector('.ec-page'),
         this.car.dir = dir;
 
         g.status = 'coefChoosed';
-        this.Game.carRideTo(g.status, dir);
-        this.car.end = false;
+
+        this.carRide(g.status);
 
         if(dir != 'mid') this.playAudio('turn');
         this.playAudio('start');
         this.onButtonClick();
+      },
+      carRide(name) {
+        let g = this.game,
+            cr = this.car;
+
+        this.Game.carRideTo(name, cr.dir);
+        cr.end = false;
+        g.dirReady = false;
       },
       closeComics() {
         let g = this.game, c = this.comics;
@@ -362,9 +413,9 @@ const page = document.querySelector('.ec-page'),
         this.$modal.hide(name);
       },
       comicsOpened() {
-        console.log('OPENED');
         let c = this.comics;
         c.open = true;
+
         setTimeout(() => {this.Game.showComics(c.name);}, 300);
       },
       comicsClosed() {
@@ -374,14 +425,16 @@ const page = document.querySelector('.ec-page'),
       chooseWay(name, dir) {
         let g = this.game, a = this.sound.audios, cs = this.coefs;
         g.prevStatus = g.status;
+
         this.car.dir = dir;
 
         cs.cur = cs.win[name];
 
         g.status = 'dir';
         g.way = name;
-        this.Game.carRideTo(false, dir);
-        this.car.end = false;
+
+        g.roadActive = g.stages[g.way].roadActive;
+        this.carRide(false);
 
         if(dir != 'mid') this.playAudio('turn');
         this.playAudio('start');
@@ -389,13 +442,16 @@ const page = document.querySelector('.ec-page'),
       },
       chooseDir(dir) {
         let g = this.game, a = this.sound.audios;
+
+        g.stages[g.way].curStage += 1;
         g.prevStatus = g.status;
 
         this.car.dir = dir;
         g.status = 'dirChoosed';
 
-        this.Game.carRideTo(g.status, dir);
-        this.car.end = false;
+        this.hideChangeVal();
+
+        this.carRide(g.status);
 
         if(dir != 'mid') this.playAudio('turn');
         this.playAudio('start');
@@ -435,11 +491,10 @@ const page = document.querySelector('.ec-page'),
       },
       cardsClosed() {
         let bet = this.bet;
-        this.game.cardsClosed = true;
 
-        this.updateCoef();
 
-        this.updateBet();
+        this.car.end = true;
+        this.car.dir = '';
       },
       startEnd() {
         let c = this.comics, g = this.game;
@@ -450,7 +505,7 @@ const page = document.querySelector('.ec-page'),
         // this.Game.nextSection(g.prevStatus, g.status);
       },
       dirChoosed() {
-        let bet = this.bet,
+        let b = this.bet,
             g = this.game,
             cd = this.cards,
             cs = this.coefs,
@@ -462,13 +517,12 @@ const page = document.querySelector('.ec-page'),
         if(win) {
           cd.situation = 0;
           cs.cur = cs.win[g.way];
-          console.log('WIN');
         }
         else {
           cd.situation = this.Game.getRand(1,2);
           cs.cur = cd.ways[g.way][cardObj.id].lose[cd.situation-1];
         }
-        bet.change = ((bet.val*cs.cur)-bet.val).toFixed(2);
+        b.change = ((b.val*cs.cur)-b.val).toFixed(2);
 
         // console.log(bet.change);
 
@@ -541,7 +595,7 @@ const page = document.querySelector('.ec-page'),
         if(hash.split('-')[1] === 'comics') {
           g.status = hash.split('-')[0];
           c.cur = 'comics-'+g.status;
-          c.name = ''
+          c.name = '';
           this.modalShow(c.cur);
         }
         else if (hash.split('-')[0] === 'modal') this.modalShow(hash);
@@ -552,6 +606,7 @@ const page = document.querySelector('.ec-page'),
           g.way = hash.split('-')[0];
           g.started = this.static.day = true;
           this.static.toggle = false;
+          g.roadActive = g.stages[g.way].roadActive;
         } else if(hash.split('_').length === 3) {
           this.cards.situation = Number(hash.split('_')[2]);
           this.modalShow(hash.split('_').slice(0,-1).join('_'));
@@ -629,7 +684,7 @@ const page = document.querySelector('.ec-page'),
         this.onButtonClick();
       },
       sectionBefore(el) {
-         this.game.sectionReady = false;
+         this.game.dirReady = false;
          setTimeout(() => {
            this.car.end = true;
            this.car.dir = '';
@@ -642,7 +697,7 @@ const page = document.querySelector('.ec-page'),
         //   g.move = g.next;
         // }, 200);
         setTimeout( () => {
-          this.game.sectionReady = true;
+          this.game.dirReady = true;
         }, 800);
        // el.classList.add('ec-section_move');
       },
@@ -748,31 +803,34 @@ const page = document.querySelector('.ec-page'),
         s.curBack.onended = function() {
           self.updateBack();
         }
-       },
-      updateAfterChange() {
-        let b = this.bet;
-        b.val += +b.change;
-
-        setTimeout( () => {
-          b.change = 0;
-        }, 300);
       },
+      // updateAfterChange() {
+      //   let b = this.bet;
+      // },
       updateCoef() {
-        if(!this.game.cardsClosed) return;
+        if(!this.cards.closed) return;
         let cs = this.coefs;
         cs.change = true;
         if(!cs.time) return cs.time = setTimeout(() => {
           cs.change = cs.time = false;
-        }, 3000);
+        }, 2000);
       },
-      updateBet() {
+      showChangeVal() {
         let b = this.bet;
         b.isChange = true;
 
+        if(b.isChange) setTimeout(() => {
+          this.hideChangeVal();
+        }, 2000);
+      },
+      hideChangeVal() {
+        let b = this.bet;
+        b.isChange = false;
+        b.val += +b.change;
+
         setTimeout(() => {
-          b.isChange = false;
-          this.updateAfterChange();
-        }, 3000);
+          b.change = 0;
+        }, 300);
       }
       // testShow(id) {
       //   var comics = ['comics-choose', 'comics-money', 'comics-border', 'comics-cards1'],
@@ -831,7 +889,7 @@ const page = document.querySelector('.ec-page'),
 
           // if(g.cardsEnd) {
             this.modalHide(cd.cur);
-            g.cardsEnd = false;
+            // g.cardsEnd = false;
             // return;
           // }
           // g.cardsEnd = true;
@@ -868,8 +926,10 @@ const page = document.querySelector('.ec-page'),
       // });
 
       this.Game.on('carLeft', (name) => {
-        // console.log(name);
-        console.log(name);
+
+        g.dirReady = true;
+        this.car.end = true;
+
         if(name) return this[name]();
         // else if(name === 'chooseCoef') return this.coefChoosed();
 
