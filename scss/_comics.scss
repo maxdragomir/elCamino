@@ -790,6 +790,37 @@ $dur: .2s;
         width: em(180px, $mfs);
       }
     }
+    &-sign {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      text-align: center;
+      display: block;
+      font-weight: 900;
+      text-transform: uppercase;
+      span {
+        display: block;
+      }
+
+      &_2 {
+        transform: translate3d(em(-88px, $mfs), em(29px, $mfs), 0) skewY(-24deg) scale(1, 1);
+        width: em(70px, $mfs);
+        span {
+          font-size: em(7px, $mfs);
+          line-height: 1.6;
+        }
+      }
+      &_8 {
+        transform: translate3d(em(-45px, $mfs), em(135px, $mfs), 0) skewY(-4.3deg) scale(1, 1);
+        width: em(120px, $mfs);
+        span {
+          font-size: em(13px, $mfs);
+          line-height: 1.6;
+        }
+      }
+
+    }
   }
 
 
