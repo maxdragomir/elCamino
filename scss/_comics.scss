@@ -109,7 +109,6 @@ $dur: .2s;
       transform: none;
     }
 
-
     .ec-comics_start & {
 
       &_1 {
@@ -826,7 +825,7 @@ $dur: .2s;
       }
 
       &_2 {
-        transform: translate3d(em(-88px, $mfs), em(29px, $mfs), 0) skewY(-24deg) scale(1, 1);
+        transform: translate3d(em(-88px, $mfs), em(28px, $mfs), 0) skewY(-24deg) scale(1, 1);
         width: em(70px, $mfs);
         span {
           font-size: em(7px, $mfs);

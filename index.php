@@ -1267,7 +1267,9 @@
             <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen7.png)">
               <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen8.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen8.jpg)">
+	            <div class="ec-comics__slide-sign ec-comics__slide-sign_8"><span>Пограничный контроль</span></div>
+            </div>
             <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group3/screen9.png)"></div>
           </div>
 
