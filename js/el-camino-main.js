@@ -340,7 +340,7 @@ const page = document.querySelector('.ec-page'),
 
         this.cards.closed = true;
 
-        this.body.classList.remove('no-scroll');
+        this.body.classList.remove('ec-no-scroll');
 
         g.status = 'dir';
 
@@ -360,7 +360,7 @@ const page = document.querySelector('.ec-page'),
       bCardsOpen() {
         this.cards.closed = false;
 
-        this.body.classList.add('no-scroll');
+        this.body.classList.add('ec-no-scroll');
       },
       beforeComicsClose() {
         let name = this.comics.beforeClose;
@@ -417,7 +417,8 @@ const page = document.querySelector('.ec-page'),
         g.dirReady = false;
       },
       closeComics() {
-        let g = this.game, c = this.comics;
+        let g = this.game,
+            c = this.comics;
         this.Game.closeComics(c.cur);
         this.onButtonClick();
         // this.modalHide('comics-'+g.curComics);
@@ -431,11 +432,16 @@ const page = document.querySelector('.ec-page'),
         let c = this.comics;
         c.open = true;
 
-        setTimeout(() => {this.Game.showComics(c.name);}, 300);
+        setTimeout(() => {
+          this.Game.showComics(c.name);
+          this.body.classList.add('ec-no-scroll');
+        }, 300);
       },
       comicsClosed() {
         let c = this.comics;
         c.open = false;
+
+        this.body.classList.remove('ec-no-scroll');
       },
       chooseWay(name, dir) {
         let g = this.game, a = this.sound.audios, cs = this.coefs;
@@ -516,14 +522,14 @@ const page = document.querySelector('.ec-page'),
             g = this.game;
 
         if(g.win) b.val = b.val*cf.cur;
-        else b.val /=2;
+        else {
+          b.val /=2
+          console.log(b.val, b.safe);
+        };
 
-        b.val = b.val*cf.cur;
+        // b.val = b.val*cf.cur;
 
-        if(b.safe) {
-          b.val += +b.safe;
-          console.log(b.val);
-        }
+        if(b.safe) b.val += +b.safe;
 
       },
       dirChoosed() {
@@ -576,10 +582,15 @@ const page = document.querySelector('.ec-page'),
         }, 1000);
       },
       gameEnd(status) {
-        let c = this.comics, g = this.game;
+        let c = this.comics,
+            g = this.game,
+            cf = this.coefs;
 
         this.onButtonClick();
         this.modalHide('modal-'+(g.win ? 'win' : 'lose'));
+
+        cf.cur = '';
+
         if(status == undefined) return g.started = false;
         g.prevStatus = 'border';
         g.status = status;
@@ -612,13 +623,15 @@ const page = document.querySelector('.ec-page'),
         // test
         let hash = location.search.replace(/\?/,''),
             g = this.game,
-            c = this.comics;
+            c = this.comics,
+            b = this.bet;
 
         if(hash.split('-')[1] === 'comics') {
-          g.status = hash.split('-')[0];
-          c.cur = 'comics-'+g.status;
-          c.name = '';
+          g.status = 'static';
+          c.cur = 'comics-'+hash.split('-')[0];
+          c.name = hash.split('-')[0];
           this.modalShow(c.cur);
+
         }
         else if (hash.split('-')[0] === 'modal') this.modalShow(hash);
         else if(hash.split('-')[1] === 'way') {
@@ -654,6 +667,12 @@ const page = document.querySelector('.ec-page'),
 
         this.showSection(g.status);
         // this.Game.nextSection(g.prevStatus, g.status);
+      },
+      bModalOpen() {
+        this.body.classList.add('ec-no-scroll');
+      },
+      modalClosed() {
+        this.body.classList.remove('ec-no-scroll');
       },
       onButtonClick() {
         this.playAudio('click');
@@ -776,16 +795,13 @@ const page = document.querySelector('.ec-page'),
         this.onButtonClick();
         c.beforeClose = 'borderShow';
 
+        c.cur = 'comics-money';
+
         c.name = 'money';
-        if(b) {
-          this.bet.safe = this.bet.val /= 2;
-          c.cur = 'comics-money';
-          this.modalShow(c.cur);
-        } else {
-          this.bet.safe = false;
-          c.cur = 'comics-money2';
-          this.modalShow(c.cur);
-        }
+        if(b) this.bet.safe = this.bet.val /= 2;
+        else this.bet.safe = false;
+
+        this.modalShow(c.cur);
       },
       showSection(name, b) {
         let g = this.game;

@@ -2,7 +2,9 @@ $roboto: 'Roboto', sans-serif;
 $robotoC: 'Roboto Condensed', sans-serif;
 $chalkB: 'ChalkboardSE-Bold';
 
-$desktop: 'screen and (max-width: 1600px)';
+$d1600: 'screen and (max-width: 1600px)';
+$d1439: 'screen and (max-width: 1439px)';
+$d1279: 'screen and (max-width: 1279px)';
 $ie: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)';
 $edge: '(-ms-accelerator:true) or (-ms-ime-align:auto)';
 
@@ -13,7 +15,8 @@ $black: #000;
 $colE2d: #2d2e2d;
 
 $mfs: 16px;
-$mfs2: 11px;
+$mfs2: 12.2px;
+$mfs3: 10px;
 
 $grayGr: conic-gradient(#9d9fa1, #626568, #9d9fa1, #626568, #9d9fa1);
 $grayGrFix: linear-gradient(to left, #626568 0%, #9d9fa1 49%, #9d9fa1 51%, #626568 100%);

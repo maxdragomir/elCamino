@@ -1,7 +1,9 @@
-.no-scroll {
+.ec-no-scroll {
   overflow: hidden;
 }
 .ec-page .v--modal  {
+
+  // margin: em(0, $mfs);
 
   &-overlay {
     background: rgba(0,0,0, .7);
@@ -30,6 +32,11 @@
   text-align: center;
   box-sizing: border-box;
   font-style: normal;
+  font-size: $mfs;
+
+  @media #{$d1439} {
+    font-size: 14px;
+  }
 
   & .ec-modal__close {
     position: absolute;

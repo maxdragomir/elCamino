@@ -6,13 +6,21 @@ $dur: .2s;
   @include em((
     width: 1514px,
     height: 730px,
-    margin: 195px 0
+    margin: 100px 0
   ), $mfs);
 
   &_cards {
     width: 100%;
     height: auto;
+    margin: em(80px 0, $mfs);
+
+    @media #{$d1600} {
+      font-size: 14px;
+      margin: em(40px 0, 14px);
+    }
+    // font-size: 16px;
     // margin-top: em(135px, $mfs);
+
   }
   // position: absolute;
   // left: 0;
@@ -34,6 +42,16 @@ $dur: .2s;
   // }
 
   &_money {
+    font-size: em(15px, $mfs);
+
+    @media #{$d1600} {
+      font-size: em(13px, $mfs2);
+
+      .ec-comics__txt {
+        font-size: em(14px, 13px);
+      }
+    }
+
     @include em((
       width: 1342px
     ), $mfs);
@@ -48,6 +66,10 @@ $dur: .2s;
       width: 1612px,
       height: 740px
     ), $mfs);
+
+    @media #{$d1279} {
+      font-size: em(9px, $mfs3);
+    }
   }
 
   &__in {
@@ -793,7 +815,6 @@ $dur: .2s;
   }
 
 
-
   &__int {
     position: absolute;
     display: -webkit-flex;
@@ -801,7 +822,7 @@ $dur: .2s;
     display: flex;
 
     @include em((
-      top: -40px,
+      top: -20px,
       dir(right): -32px
     ), $mfs);
   }
@@ -1177,6 +1198,7 @@ $dur: .2s;
         left: 0;
         right: 0;
         bottom: 100%;
+        margin-bottom: -1px;
         height: em(20px, 14px);
         background: url(#{$imgDir}slider/text-bg.png) center;
         background-size: auto 100%;
@@ -1229,7 +1251,7 @@ $dur: .2s;
   top: 0;
 
   @include em((
-    left: -28px,
+    left: -15px,
     width: 430px,
     height: 698px
   ), $mfs);

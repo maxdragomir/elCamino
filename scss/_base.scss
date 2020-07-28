@@ -19,8 +19,12 @@
     line-height: 1.2;
     background-color: #edf5fd;
 
-    @media #{$desktop} {
+    @media #{$d1600} {
       font-size: $mfs2;
+    }
+
+    @media #{$d1439} {
+      font-size: $mfs3;
     }
 
     direction: dir(ltr);
@@ -30,9 +34,9 @@
     position: relative;
     margin: auto;
     box-shadow: 0 0 30px #929292;
+    max-width: 1920px;
 
     @include em((
-      max-width: 1920px,
       height: 867px
     ), $mfs);
 
@@ -160,26 +164,6 @@
       display: block;
       position: relative;
       z-index: 1;
-    }
-
-    &_size_s {
-      font-size: 1em;
-      @include em((
-        min-height: 46px,
-        min-width: 56px,
-        padding: 13px 22px,
-        border-radius: 50px
-      ), $mfs);
-    }
-
-    &_size_m {
-      font-size: em(18px, $mfs);
-      @include em((
-        min-height: 60px,
-        min-width: 130px,
-        padding: 20px 22px 16px,
-        border-radius: 50px
-      ), 18px);
     }
 
     &_theme_gray {
@@ -389,6 +373,52 @@
 
         &:after {
           opacity: 0;
+        }
+      }
+    }
+
+    &_size_s {
+      font-size: 1em;
+      @include em((
+        min-height: 46px,
+        min-width: 56px,
+        padding: 13px 22px,
+        border-radius: 50px
+      ), $mfs);
+
+      &:disabled {
+        cursor: default;
+        background: linear-gradient(to bottom, #646668 0%, #3b3d3f 100%);
+
+        &:before {
+          background: $grayGrHover;
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    &_size_m {
+      font-size: em(18px, $mfs);
+      @include em((
+        min-height: 60px,
+        min-width: 130px,
+        padding: 20px 22px 16px,
+        border-radius: 50px
+      ), 18px);
+
+      &:disabled {
+        cursor: default;
+        background: linear-gradient(to bottom, #646668 0%, #3b3d3f 100%);
+
+        &:before {
+          background: $grayGrHover;
+        }
+
+        &:after {
+          content: none;
         }
       }
     }

@@ -802,7 +802,7 @@
         bottom: 0;
         background-size: 100% 100%;
         transform: rotateY(180deg);
-        margin-right: -25px;
+        margin-right: em(-25px, $mfs);
         z-index: 1;
         opacity: 0;
       }
@@ -1280,7 +1280,7 @@
 
   &-speedometer {
     position: absolute;
-    transition: 1.5s ease-out;
+    transition: transform 1.5s ease-out;
 
     &.ec-speedometer_start {
       transform: rotate(100deg)
@@ -1317,7 +1317,7 @@
 
   &-tachometer {
     position: absolute;
-    transition: 1.5s ease-out;
+    transition: transform 1.5s ease-out;
 
 
     &.ec-tachometer_start {
