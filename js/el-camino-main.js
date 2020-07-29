@@ -155,7 +155,9 @@ const page = document.querySelector('.ec-page'),
           'comics-money2': {
             0: 'money'
           },
-          'track-border': {}
+          'track-border': {},
+          'village-border': {},
+          'city-border': {}
         }
       },
       border: {
@@ -328,7 +330,7 @@ const page = document.querySelector('.ec-page'),
 
         setTimeout(() => {
           c.name = 'border';
-          c.cur = 'track-border';
+          c.cur = g.way+'-border';
           this.modalShow(c.cur);
         }, 2000);
       },
@@ -399,6 +401,8 @@ const page = document.querySelector('.ec-page'),
         this.car.dir = dir;
 
         this.coefs.cur = this.coefs.win[way];
+
+        g.way = way;
 
         g.status = 'coefChoosed';
 
