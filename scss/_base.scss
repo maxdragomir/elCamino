@@ -392,6 +392,20 @@
 
         &:before {
           background: $grayGrHover;
+
+          @media #{$ie} {
+            background: #646668;
+          }
+
+          @supports #{$edge} {
+            background: #646668;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $grayGrFixHover;
+            }
+          }
         }
 
         &:after {
@@ -415,6 +429,20 @@
 
         &:before {
           background: $grayGrHover;
+
+          @media #{$ie} {
+            background: #646668;
+          }
+
+          @supports #{$edge} {
+            background: #646668;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $grayGrFixHover;
+            }
+          }
         }
 
         &:after {
@@ -741,6 +769,20 @@
 
         &:before {
           background: $grayGrHover;
+
+          @media #{$ie} {
+            background: #646668;
+          }
+
+          @supports #{$edge} {
+            background: #646668;
+          }
+
+          @-moz-document url-prefix() {
+            & {
+              background: $grayGrFixHover;
+            }
+          }
         }
 
         &:after {

@@ -17,7 +17,7 @@
 
           @include em((
             height: 195px,
-            bottom: 226px
+            bottom: 208px
           ), $mfs);
 
           @media #{$d1600} {

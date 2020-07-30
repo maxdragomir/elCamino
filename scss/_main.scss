@@ -648,8 +648,9 @@
     top: em(-32px, $mfs);
     // height: 100%;
     background: url(../img/el-camino/static/day/road.png) no-repeat center bottom;
-    background-size: auto 99.8%;
-    height: em(495px, $mfs);
+    // background-size: auto 99.8%;
+    background-size: auto 100%;
+    height: em(477px, $mfs);
     width: 100%;
 
     .ec-bg_night & {
@@ -853,6 +854,21 @@
       background: url(../img/el-camino/torpedo/torpedo-start.png) no-repeat center;
       background-size: auto 100%;
       z-index: 1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      background: url(#{$imgDir}torpedo/logo.png) no-repeat;
+      background-size: contain;
+      z-index: 1;
+
+      @include em((
+        width: 278px,
+        height: 72px,
+        top: 120px,
+        right: 15px
+      ), $mfs)
     }
 
     &__top {
