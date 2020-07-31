@@ -21,6 +21,7 @@ const page = document.querySelector('.ec-page'),
     	Multiselect: window.VueMultiselect.default
   	},
     data: {
+      rtl: false,
       body: document.querySelector('body'),
       load: {
         images: false,
