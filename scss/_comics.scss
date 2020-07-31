@@ -90,10 +90,10 @@ $dur: .2s;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
-    &__parts {
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
-    }
+    // &__parts {
+    //   animation-fill-mode: forwards;
+    //   animation-timing-function: linear;
+    // }
 
     svg {
       width: 100%;
@@ -488,26 +488,28 @@ $dur: .2s;
     }
 
     &-part {
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;
-      animation-delay: $dur;
+      // animation-fill-mode: forwards;
+      transition-timing-function: linear;
+      transition-delay: $dur;
 
       .ec-comics__slide_show &,
       .ec-slider__item_anim & {
-        animation-name: moveComicsPart;
+        // transition: -name: moveComicsPart;
+        transform: none;
+        opacity: 1;
       }
       &_easing {
 
         &_out {
-          animation-timing-function: ease-out;
+          transition-timing-function: ease-out;
         }
 
         &_in {
-          animation-timing-function: ease-in;
+          transition-timing-function: ease-in;
         }
 
         &_steps {
-          animation-timing-function: steps(3);
+          transition-timing-function: steps(3);
         }
       }
 
@@ -614,14 +616,6 @@ $dur: .2s;
           transform: translate(-10%, -4%);
         }
 
-        &_p {
-          animation-iteration-count: 3;
-
-          .ec-comics__slide_show & {
-            animation-name: opacityHalf0;
-          }
-        }
-
         &_rotr {
           transform: rotate(-5deg);
         }
@@ -685,111 +679,108 @@ $dur: .2s;
         &_translate_0_5Scale_1_1 {
           transform: translate(0%, 5%) scale(1.1);
         }
-        &_rev {
-          animation-direction: reverse;
-        }
 
       }
 
       &_dur {
 
         &_2 {
-          animation-duration: .2s;
+          transition-duration: .2s;
         }
 
         &_4 {
-          animation-duration: .4s;
+          transition-duration: .4s;
         }
 
         &_6 {
-          animation-duration: .6s;
+          transition-duration: .6s;
         }
 
         &_8 {
-          animation-duration: .6s;
+          transition-duration: .6s;
         }
 
         &_10 {
-          animation-duration: 1s;
+          transition-duration: 1s;
         }
 
         &_12 {
-          animation-duration: 1.2s;
+          transition-duration: 1.2s;
         }
 
         &_15 {
-          animation-duration: 1.5s;
+          transition-duration: 1.5s;
         }
 
         &_16 {
-          animation-duration: 1.6s;
+          transition-duration: 1.6s;
         }
 
         &_20 {
-          animation-duration: 2s;
+          transition-duration: 2s;
         }
 
         &_22 {
-          animation-duration: 2.2s;
+          transition-duration: 2.2s;
         }
 
         &_30 {
-          animation-duration: 3s;
+          transition-duration: 3s;
         }
 
         &_32 {
-          animation-duration: 3.2s;
+          transition-duration: 3.2s;
         }
 
         &_34 {
-          animation-duration: 3.4s;
+          transition-duration: 3.4s;
         }
 
         &_36 {
-          animation-duration: 3.6s;
+          transition-duration: 3.6s;
         }
 
         &_40 {
-          animation-duration: 4s;
+          transition-duration: 4s;
         }
 
         &_44 {
-          animation-duration: 4s;
+          transition-duration: 4s;
         }
 
         &_60 {
-          animation-duration: 6s;
+          transition-duration: 6s;
         }
       }
 
       &_delay {
 
         &_2 {
-          animation-delay: $dur+.2s;
+          transition-delay: $dur+.2s;
         }
 
         &_4 {
-          animation-delay: $dur+.4s;
+          transition-delay: $dur+.4s;
         }
 
         &_6 {
-          animation-delay: $dur+.6s;
+          transition-delay: $dur+.6s;
         }
 
         &_8 {
-          animation-delay: $dur+.6s;
+          transition-delay: $dur+.6s;
         }
 
         &_10 {
-          animation-delay: $dur+1s;
+          transition-delay: $dur+1s;
         }
 
         &_16 {
-          animation-delay: $dur+1.6s;
+          transition-delay: $dur+1.6s;
         }
 
         &_20 {
-          animation-delay: $dur+2s;
+          transition-delay: $dur+2s;
         }
       }
     }
