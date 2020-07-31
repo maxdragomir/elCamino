@@ -1029,7 +1029,7 @@
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 965 629" xml:space="preserve">
               <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/bg.jpg"/>
               <g class="ec-comics__slide-part">
-                <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/el1.png"/>
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/el1.png"/>
               </g>
             </svg>
           </div>
@@ -1230,7 +1230,7 @@
                 <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
                   <g class="ec-comics__slide-part">
                     <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
-                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
                   </g>
                 </g>
            </svg>
@@ -1367,7 +1367,7 @@
                 <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
                   <g class="ec-comics__slide-part">
                     <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
-                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
                   </g>
                 </g>
            </svg>
@@ -1500,7 +1500,7 @@
                 <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
                   <g class="ec-comics__slide-part">
                     <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
-                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
                   </g>
                 </g>
            </svg>
@@ -1615,12 +1615,12 @@
                 <div class="ec-card" v-if="cards.situation === 0">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sc  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/bg.jpg)"></div>
@@ -1874,6 +1874,7 @@
       </section>
 
     </modal>
+
     <modal name="village_2"
            :adaptive="true"
            height="auto"
@@ -1919,6 +1920,80 @@
                 <div class="ec-card" v-else-if="cards.situation === 1">
                 </div>
                 <div class="ec-card" v-else>
+                </div>
+              </div>
+            </div>
+            <div class="ec-slider__txt">
+              <p>
+                Впереди ремонт дороги! Вас выбросило на обочину. Но дорожные работники Вам помогли!
+                <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
+              </p>
+            </div>
+            <div class="ec-slider__bot" style="background-image: url(img/el-camino/slider/bot-img1.png)"></div>
+          </div>
+
+          <div class="ec-comics__int">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </modal>
+
+
+    <modal name="village_3"
+           :adaptive="true"
+           height="auto"
+           width="100%"
+           :click-to-close="false"
+           @before-open="bCardsOpen"
+           @before-close="bCardsClose"
+           @opened="cardsOpened"
+           @closed="cardsClosed">
+
+      <section class="ec-comics ec-comics_cards">
+        <div class="ec-slider">
+          <div class="ec-slider__in">
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/train/top-img.png)"></div>
+            <div class="ec-slider__content">
+              <div class="ec-slider__item">
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r13b5 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/train/screen1/elem1.png)"></div>
+                </div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen2/elem2.png)"></div>
+                </div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_scr ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem3.png)"></div>
+                </div>
+                <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem3.png)"></div>
+                </div>
+                <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_scr ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_20 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem3.png)"></div>
                 </div>
               </div>
             </div>

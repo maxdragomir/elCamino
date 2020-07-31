@@ -610,6 +610,10 @@ $dur: .2s;
           transform: translate(-10%, -10%);
         }
 
+        &_r13b5 {
+          transform: translate(-13%, -5%);
+        }
+
         &_p {
           animation-iteration-count: 3;
 
@@ -621,20 +625,18 @@ $dur: .2s;
         &_rotr {
           transform: rotate(-5deg);
         }
-        &_sc,
-        &_scr {
+        &_sct {
           transform: translate(-5%, -5%) scale(1.1);
         }
 
 
-        &_sclt,
-        &_scltr {
+        &_sc {
           transform: translate(0%, 0%) scale(1.1);
         }
 
-        &_scr,
-        &_scltr {
-          animation-direction: reverse;
+
+        &_scr {
+          transform: translate(0%, 0%) scale(0.9);
         }
 
         &_tt {
