@@ -1963,38 +1963,43 @@
       <section class="ec-comics ec-comics_cards">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/сonstruction/top-img.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/construction/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
-                <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/elem1.png)"></div>
-                </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
-                </div>
-                <div class="ec-card" v-else>
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen1/elem1.png)"></div>
+                  <div class="ec-card__part ec-card__part_sign">Ремонт дороги</div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/bg.png)"></div>
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m20_m5Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/elem1.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m20_m5Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem1.png)"></div>
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_5Scale_1_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/group2/bg.png)"></div>
                 </div>
               </div>
             </div>
