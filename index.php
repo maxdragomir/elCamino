@@ -1817,7 +1817,7 @@
               <div class="ec-slider__item">
                 <div class="ec-card">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r13b5 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/train/screen1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r10b4 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/train/screen1/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
