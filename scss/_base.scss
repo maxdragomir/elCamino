@@ -386,32 +386,32 @@
         border-radius: 50px
       ), $mfs);
 
-      &:disabled {
-        cursor: default;
-        background: linear-gradient(to bottom, #646668 0%, #3b3d3f 100%);
-
-        &:before {
-          background: $grayGrHover;
-
-          @media #{$ie} {
-            background: #646668;
-          }
-
-          @supports #{$edge} {
-            background: #646668;
-          }
-
-          @-moz-document url-prefix() {
-            & {
-              background: $grayGrFixHover;
-            }
-          }
-        }
-
-        &:after {
-          content: none;
-        }
-      }
+      // &:disabled {
+      //   cursor: default;
+      //   background: linear-gradient(to bottom, #646668 0%, #3b3d3f 100%);
+      //
+      //   &:before {
+      //     background: $grayGrHover;
+      //
+      //     @media #{$ie} {
+      //       background: #646668;
+      //     }
+      //
+      //     @supports #{$edge} {
+      //       background: #646668;
+      //     }
+      //
+      //     @-moz-document url-prefix() {
+      //       & {
+      //         background: $grayGrFixHover;
+      //       }
+      //     }
+      //   }
+      //
+      //   &:after {
+      //     content: none;
+      //   }
+      // }
     }
 
     &_size_m {

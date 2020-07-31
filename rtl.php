@@ -83,9 +83,6 @@
             </div>
           </div>
 
-          <div class="ec-border ec-border_stop">
-          </div>
-
           <div class="ec-car-wrap">
             <div class="ec-car ec-car_static">
               <div class="ec-car__light ec-car__light_front"></div>
@@ -968,7 +965,7 @@
 
             <div class="ec-radio__hint">
               <p v-if="sound.muted">звук выключен</p>
-              <p v-else>выбери радиоволну</p>
+              <p v-else>выберите радиоволну</p>
             </div>
 
             <ul class="ec-radio__list">
@@ -1032,7 +1029,7 @@
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 965 629" xml:space="preserve">
               <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/bg.jpg"/>
               <g class="ec-comics__slide-part">
-                <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/el1.png"/>
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36" width="100%" height="100%" xlink:href="img/el-camino/comics/screen8/el1.png"/>
               </g>
             </svg>
           </div>
@@ -1167,6 +1164,8 @@
       </section>
     </modal>
 
+
+    <!-- COMICS -->
     <modal name="track-border"
          :adaptive="true"
          height="auto"
@@ -1183,87 +1182,92 @@
           <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
              <mask id="ec-mask-screen1">
-               <image width="100%" height="100%" xlink:href="img/el-camino/comics3/screen1/mask.png" />
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/mask.png" />
              </mask>
-             <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen1/bg.jpg"/>
+             <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/bg.jpg"/>
              <g mask="url(#ec-mask-screen1)" class="ec-comics__parts">
-               <image class="ec-comics__slide-part ec-comics__slide-part_anim_rt2 ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen1/el1.png"/>
+               <image class="ec-comics__slide-part ec-comics__slide-part_anim_rt2 ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/el1.png"/>
              </g>
            </svg>
           </div>
           <div class="ec-comics__slide ec-comics__slide_2 ec-comics__slide_anim" data-dur="3000">
            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 927 419" xml:space="preserve">
              <mask id="ec-mask-screen2">
-               <image width="100%" height="100%" xlink:href="img/el-camino/comics3/screen2/mask.png" />
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/mask.png" />
              </mask>
-             <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen2/bg.png"/>
+             <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/bg.png"/>
              <g mask="url(#ec-mask-screen2)" class="ec-comics__parts">
-               <image class="ec-comics__slide-part ec-comics__slide-part_anim_lt ec-comics__slide-part_dur_30 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen2/el1.png"/>
+               <image class="ec-comics__slide-part ec-comics__slide-part_anim_lt ec-comics__slide-part_dur_30 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/el1.png"/>
              </g>
            </svg>
+            <div class="ec-comics__slide-sign ec-comics__slide-sign_2"><span>Пограничный контроль</span></div>
           </div>
-          <div class="ec-comics__slide ec-comics__slide_3" style="background-image: url(img/el-camino/comics3/screen3.png)"></div>
+          <div class="ec-comics__slide ec-comics__slide_3" style="background-image: url(img/el-camino/border-easy/screen3.png)"></div>
 
           <div v-if="border.situation === 0">
-            <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/comics3/screen4.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_5" style="background-image: url(img/el-camino/comics3/screen5.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_6" style="background-image: url(img/el-camino/comics3/screen6.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/border-easy/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5" style="background-image: url(img/el-camino/border-easy/screen5.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_6" style="background-image: url(img/el-camino/border-easy/screen6.jpg)"></div>
             <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_anim" data-dur="3000">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1656 458" xml:space="preserve">
              <mask id="ec-mask-screen7">
-               <image width="100%" height="100%" xlink:href="img/el-camino/comics3/screen7/mask.png" />
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/mask.png" />
              </mask>
-                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen7/bg.png"/>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/bg.png"/>
                 <g mask="url(#ec-mask-screen7)" class="ec-comics__parts">
-                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen7/el2.png"/>
-                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen7/el3.png"/>
-                  <image class="ec-comics__slide-part" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen7/el1.png"/>
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el2.png"/>
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el3.png"/>
+                  <image class="ec-comics__slide-part" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el1.png"/>
                 </g>
            </svg>
             </div>
             <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_anim" data-dur="3000">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1121 281" xml:space="preserve">
              <mask id="ec-mask-screen8">
-               <image width="100%" height="100%" xlink:href="img/el-camino/comics3/screen8/mask.png" />
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/mask.png" />
              </mask>
-                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen8/bg.png"/>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/bg.png"/>
                 <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
                   <g class="ec-comics__slide-part">
-                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen8/el1.png"/>
-                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/comics3/screen8/el2.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
                   </g>
                 </g>
            </svg>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_9" style="background-image: url(img/el-camino/comics3/screen9.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_9" style="background-image: url(img/el-camino/border-easy/screen9.png)"></div>
           </div>
 
           <div v-else-if="border.situation === 1">
-            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/comics3/group2/screen4.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen5.png)">
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen5.png)">
               <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/comics3/group2/screen6.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen7.png)">
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
               <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen8.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen9.png)">
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen8.jpg)">
+              <div class="ec-comics__slide-sign ec-comics__slide-sign_8"><span>Пограничный контроль</span></div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen9.png)">
               <div class="ec-comics__slide-text ec-comics__slide-text_9 ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Хорошо, что я припрятал половину!</div>
             </div>
           </div>
 
           <div v-else>
-            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/comics3/group2/screen4.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen5.png)">
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen5.png)">
               <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/comics3/group2/screen6.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen7.png)">
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
               <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
             </div>
-            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group2/screen8.png)"></div>
-            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/comics3/group3/screen9.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen8.jpg)">
+              <div class="ec-comics__slide-sign ec-comics__slide-sign_8"><span>Пограничный контроль</span></div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group3/screen9.png)"></div>
           </div>
 
 
@@ -1298,6 +1302,273 @@
         </div>
       </section>
     </modal>
+
+    <modal name="village-border"
+           :adaptive="true"
+           height="auto"
+           width="100%"
+           :click-to-close="false"
+           @before-open="beforeComicsOpen"
+           @before-close="beforeComicsClose"
+           @opened="comicsOpened"
+           @closed="comicsClosed">
+
+      <section class="ec-comics ec-comics_border">
+        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="ec-comics__in">
+          <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
+             <mask id="ec-mask-screen1">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/mask.png" />
+             </mask>
+              <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-medium/screen1/bg.jpg"/>
+              <g mask="url(#ec-mask-screen1)" class="ec-comics__parts">
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_rt2 ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/el1.png"/>
+              </g>
+           </svg>
+          </div>
+          <div class="ec-comics__slide ec-comics__slide_2 ec-comics__slide_anim" data-dur="3000">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 927 419" xml:space="preserve">
+             <mask id="ec-mask-screen2">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/mask.png" />
+             </mask>
+              <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-medium/screen2/bg.png"/>
+              <g mask="url(#ec-mask-screen2)" class="ec-comics__parts">
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_lt ec-comics__slide-part_dur_30 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/el1.png"/>
+              </g>
+           </svg>
+            <div class="ec-comics__slide-sign ec-comics__slide-sign_2"><span>Пограничный контроль</span></div>
+          </div>
+          <div class="ec-comics__slide ec-comics__slide_3" style="background-image: url(img/el-camino/border-medium/screen3.png)"></div>
+
+          <div v-if="border.situation === 0">
+            <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/border-easy/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5" style="background-image: url(img/el-camino/border-easy/screen5.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_6" style="background-image: url(img/el-camino/border-easy/screen6.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_anim" data-dur="3000">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1656 458" xml:space="preserve">
+             <mask id="ec-mask-screen7">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/mask.png" />
+             </mask>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/bg.png"/>
+                <g mask="url(#ec-mask-screen7)" class="ec-comics__parts">
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el2.png"/>
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el3.png"/>
+                  <image class="ec-comics__slide-part" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el1.png"/>
+                </g>
+           </svg>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_anim" data-dur="3000">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1121 281" xml:space="preserve">
+             <mask id="ec-mask-screen8">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/mask.png" />
+             </mask>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/bg.png"/>
+                <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
+                  <g class="ec-comics__slide-part">
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
+                  </g>
+                </g>
+           </svg>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_9" style="background-image: url(img/el-camino/border-easy/screen9.png)"></div>
+          </div>
+
+          <div v-else-if="border.situation === 1">
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-medium/group2/screen5.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-medium/group2/screen8.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen9.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_9 ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Хорошо, что я припрятал половину!</div>
+            </div>
+          </div>
+
+          <div v-else>
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-medium/group2/screen5.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-medium/group2/screen8.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group3/screen9.png)"></div>
+          </div>
+
+
+          <div class="ec-comics__int">
+            <!-- <button class="ec-comics__btn ec-comics__btn_next" :disabled="comics.slidesOff" @click="skipSlide()">
+              <svg viewBox="0 0 15 23" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__next"></use>
+              </svg>
+            </button> -->
+            <!-- <button class="ec-comics__btn ec-comics__btn_end" :disabled="comics.slidesOff" @click="skipAll()">
+              <svg viewBox="0 0 26.19 23.19" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__end"></use>
+              </svg>
+            </button> -->
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeComics()">
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__close"></use>
+              </svg>
+            </button>
+            <!-- <button class="ec-comics__btn ec-comics__btn_pause" v-bind:class="{'ec-comics__btn_active': comics.paused}" @click="toggleComics()" v-else>
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 15 23" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__toggle"></use>
+              </svg>
+            </button> -->
+          </div>
+        </div>
+      </section>
+    </modal>
+
+    <modal name="city-border"
+           :adaptive="true"
+           height="auto"
+           width="100%"
+           :click-to-close="false"
+           @before-open="beforeComicsOpen"
+           @before-close="beforeComicsClose"
+           @opened="comicsOpened"
+           @closed="comicsClosed">
+
+      <section class="ec-comics ec-comics_border">
+        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="ec-comics__in">
+          <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
+             <mask id="ec-mask-screen1">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/mask.png" />
+             </mask>
+              <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-hard/screen1/bg.jpg"/>
+              <g mask="url(#ec-mask-screen1)" class="ec-comics__parts">
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_rt2 ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen1/el1.png"/>
+              </g>
+           </svg>
+          </div>
+          <div class="ec-comics__slide ec-comics__slide_2 ec-comics__slide_anim" data-dur="3000">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 927 419" xml:space="preserve">
+             <mask id="ec-mask-screen2">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/mask.png" />
+             </mask>
+              <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-medium/screen2/bg.png"/>
+              <g mask="url(#ec-mask-screen2)" class="ec-comics__parts">
+                <image class="ec-comics__slide-part ec-comics__slide-part_anim_lt ec-comics__slide-part_dur_30 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen2/el1.png"/>
+              </g>
+           </svg>
+            <div class="ec-comics__slide-sign ec-comics__slide-sign_2"><span>Пограничный контроль</span></div>
+          </div>
+          <div class="ec-comics__slide ec-comics__slide_3" style="background-image: url(img/el-camino/border-medium/screen3.png)"></div>
+
+          <div v-if="border.situation === 0">
+            <div class="ec-comics__slide ec-comics__slide_4" style="background-image: url(img/el-camino/border-easy/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5" style="background-image: url(img/el-camino/border-easy/screen5.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_6" style="background-image: url(img/el-camino/border-easy/screen6.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_anim" data-dur="3000">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1656 458" xml:space="preserve">
+             <mask id="ec-mask-screen7">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/mask.png" />
+             </mask>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/bg.png"/>
+                <g mask="url(#ec-mask-screen7)" class="ec-comics__parts">
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el2.png"/>
+                  <image class="ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_easing_out ec-comics__slide-part_dur_30" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el3.png"/>
+                  <image class="ec-comics__slide-part" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen7/el1.png"/>
+                </g>
+           </svg>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_anim" data-dur="3000">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1121 281" xml:space="preserve">
+             <mask id="ec-mask-screen8">
+               <image width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/mask.png" />
+             </mask>
+                <image class="ec-comics__slide-part ec-comics__slide_bg" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/bg.png"/>
+                <g mask="url(#ec-mask-screen8)" class="ec-comics__parts">
+                  <g class="ec-comics__slide-part">
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_rs ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el1.png"/>
+                    <image class="ec-comics__slide-part ec-comics__slide-part_anim_sct ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" width="100%" height="100%" xlink:href="img/el-camino/border-easy/screen8/el2.png"/>
+                  </g>
+                </g>
+           </svg>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_9" style="background-image: url(img/el-camino/border-easy/screen9.png)"></div>
+          </div>
+
+          <div v-else-if="border.situation === 1">
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-hard/group2/screen5.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-hard/group2/screen8.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen9.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_9 ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Хорошо, что я припрятал половину!</div>
+            </div>
+          </div>
+
+          <div v-else>
+            <div class="ec-comics__slide ec-comics__slide_4 ec-comics__slide_group1_4" style="background-image: url(img/el-camino/border-easy/group2/screen4.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_5 ec-comics__slide_group1_5 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-hard/group2/screen5.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-part ec-comics__slide-part_anim_rf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Пограничный контроль</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_6 ec-comics__slide_group1_6" style="background-image: url(img/el-camino/border-easy/group2/screen6.png)"></div>
+            <div class="ec-comics__slide ec-comics__slide_7 ec-comics__slide_group1_7 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group2/screen7.png)">
+              <div class="ec-comics__slide-text ec-comics__slide-text_7 ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_easing_out ec-comics__slide-part_dur_20">Нашли не задекларированную сумму. Конфискуем!</div>
+            </div>
+            <div class="ec-comics__slide ec-comics__slide_8 ec-comics__slide_group1_8 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-hard/group2/screen8.jpg)"></div>
+            <div class="ec-comics__slide ec-comics__slide_9 ec-comics__slide_group1_9 ec-comics__slide_anim" style="background-image: url(img/el-camino/border-easy/group3/screen9.png)"></div>
+          </div>
+
+
+          <div class="ec-comics__int">
+            <!-- <button class="ec-comics__btn ec-comics__btn_next" :disabled="comics.slidesOff" @click="skipSlide()">
+              <svg viewBox="0 0 15 23" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__next"></use>
+              </svg>
+            </button> -->
+            <!-- <button class="ec-comics__btn ec-comics__btn_end" :disabled="comics.slidesOff" @click="skipAll()">
+              <svg viewBox="0 0 26.19 23.19" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__end"></use>
+              </svg>
+            </button> -->
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeComics()">
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__close"></use>
+              </svg>
+            </button>
+            <!-- <button class="ec-comics__btn ec-comics__btn_pause" v-bind:class="{'ec-comics__btn_active': comics.paused}" @click="toggleComics()" v-else>
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 15 23" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__toggle"></use>
+              </svg>
+            </button> -->
+          </div>
+        </div>
+      </section>
+    </modal>
+    <!-- COMICS -->
 
 
 
@@ -1344,12 +1615,12 @@
                 <div class="ec-card" v-if="cards.situation === 0">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sc ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen3/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_10" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sclt  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_sc  ec-comics__slide-part_dur_22" style="background-image: url(img/el-camino/cards/track/bikers/screen3/el2.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/track/bikers/screen2/bg.jpg)"></div>
@@ -1528,7 +1799,82 @@
 
 
     <!-- VILLAGE -->
+
+
     <modal name="village_0"
+           :adaptive="true"
+           height="auto"
+           width="100%"
+           :click-to-close="false"
+           @before-open="bCardsOpen"
+           @before-close="bCardsClose"
+           @opened="cardsOpened"
+           @closed="cardsClosed">
+
+      <section class="ec-comics ec-comics_cards">
+        <div class="ec-slider">
+          <div class="ec-slider__in">
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/train/top-img.png)"></div>
+            <div class="ec-slider__content">
+              <div class="ec-slider__item">
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r10b4 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/train/screen1/elem1.png)"></div>
+                </div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen2/elem2.png)"></div>
+                </div>
+              </div>
+              <div class="ec-slider__item">
+                <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_scr ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group1/elem3.png)"></div>
+                </div>
+                <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part" style="background-image: url(img/el-camino/cards/village/train/screen3/group2/elem3.png)"></div>
+                </div>
+                <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_scr ec-comics__slide-part_dur_32 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem2.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_20 el-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/train/screen3/group3/elem3.png)"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ec-slider__txt">
+              <p>
+                Впереди ремонт дороги! Вас выбросило на обочину. Но дорожные работники Вам помогли!
+                <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
+              </p>
+            </div>
+            <div class="ec-slider__bot" style="background-image: url(img/el-camino/slider/bot-img1.png)"></div>
+          </div>
+
+          <div class="ec-comics__int">
+            <button class="ec-comics__btn ec-comics__btn_close" @click="closeCards()">
+              <svg viewBox="0 0 60 60" class="ec-comics__btn_round">
+                <path class="ec-comics__round-path" stroke-linecap="round" d="M30.03,3C44.93,3.02,57,15.1,57,30c0,14.91-12.09,27-27,27S3,44.91,3,30C3,15.1,15.07,3.02,29.96,3"/>
+              </svg>
+              <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+                <use xlink:href="#ec-comics__close"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </modal>
+
+    <modal name="village_1"
            :adaptive="true"
            height="auto"
            width="100%"
@@ -1545,31 +1891,38 @@
             <div class="ec-slider__content">
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
-                </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/villagers/screen1/car.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/villagers/screen1/group1/bg.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen1/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/villagers/screen1/group2/car.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_b ec-comics__slide-part_dur_36 ec-comics__slide-part_easing_out" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group1/elem1.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen2/bg.jpg)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen2/el1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group2/bg.jpg)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group2/el1.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group3/bg.png)"></div>
+
+                  <div class="ec-card__part ec-card__part_text ec-card__part_text_bl ec-comics__slide-part_easing_out ec-comics__slide-part ec-comics__slide-part_anim_lf ec-comics__slide-part_delay_4 ec-comics__slide-part_dur_10">Дорога платная !</div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_easing_in ec-comics__slide-part_anim_scr ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/group1/bg.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/group2/bg.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group2/bg.jpg)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_f ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen2/group2/el1.png)"></div>
                 </div>
               </div>
             </div>
@@ -1596,6 +1949,7 @@
       </section>
 
     </modal>
+
     <modal name="village_2"
            :adaptive="true"
            height="auto"
@@ -1609,38 +1963,43 @@
       <section class="ec-comics ec-comics_cards">
         <div class="ec-slider">
           <div class="ec-slider__in">
-            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/сonstruction/top-img.png)"></div>
+            <div class="ec-slider__top" style="background-image: url(img/el-camino/cards/village/construction/top-img.png)"></div>
             <div class="ec-slider__content">
               <div class="ec-slider__item">
-                <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen1/elem1.png)"></div>
-                </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
-                </div>
-                <div class="ec-card" v-else>
+                <div class="ec-card">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen1/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m15_3Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen1/elem1.png)"></div>
+                  <div class="ec-card__part ec-card__part_sign">Ремонт дороги</div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/bg.png)"></div>
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem1.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen2/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/bg.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m20_m5Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/elem1.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m20_m5Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/elem1.png)"></div>
                 </div>
               </div>
               <div class="ec-slider__item">
                 <div class="ec-card" v-if="cards.situation === 0">
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/bg.png)"></div>
-                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem1.png)"></div>
-                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/сonstruction/screen3/elem2.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem1.png)"></div>
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else-if="cards.situation === 1">
+                  <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/bg.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_5Scale_1_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem1.png)"></div>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem2.png)"></div>
                 </div>
                 <div class="ec-card" v-else>
+                  <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_36" style="background-image: url(img/el-camino/cards/village/villagers/screen3/group2/bg.png)"></div>
                 </div>
               </div>
             </div>
@@ -1985,8 +2344,8 @@
 
 
           <div class="ec-modal__foot">
-            <a href="/" class="ec-modal__btn ec-btn ec-btn_theme_greenB ec-btn_size_m" @click.stop.prevent="gameEnd('choose')" :disabled="bet.val < bet.min"><span>ИГРАТЬ СНАЧАЛА</span></a>
-            <a href="/" class="ec-modal__btn ec-btn ec-btn_theme_blueB ec-btn_size_m" @click.stop.prevent="gameEnd()"><span>Изменить ставку</span></a>
+            <button class="ec-modal__btn ec-btn ec-btn_theme_greenB ec-btn_size_m" @click.stop.prevent="gameEnd('choose')" :disabled="bet.val < bet.min"><span>ИГРАТЬ СНАЧАЛА</span></button>
+            <button class="ec-modal__btn ec-btn ec-btn_theme_blueB ec-btn_size_m" @click.stop.prevent="gameEnd()"><span>Изменить ставку</span></button>
           </div>
         </div>
       </div>
