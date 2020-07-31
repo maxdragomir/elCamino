@@ -674,10 +674,15 @@ $dur: .2s;
         &_translate_5_10Scale_1 {
           transform: translate(5%, 10%) scale(1);
         }
+        &_translate_m20_m5Scale_1 {
+          transform: translate(-20%, -5%) scale(1);
+        }
         &_translate_m10_m15_rotate_m85 {
           transform: rotate(-85deg) translate(-10%, -15%);
         }
-
+        &_translate_0_5Scale_1_1 {
+          transform: translate(0%, 5%) scale(1.1);
+        }
         &_rev {
           animation-direction: reverse;
         }
@@ -1340,6 +1345,21 @@ $dur: .2s;
         left: auto;
         right: em(60px, $mfs);
       }
+    }
+
+    &_sign {
+      position: absolute;
+      top: em(270px, $mfs);
+      right: em(51px, $mfs);
+      left: auto;
+      text-align: center;
+      color: #000;
+      height: auto;
+      width: 20%;
+      font-size: em(20px, $mfs);
+      font-weight: 600;
+      direction: dir(ltr);
+      font-style: normal;
     }
 
   }
