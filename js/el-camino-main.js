@@ -173,10 +173,22 @@ const page = document.querySelector('.ec-page'),
                 0: 0.8,
                 1: 0.5
               }
+            },
+            1: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
+            2: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
             }
           },
           village: {
-            0: {
+            1: {
               lose: {
                 0: 0.8,
                 1: 0.5
