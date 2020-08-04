@@ -239,7 +239,7 @@
                     </button>
                   </div>
                   <div class="ec-btns-group ec-group-wrap">
-                    <a href="#" class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-rules"><span>правила</span></a>
+                    <a href="#" class="ec-btn ec-btn_theme_gray ec-btn_size_s ec-btn-rules" @click="$modal.show('modal-rules')"><span>правила</span></a>
                   </div>
                 </div>
 
@@ -984,6 +984,8 @@
                 <use xlink:href="#ec-sound_off"></use>
               </svg>
             </button>
+
+            <a href="#" class="ec-rules_link" @click="$modal.show('modal-rules')"><span>правила</span></a>
           </div>
         </div>
       </div>
@@ -1002,7 +1004,7 @@
          >
 
       <section class="ec-comics ec-comics_start">
-        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="ec-comics__txt-top">Ваша задача - провезти в El Camino деньги через границу. По пути вам будут попадаться припятствия. Именно от вас зависит, какую дорогу выбрать и сколько денег получится провезти.</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1" style="background-image: url(img/el-camino/comics/screen1.jpg)"></div>
           <div class="ec-comics__slide ec-comics__slide_2" style="background-image: url(img/el-camino/comics/screen2.png)"></div>
@@ -1093,7 +1095,8 @@
 
       <section class="ec-comics ec-comics_money" v-bind:class="{'ec-comics_money2': !bet.safe}">
 
-        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div v-if="bet.safe" class="ec-comics__txt-top">До границы остается 1 км. Вы решаете остановиться и припрятать половину денег в бензобак на случай досмотра</div>
+        <div v-else class="ec-comics__txt-top">До границы остается 1 км. Вы решаете не прятать деньги и испытать удачу и попробовать пересечь границу</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1" style="background-image: url(img/el-camino/comics2/screen1.png)">
            <div class="ec-comics__sign">ВНИМАНИЕ! контроль 1 км</div>
@@ -1177,7 +1180,9 @@
          @closed="comicsClosed">
 
       <section class="ec-comics ec-comics_border">
-        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div v-if="border.situation === 0" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Но пограничник указываем вам зеленый свет и просит проезжать. Граница пройдена успешно!</div>
+        <div v-else-if="border.situation === 1" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму. Хорошо, что половину удалось припрятать.</div>
+        <div v-else class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму.</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
@@ -1314,7 +1319,9 @@
            @closed="comicsClosed">
 
       <section class="ec-comics ec-comics_border">
-        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div v-if="border.situation === 0" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Но пограничник указываем вам зеленый свет и просит проезжать. Граница пройдена успешно!</div>
+        <div v-else-if="border.situation === 1" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму. Хорошо, что половину удалось припрятать.</div>
+        <div v-else class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму.</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
@@ -1447,7 +1454,9 @@
            @closed="comicsClosed">
 
       <section class="ec-comics ec-comics_border">
-        <div class="ec-comics__txt-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div v-if="border.situation === 0" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Но пограничник указываем вам зеленый свет и просит проезжать. Граница пройдена успешно!</div>
+        <div v-else-if="border.situation === 1" class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму. Хорошо, что половину удалось припрятать.</div>
+        <div v-else class="ec-comics__txt-top">Вы подъезжаете к границе и ожидаете контроль. Пограничник указывает на вас и просит приготовить автомобиль к досмотру. У вас находят и конфискуют незадекларированную сумму.</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1 ec-comics__slide_anim" data-dur="3000">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812 419" xml:space="preserve">
@@ -1630,7 +1639,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.
+                <span v-if="cards.situation === 0">Вы встретили бандитов на дороге! El Camino не подвела, вам удалось от них убежать</span>
+                <span v-else-if="cards.situation === 1">Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.</span>
+                <span v-else>Вы встретили бандитов на дороге! Убежать не удалось, вам пришлось заплатить</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -1701,7 +1712,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.
+                <span v-if="cards.situation === 0">Вы проехали за поворот, и там заправка! Вы успели заправиться и поехали дальше.</span>
+                <span v-else-if="cards.situation === 1">Вы проехали за поворот, но там оказался фастфуд. Вы стоите на обочине в ожидании помощи.</span>
+                <span v-else>Вы проехали за поворот, но заправка оказалась закрыта. Вы стоите на обочине в ожидании помощи.</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -1772,7 +1785,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вы встретили бандитов на дороге! Чтоб проехать дальше Вам пришлось заплатить.
+                <span v-if="cards.situation === 0">Впереди полиция ловит нарушителей. Вы успели затормозить и избежали штрафа!</span>
+                <span v-else-if="cards.situation === 1">Впереди полиция ловит нарушителей. Вы не успели сбавить скорость, вас остановила полиция!</span>
+                <span v-else>Впереди полиция ловит нарушителей. Вы не успели затормозить и заплатили штраф!</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -1850,7 +1865,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Впереди ремонт дороги! Вас выбросило на обочину. Но дорожные работники Вам помогли!
+                <span v-if="cards.situation === 0">Впереди железнодорожный переезд и мчится поезд. Вы успели проскочить!</span>
+                <span v-else-if="cards.situation === 1">Впереди железнодорожный переезд и мчится поезд. Вы решили пропустить его.</span>
+                <span v-else>Впереди железнодорожный переезд и мчится поезд. Проскочить точно не получится - шлагбаум закрыт, барьеры подняты.</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -1926,7 +1943,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Селяни прострелили Вам колесо, и требут плату за проезд. Вы им заплатили.
+                <span v-if="cards.situation === 0">Селяне заблокировали вам дорогу и требуют плату за проезд. Вам удалось от них уехать</span>
+                <span v-else-if="cards.situation === 1">Селяне прострелили вам колесо и требуют плату за проезд. Вы им заплатили.</span>
+                <span v-else>Селяне заблокировали вам дорогу и требуют плату за проезд. Вы им заплатили.</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -1971,12 +1990,12 @@
                 </div>
               </div>
               <div class="ec-slider__item">
-                <div class="ec-card" v-if="cards.situation === 0">
+                <div class="ec-card" v-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/bg.png)"></div>
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem1.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_m5Scale_9 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/elem2.png)"></div>
                 </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
+                <div class="ec-card" v-else-if="cards.situation === 0">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_m20_m5Scale_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen2/group2/elem1.png)"></div>
                 </div>
@@ -1986,12 +2005,12 @@
                 </div>
               </div>
               <div class="ec-slider__item">
-                <div class="ec-card" v-if="cards.situation === 0">
+                <div class="ec-card" v-if="cards.situation === 1">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_r ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem1.png)"></div>
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/elem2.png)"></div>
                 </div>
-                <div class="ec-card" v-else-if="cards.situation === 1">
+                <div class="ec-card" v-else-if="cards.situation === 0">
                   <div class="ec-card__part" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/bg.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_translate_0_5Scale_1_1 ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem1.png)"></div>
                   <div class="ec-card__part ec-comics__slide-part ec-comics__slide-part_anim_l ec-comics__slide-part_dur_32" style="background-image: url(img/el-camino/cards/village/construction/screen3/group2/elem2.png)"></div>
@@ -2003,7 +2022,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Впереди ремонт дороги! Вас выбросило на обочину. Но дорожные работники Вам помогли!
+                <span v-if="cards.situation === 1">Впереди ремонт дороги. Вас выбросило на обочину, но дорожные работники помогли.</span>
+                <span v-else-if="cards.situation === 0">Впереди ремонт дороги. Вы попали в яму, но вам удалось проскочить.</span>
+                <span v-else>Впереди ремонт дороги. Вы пробили колесо, придется менять самому.</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -2075,7 +2096,9 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur illo iste obcaecati quasi!
+                <span v-if="cards.situation === 0">У вас на пути полиция. Но все обошлось - не остановили.</span>
+                <span v-else-if="cards.situation === 1">Вас остановила полиция. Пришлось заплатить штраф.</span>
+                <span v-else>На пути полиция. Вас не остановили, но камера зафиксировала превышение скорости</span>
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -2141,7 +2164,10 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вас подрезал встречный автомобиль. Вы не справились с управлением и врезались в столб!
+                <span v-if="cards.situation === 0">Вы встретили красивую девушку и подвозете ее. После такой приятной компании едете дальше.</span>
+                <span v-else-if="cards.situation === 1">Красивая девушка просит вас подвезти. Но вам не пути - даете ей деньги на такси.</span>
+                <span v-else>Впереди красивая девушка просит подвезти. Она достает пистолет и отбирает у вас деньги.</span>
+
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -2209,7 +2235,10 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вы встретили автомобиль.И удачно выполнили маневр, и разьехались с ним.
+                <span v-if="cards.situation === 0">Вас подрезал встречный автомобиль. Вы удачно выполнили маневр и разъехались с ним.</span>
+                <span v-else-if="cards.situation === 1">Вам навстречу выехал автомобиль. Вы не успели среагировать и попали в ДТП.</span>
+                <span v-else>Вас подрезал встречный автомобиль. Вы не справились с управлением и врезались в столб.</span>
+
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -2276,7 +2305,10 @@
             </div>
             <div class="ec-slider__txt">
               <p>
-                Вас подрезал встречный автомобиль. Вы не справились с управлением и врезались в столб!
+                <span v-if="cards.situation === 0">Сегодня игра любимой команды! Вы решили сделать ставку. Ставка сыграла!</span>
+                <span v-else-if="cards.situation === 1">Сегодня игра любимой команды! Вы решили сделать ставку. Ставка не сыграла.</span>
+                <span v-else>Сегодня игра любимой команды! Вы сделали ставку и на радостях потратили выигрыш в баре.</span>
+
                 <span class="ec-slider__sum" v-bind:class="{'ec-slider__sum_add' : bet.change > 0, 'ec-slider__sum_rem' : bet.change < 0}">{{bet.change}} рублей</span>
               </p>
             </div>
@@ -2344,6 +2376,56 @@
           <div class="ec-modal__foot">
             <button class="ec-modal__btn ec-btn ec-btn_theme_greenB ec-btn_size_m" @click.stop.prevent="gameEnd('choose')" :disabled="bet.val < bet.min"><span>ИГРАТЬ СНАЧАЛА</span></button>
             <button class="ec-modal__btn ec-btn ec-btn_theme_blueB ec-btn_size_m" @click.stop.prevent="gameEnd()"><span>Изменить ставку</span></button>
+          </div>
+        </div>
+      </div>
+    </modal>
+
+    <modal name="modal-rules"
+         :adaptive="true"
+         height="auto"
+         width="100%">
+
+      <div class="ec-modal ec-modal_rules">
+
+        <button class="ec-modal__close ec-comics__btn ec-comics__btn_close" @click="$modal.hide('modal-rules')">
+          <svg viewBox="0 0 18 18" class="ec-comics__btn-svg">
+            <use xlink:href="#ec-comics__close"></use>
+          </svg>
+        </button>
+
+        <div class="ec-modal__in ec-modal__in_rules">
+          <div class="ec-rules">
+            <h2>Правила</h2>
+
+            <h3>Lorem ipsum dolor</h3>
+            <ol>
+              <li>Aliquam blandit, nisi vel dapibus faucibus, lectus nisl euismod risus, vel consectetur lectus urna in quam. Nunc vulputate nec enim non malesuada.</li>
+              <li>Mauris aliquet ex vestibulum commodo accumsan:
+              	<ul>
+                  <li>Vestibulum vitae auctor augue</li>
+              	  <li>Maecenas suscipit eros ut neque tempor varius</li>
+              	  <li>Vivamus fermentum leo lorem</li>
+              	  <li>Nunc vulputate nec enim non malesuada</li>
+                </ul>
+              </li>
+              <li>Suspendisse lacinia egestas malesuada. Fusce finibus enim quis dui lobortis laoreet at ac magna. Fusce euismod tortor magna, ut eleifend mauris auctor sed. Nulla ac dolor convallis nisi:</li>
+            </ol>
+            <h3>Nulla ac dolor convallis nisi:</h3>
+            <ol>
+              <li>Учитывается только первая ставка типа 1х2 с момента начала акции и до начала матча.</li>
+              <li>Данное предложение действует только для пользователей, дата заведения учетной записи которых не позднее 6 месяцев со дня регистрации.</li>
+              <li>Если команда на которую поставлена ставка будет вести в матче с разницей в 2 гола, выигранная ставка сразу выплачивается на счет.</li>
+              <li>Предложение не применяется, если ставка была полностью обналичена. Если ставка была частично обналичена, а ваша команда на два гола впереди, ставка будет рассчитана на оставшиеся активную ставку.</li>
+              <li>В личном кабинете должно быть отмечено согласие на участие в бонусных акциях.</li>
+              <li>Ставка должна быть сделана за собственные средства.</li>
+              <li>В данной акции не учитываются бонусные ставки, ставки сделанные за авансовые средства, ставки на промокод.</li>
+              <li>В расчет не будут приниматься ставки на различные виды фор и тоталов, а также маркеты с исходами чет/нечет.</li>
+              <li>Сумма возврата будет зачислена в виде промокода. Условия промокода вы сможете узнать в Личном кабинете — Проверка промокода.</li>
+              <li>Промокод начисляется в течение 24 часов с момента расчета ставки.</li>
+              <li>Ставки, рассчитанные с коэффициентом «1», не учитываются для расчета данной акции.</li>
+              <li>Компания оставляет за собой право потребовать от любого участника пари документы, удостоверяющие личность, прежде чем зачислить любой бонус.</li>
+            </ol>
           </div>
         </div>
       </div>

@@ -189,6 +189,12 @@ const page = document.querySelector('.ec-page'),
             }
           },
           village: {
+            0: {
+              lose: {
+                0: 0.8,
+                1: 0.5
+              }
+            },
             1: {
               lose: {
                 0: 0.8,
@@ -461,7 +467,11 @@ const page = document.querySelector('.ec-page'),
         this.body.classList.remove('ec-no-scroll');
       },
       chooseWay(name, dir) {
-        let g = this.game, a = this.sound.audios, cs = this.coefs;
+        let g = this.game,
+            a = this.sound.audios,
+            cs = this.coefs,
+            cards = this.cards.ways[name];
+
         g.prevStatus = g.status;
 
         this.car.dir = dir;
@@ -470,6 +480,9 @@ const page = document.querySelector('.ec-page'),
 
         g.status = 'dir';
         g.way = name;
+
+        this.cards.ways[g.way+'Ids'] = [];
+        for (var key in cards) this.cards.ways[g.way+'Ids'].push(key);
 
         g.roadActive = g.stages[g.way].roadActive;
         this.carRide(false);
@@ -576,10 +589,13 @@ const page = document.querySelector('.ec-page'),
       getCard() {
         let g = this.game,
             cards = this.cards.ways[g.way],
+            cardIds = this.cards.ways[g.way+'Ids'],
             arr = [];
 
-        for (var key in cards) arr.push(key);
-        let id = this.Game.shuffle(arr)[0];
+        // this.cards.ways[g.way+'Clone'] = cards;
+        let id = this.Game.shuffle(cardIds)[0];
+        console.log(id);
+        cardIds.shift();
         return {
           id: id,
           card: cards[id]

@@ -125,4 +125,109 @@
       }
     }
   }
+
+  &_rules {
+    background-color: #fff;
+    background-image: url(#{$imgDir}modal/rules-bg.png);
+    background-size: 100% 100%;
+    color: #1e1614;
+    font-family: $robotoC;
+    text-align: left;
+    width: em(820px, $mfs);
+    padding: em(40px 40px 65px 70px, $mfs);
+
+    @include dir((
+      padding-left: em(70px, $mfs),
+      padding-right: em(40px, $mfs)
+    ));
+  }
+}
+
+.ec-rules {
+  max-height: 390px;
+  overflow: auto;
+
+  @include dir((
+    padding-right: em(20px, $mfs)
+  ));
+
+  h2 {
+    font-size: em(24px, $mfs);
+    color: #197cf6;
+    text-transform: uppercase;
+    text-align: center;
+    margin: em(0 0 20px, 24px);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: em(20px, $mfs);
+    color: #197cf6;
+    font-weight: 700;
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: list;
+
+    @include dir((
+      padding-left: em(10px, $mfs)
+    ));
+    line-height: 1.5;
+
+    & > li {
+      margin: em(12px 0 0, $mfs);
+
+      &:before {
+        content: counter(list)')';
+        color: #197cf6;
+        font-weight: 700;
+        counter-increment: list;
+        display: inline-block;
+
+        @include dir((
+          margin-right: em(5px, $mfs)
+        ))
+      }
+    }
+  }
+
+  ul {
+    counter-reset: list2;
+    list-style: none;
+
+    @include dir((
+      padding-left: em(30px, $mfs)
+    ));
+
+    & > li {
+      counter-increment: list2;
+      margin: em(12px 0 0, $mfs);
+
+      &:before {
+        content: counter(list2, lower-alpha)')';
+        color: #197cf6;
+        font-weight: 700;
+        counter-increment: list;
+        display: inline-block;
+
+        @include dir((
+          margin-right: em(5px, $mfs)
+        ))
+      }
+    }
+  }
+
+  &_link {
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: underline;
+    margin-top: em(30px, $mfs);
+    font-style: normal;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
