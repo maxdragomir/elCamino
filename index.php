@@ -444,6 +444,7 @@
               <div class="ec-mts ec-mts_pos-r"></div>
             </div>
           </div>
+
           <div class="ec-scale ec-road__scale">
             <div class="ec-bg__bot ec-road__bot">
               <div class="ec-rock ec-rock_num1 ec-rock_img1"></div>
@@ -482,17 +483,15 @@
           <div class="ec-car-wrap">
              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <!-- <path class="ec-road_dir_left" d="M1136.4,161c0,0,4-3.2-125.8-42.8C840,63.2,605,13.2,497,17.7c0,0-293-4.5-497-4.5"/> -->
                <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <!-- <line class="ec-road_dir_mid" x1="1136.4" y1="161" x2="1005.7" y2="0.3"/> -->
                <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <!-- <path class="ec-road_dir_right" d="M1136.4,161c0,0-6.4-140.8,278.7-139.7c0,0,187.9-7.1,506.9-7.1"/> -->
                <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
             </svg>
             <div class="ec-car ec-car_road">
               <div class="ec-car__sprite"></div>
             </div>
           </div>
+
         </div>
         <div class="ec-bg ec-bg_city" v-if="game.way == 'city'">
           <div class="ec-bg__top ec-road__top">
@@ -860,7 +859,19 @@
           </div>
 
           <div class="ec-scale ec-scale_3 ec-scale_border">
-            <div class="ec-border ec-border_stop">
+            <div class="ec-border ec-border_stop" v-bind:class="{'ec-border_village': game.way == 'village', 'ec-border_city': game.way == 'city'}">
+              <div class="ec-border__sign">Пограничный контроль</div>
+            </div>
+          </div>
+
+          <div class="ec-scale ec-road__scale">
+            <div class="ec-bg__bot ec-road__bot">
+              <div class="ec-rock ec-rock_num7 ec-rock_img2"></div>
+              <div class="ec-rock ec-rock_num3 ec-rock_img3"></div>
+              <div class="ec-rock ec-rock_num4 ec-rock_img4"></div>
+              <div class="ec-rock ec-rock_num8 ec-rock_img3"></div>
+              <div class="ec-rock ec-rock_num5 ec-rock_img5"></div>
+              <div class="ec-rock ec-rock_num6 ec-rock_img5"></div>
             </div>
           </div>
 
@@ -876,19 +887,6 @@
             </svg>
             <div class="ec-car ec-car_road">
               <div class="ec-car__sprite"></div>
-            </div>
-          </div>
-
-          <div class="ec-scale ec-road__scale">
-            <div class="ec-bg__bot ec-road__bot">
-              <div class="ec-rock ec-rock_num1 ec-rock_img1"></div>
-              <div class="ec-rock ec-rock_num9 ec-rock_img2"></div>
-              <div class="ec-rock ec-rock_num7 ec-rock_img2"></div>
-              <div class="ec-rock ec-rock_num3 ec-rock_img3"></div>
-              <div class="ec-rock ec-rock_num4 ec-rock_img4"></div>
-              <div class="ec-rock ec-rock_num8 ec-rock_img3"></div>
-              <div class="ec-rock ec-rock_num5 ec-rock_img5"></div>
-              <div class="ec-rock ec-rock_num6 ec-rock_img5"></div>
             </div>
           </div>
         </div>
@@ -1096,7 +1094,7 @@
       <section class="ec-comics ec-comics_money" v-bind:class="{'ec-comics_money2': !bet.safe}">
 
         <div v-if="bet.safe" class="ec-comics__txt-top">До границы остается 1 км. Вы решаете остановиться и припрятать половину денег в бензобак на случай досмотра</div>
-        <div v-else class="ec-comics__txt-top">До границы остается 1 км. Вы решаете не прятать деньги и испытать удачу и попробовать пересечь границу</div>
+        <div v-else class="ec-comics__txt-top">До границы остается 1 км. Вы решаете не прятать деньги, испытать удачу и попробовать пересечь границу</div>
         <div class="ec-comics__in">
           <div class="ec-comics__slide ec-comics__slide_1" style="background-image: url(img/el-camino/comics2/screen1.png)">
            <div class="ec-comics__sign">ВНИМАНИЕ! контроль 1 км</div>
@@ -2343,7 +2341,9 @@
       <div class="ec-modal ec-modal_safe ec-modal_size_m">
 
         <div class="ec-modal__in ec-modal_safe__in">
-          <p class="ec-modal__txt">Застраховать сумму?</p>
+          <p class="ec-modal__title">Застраховать сумму?</p>
+
+          <p class="ec-modal__txt">Вы можете сохранить <b>50%</b> суммы перед прохождением границы, припрятав ее в автомобиле. <br> Застраховать <b>{{bet.val/2}} RUB</b>?</p>
 
           <div class="ec-modal__foot">
             <a href="/" class="ec-modal__btn ec-btn ec-btn_theme_greenB ec-btn_size_m" @click.stop.prevent="safeGame(true, 'modal-safe')"><span>Застраховать</span></a>
@@ -2744,8 +2744,8 @@
 <!-- <script type="text/javascript" src="js/slick.js"></script> -->
 <script type="text/javascript" src="js/logo-anim.js"></script>
 <script type="text/javascript" src="js/el-camino-helper.js"></script>
-<script type="text/javascript" src="js/el-camino-const.js"></script>
-<script type="text/javascript" src="js/el-camino-main.js"></script>
-<!-- <script type="text/javascript" src="js/el-camino-const-babel.js"></script> -->
-<!-- <script type="text/javascript" src="js/el-camino-main-babel.js"></script> -->
+<!-- <script type="text/javascript" src="js/el-camino-const.js"></script> -->
+<!-- <script type="text/javascript" src="js/el-camino-main.js"></script> -->
+<script type="text/javascript" src="js/el-camino-const-babel.js"></script>
+<script type="text/javascript" src="js/el-camino-main-babel.js"></script>
 <?php include('../assets/footer16april2020.php'); ?>

@@ -33,6 +33,7 @@
   box-sizing: border-box;
   font-style: normal;
   font-size: $mfs;
+  padding: em(10px 10px 0 10px, $mfs);
 
   @media #{$d1439} {
     font-size: 14px;
@@ -61,6 +62,7 @@
 
   &_safe {
     background-image: url(#{$imgDir}/modal/bg1.png);
+    padding-top: em(340px, $mfs);
 
     &__in {
       flex-basis: 100%;
@@ -71,11 +73,24 @@
     }
   }
 
-  &__txt {
+  &__title {
     font-size: em(26px, $mfs);
     color: $black;
     font-family: $chalkB;
     margin: em(18px 0, 26px);
+  }
+
+  &__txt {
+    font-size: em(16px, $mfs);
+    color: #434343;
+    font-family: $chalkB;
+    line-height: 1.5;
+    margin: em(12px 0, 16px);
+    font-family: $robotoC;
+
+    b {
+      color: #0094ff;
+    }
   }
 
   &__foot {

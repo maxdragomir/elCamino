@@ -89,7 +89,7 @@
   &-scale {
 
     &_border {
-      z-index: 1;
+      // z-index: 1;
     }
   }
 
@@ -105,16 +105,56 @@
 
   &-border {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: url(#{$imgDir}/border/border-stop.png) no-repeat;
-    background-size: 100% 100%;
+    left: 0;
+    right: 0;
+    background: url(#{$imgDir}/border/border-stop.png) no-repeat center;
+    background-size: auto 100%;
     z-index: 2;
 
+    &_village {
+      background-image: url(#{$imgDir}/border/border-stop2.png);
+
+      & .ec-border__sign {
+        margin-left: em(266px, $mfs);
+      }
+    }
+
+    &_city {
+      background-image: url(#{$imgDir}/border/border-stop3.png);
+
+      & .ec-border__sign {
+        margin-left: em(266px, $mfs);
+      }
+    }
+
     @include em((
-      width: 960px,
-      height: 265px,
-      top: 825px
+      height: 294px,
+      top: 790px
     ), $mfs);
+
+    &__sign {
+      font-size: em(14px, $mfs);
+      color: #000;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      text-align: center;
+      font-family: $robotoC;
+      font-weight: 700;
+      font-style: normal;
+      text-transform: uppercase;
+      line-height: 1;
+      align-items: center;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+
+      @include em((
+        width: 114px,
+        height: 42px,
+        margin-bottom: 73px,
+        margin-left: 176px
+      ), $mfs);
+    }
   }
 }

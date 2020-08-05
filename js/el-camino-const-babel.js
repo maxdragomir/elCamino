@@ -2,18 +2,6 @@
 
 function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -22,43 +10,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var CaminoClass = /*#__PURE__*/function () {
   function CaminoClass() {
+    var _this = this;
+
     _classCallCheck(this, CaminoClass);
 
     this.page = document.querySelector('.ec-page');
     this.setts = {
       changed: false,
       carDur: 1500,
-      els: {
-        fIcons: this.page.querySelectorAll('.ec-footer__icon')
-      },
       comics: {
         dur: 2000,
-        durFast: 1500,
         durEnd: 3000,
-        roundMax: 170,
-        paused: false
+        roundMax: 170 // paused: false,
+        // skip: false
+
       },
       car: {
         dur: 1500,
-        outDur: 4000,
+        outDur: 2000,
         sprites: {
           left: {
-            steps: 27,
-            scale: 1.7,
+            steps: 20,
+            scale: .75,
             coord: [// X  Y
-            0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 0, 2, 1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 8, 2, 0, 3, 1, 3, 2, 3, 3, 3, 4, 3, 5, 3, 6, 3, 7, 3, 8, 3]
+            0, 1, 1, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1, 0, 2, 1, 2, 2, 2]
           },
           mid: {
-            steps: 20,
-            scale: .9,
+            steps: 1,
+            scale: .78,
             coord: [// X  Y
             0, 0]
           },
           right: {
-            steps: 40,
-            scale: 1.7,
+            steps: 30,
+            scale: .75,
             coord: [// X  Y
-            0, 4, 1, 4, 2, 4, 3, 4, 4, 4, 5, 4, 6, 4, 7, 4, 8, 4, 0, 5, 1, 5, 2, 5, 3, 5, 4, 5, 5, 5, 6, 5, 7, 5, 8, 5, 0, 6, 1, 6, 2, 6, 3, 6, 4, 6, 5, 6, 6, 6, 7, 6, 8, 6]
+            0, 3, 1, 3, 2, 3, 3, 3, 4, 3, 5, 3, 6, 3, 7, 3, 8, 3, 9, 3, 0, 4, 1, 4, 2, 4]
           }
         }
       },
@@ -70,62 +57,45 @@ var CaminoClass = /*#__PURE__*/function () {
           return Math.pow(pos, 2);
         }
       }
-    };
-    this.activeRandIcons();
-  }
+    }; // this.activeRandIcons();
+
+    this.on('comicsPartEnd', function (skip) {
+      var s = _this.setts,
+          c = s.comics,
+          l = c.slides.length - 1; // c.slides[c.curStep].classList.add('ec-comics__slide_end');
+      // if(c.curStep >= l) return this.endComics();
+
+      if (c.curStep >= l) return _this.trigger('slidesOff'); // if(skip) c.skip = c.stop = false;
+
+      c.curStep += 1;
+
+      _this.startComics();
+    });
+  } // nextSection(cur, next) {
+  //   let s = this.setts;
+  //
+  //   // this.page.querySelector(`.ec-section_${next}`).classList.add('ec-section_active');
+  //   // this.page.querySelector(`.ec-section_${cur}`).classList.remove('ec-section_active');
+  //
+  //   setTimeout(() => {
+  //     this.trigger('sectionChanged', cur);
+  //   }, 100);
+  // }
+
 
   _createClass(CaminoClass, [{
-    key: "nextSection",
-    value: function nextSection(cur, next) {
-      var _this = this;
-
-      var s = this.setts;
-      this.page.querySelector(".ec-section_".concat(next)).classList.add('ec-section_active');
-      this.page.querySelector(".ec-section_".concat(cur)).classList.remove('ec-section_active');
-      s.changed = true;
-      setTimeout(function () {
-        _this.trigger('sectionChanged', cur);
-      }, 100);
-    }
-  }, {
-    key: "moveCar",
-    value: function moveCar(cur, fn) {
-      var _this2 = this;
-
-      var s = this.setts;
-      this.page.querySelector(".ec-section_".concat(cur)).classList.add('ec-section_move');
-      if (!s.changed) setTimeout(function () {
-        _this2.trigger('moveEnd', cur);
-      }, s.car.dur);else s.changed = false;
-    }
-  }, {
     key: "showComics",
     value: function showComics(name) {
-      var _this3 = this;
-
       var s = this.setts,
           c = s.comics,
-          comics = c[name] = this.page.querySelector(".ec-comics"),
-          slides = comics.querySelectorAll('.ec-comics__slide'),
-          round = comics.querySelector('.ec-comics__round-path'),
+          comics = c.wrap = this.page.querySelector(".ec-comics"),
+          slides = c.slides = comics.querySelectorAll('.ec-comics__slide_anim'),
           l = slides.length - 1;
-      c.curStep = 0;
-      this.startComics(comics);
+      c.curStep = 0; // c.fn = fn;
 
-      c.onDraw = function (pr) {
-        round.setAttribute('stroke-dasharray', c.roundMax - c.roundMax * pr + ' 9999');
-        if (s.comics.paused) c.pauseDate = performance.now();
-      };
-
-      this.on('comicsPartEnd', function (skip) {
-        // if(c.slidesOff) return this.trigger('comicsEnd', comics);
-        slides[c.curStep].classList.add('ec-comics__slide_end');
-        if (c.curStep >= l) return _this3.endComics(name);
-        if (skip) c.skip = c.stop = false;
-        c.curStep += 1;
-
-        _this3.startComics(comics);
-      });
+      s.animOff = false;
+      if (slides.length) this.startComics();
+      this.endComics();
     }
   }, {
     key: "carRideTo",
@@ -136,7 +106,7 @@ var CaminoClass = /*#__PURE__*/function () {
           dirObj = cs.sprites[dir],
           l = dirObj.coord.length / 2,
           sc = dirObj.scale,
-          carW = self.page.querySelector(".ec-section_".concat(name, " .ec-car-wrap")),
+          carW = self.page.querySelector(".ec-section .ec-car-wrap"),
           car = carW.querySelector('.ec-car'),
           sprite = carW.querySelector('.ec-car__sprite'),
           path = carW.querySelector(".ec-road_dir_".concat(dir)),
@@ -146,10 +116,11 @@ var CaminoClass = /*#__PURE__*/function () {
         h: car.offsetHeight
       },
           b = false;
+      s.animOff = false;
       self.animate({
         start: performance.now(),
         timing: function timing(tf) {
-          return s.easings.easeInQuad(tf); // return s.easings.linear(tf);
+          return s.easings.linear(tf); // return s.easings.linear(tf);
         },
         draw: function draw(pr) {
           // if (b) return;
@@ -168,152 +139,220 @@ var CaminoClass = /*#__PURE__*/function () {
           w = w <= 0 ? 0 : w;
           h = h <= 0 ? 0 : h;
           step = step < l ? step : l - 1;
-          car.setAttribute('style', "left: ".concat(coord.x, "px;\n          top: ").concat(coord.y, "px;\n          width: ").concat(w, "px;\n          height: ").concat(h, "px;"));
+          car.setAttribute('style', "left: ".concat(coord.x / 588 * 100, "%;\n          top: ").concat(coord.y / 169 * 100, "%;\n          width: ").concat(w, "px;\n          height: ").concat(h, "px;"));
           sprite.setAttribute('style', "left: -".concat(dirObj.coord[step * 2] * 100 + '%', ";\n          top: -").concat(dirObj.coord[step * 2 + 1] * 100 + '%'));
           b = true;
         },
         duration: s.car.outDur,
         complete: function complete(stop) {
-          self.trigger('carLeft');
+          self.trigger('carLeft', name);
         },
         pause: function pause(start) {}
       });
-    }
-  }, {
-    key: "testShow",
-    value: function testShow(_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          id = _ref2[0],
-          sc = _ref2[1];
+    } // testShow([id, sc]) {
+    //
+    //   let s = this.setts,
+    //       c = s.comics,
+    //       comics = this.page.querySelector('.ec-comics'),
+    //       screens = comics.querySelectorAll('.ec-comics__slide');
+    //
+    //   for (var i = 0; i < screens.length; i++)
+    //     screens[i].classList.remove('ec-comics__slide_show');
+    //
+    //     screens[sc-1].classList.add('ec-comics__slide_show');
+    // }
 
-      var s = this.setts,
-          c = s.comics,
-          comics = this.page.querySelectorAll('.ec-comics')[id - 1],
-          screens = comics.querySelectorAll('.ec-comics__slide');
-
-      for (var i = 0; i < screens.length; i++) {
-        screens[i].classList.remove('ec-comics__slide_show');
-      }
-
-      comics.classList.add('ec-comics_active');
-      screens[sc - 1].classList.add('ec-comics__slide_show');
-    }
   }, {
     key: "endComics",
-    value: function endComics(name) {
+    value: function endComics() {
       var self = this,
           s = self.setts,
           c = s.comics,
-          comics = c[name],
-          round = comics.querySelector('.ec-comics__round-path');
-      c.skipAll = c.stop = false;
-      c.curDur = c.durEnd;
-      c.slidesOff = true;
-      this.trigger('slidesOff');
+          comics = c.wrap,
+          round = comics.querySelector('.ec-comics__round-path'); // c.skipAll = c.stop = false;
+      // c.stop = false;
+
+      s.curDur = c.durEnd; // this.trigger('slidesOff');
+
       this.animate({
         start: performance.now(),
         timing: function timing(tf) {
           return tf;
         },
         draw: function draw(pr) {
-          c.onDraw(pr);
+          round.setAttribute('stroke-dasharray', c.roundMax - c.roundMax * pr + ' 9999');
         },
-        duration: c.curDur,
+        duration: 60000,
         complete: function complete(stop) {
-          c.slidesOff = false;
-          self.trigger('comicsEnd', comics);
-        },
-        pause: function pause(start) {
-          c.startDate = start;
-          return s.comics.paused;
-        }
+          // if(c.closed) return;
+          s.animOff = true;
+          self.trigger('comicsEnd'); // console.log('COMICS END');
+        } // pause(start) {
+        //   c.startDate = start;
+        //   return s.comics.paused;
+        // }
+
       });
     }
   }, {
     key: "startComics",
-    value: function startComics(comics) {
-      var s = this.setts,
+    value: function startComics() {
+      var self = this,
+          s = this.setts,
           c = s.comics,
-          slides = comics.querySelectorAll('.ec-comics__slide'),
-          b = slides[c.curStep].classList.contains('ec-comics__slide_speed_fast');
-      c.curDur = b ? c.durFast : c.dur;
+          slides = c.slides,
+          b = slides[c.curStep].getAttribute('data-dur');
+      s.curDur = b ? b : c.dur;
       slides[c.curStep].classList.add('ec-comics__slide_show');
-      this.animComics({
+      this.animate({
         start: performance.now(),
-        dur: c.curDur
-      });
+        timing: function timing(tf) {
+          return tf;
+        },
+        draw: function draw(pr) {},
+        duration: s.curDur,
+        complete: function complete(stop) {
+          self.trigger('comicsPartEnd', stop);
+        }
+      }); // if(!c.skipAll) this.trigger('slideOff', c.curStep);
+
+      this.trigger('slideStart', c.curStep);
     }
   }, {
-    key: "animComics",
-    value: function animComics(_ref3) {
-      var start = _ref3.start,
-          dur = _ref3.dur;
+    key: "animCard",
+    value: function animCard(dur) {
       var self = this,
           s = self.setts,
-          c = s.comics;
+          c = s.comics,
+          card = c.card = document.querySelector(".ec-comics_cards"),
+          round = card.querySelector('.ec-comics__round-path');
+      s.curDur = dur;
       this.animate({
-        start: start,
+        start: performance.now(),
         timing: function timing(tf) {
           return tf;
         },
         draw: function draw(pr) {
-          c.onDraw(pr);
+          round.setAttribute('stroke-dasharray', c.roundMax - c.roundMax * pr + ' 9999');
         },
-        duration: dur,
+        duration: s.curDur,
         complete: function complete(stop) {
-          self.trigger('comicsPartEnd', stop);
-        },
-        pause: function pause(start) {
-          c.startDate = start;
-          return s.comics.paused;
+          self.trigger('cardPartEnd', stop);
         }
+      }); // this.animate({
+      //   start: start,
+      //   timing(tf) {
+      //     return tf;
+      //   },
+      //   draw(pr) {
+      //     c.onDrawCard(pr);
+      //   },
+      //   duration: dur,
+      //   complete(stop) {
+      //     self.trigger('cardPartEnd');
+      //   },
+      //   pause(start) {
+      //     c.startDate = start;
+      //     return s.comics.paused;
+      //   }
+      // });
+    }
+  }, {
+    key: "backCar",
+    value: function backCar() {
+      var self = this,
+          s = self.setts,
+          carW = self.page.querySelector(".ec-section .ec-car-wrap"),
+          car = carW.querySelector('.ec-car'),
+          sprite = carW.querySelector('.ec-car__sprite');
+      car.removeAttribute('style');
+      sprite.removeAttribute('style');
+      carW.classList.add('ec-car_back');
+      carW.addEventListener("webkitAnimationEnd", function () {
+        carW.classList.remove('ec-car_back');
       });
-    }
-  }, {
-    key: "skipSlide",
-    value: function skipSlide() {
-      var s = this.setts,
-          c = s.comics;
-      if (c.paused) this.toggleComics();
-      c.skip = c.stop = true;
-    }
-  }, {
-    key: "skipAll",
-    value: function skipAll() {
-      var s = this.setts,
-          c = s.comics;
-      if (c.paused) this.toggleComics();
-      c.skipAll = c.stop = true;
-    }
-  }, {
-    key: "toggleComics",
-    value: function toggleComics() {
-      var s = this.setts,
-          c = s.comics;
-      c.paused = !c.paused;
-      if (c.paused) return;
-      this.animComics({
-        start: c.startDate - (c.pauseDate - performance.now()),
-        dur: c.curDur
-      });
-    }
+    } // animComics({start, dur}, name) {
+    //   let self = this,
+    //       s = self.setts,
+    //       c = s.comics;
+    //
+    //   this.animate({
+    //     start: start,
+    //     timing(tf) {
+    //       return tf;
+    //     },
+    //     draw(pr) {
+    //       // c.onDraw(pr);
+    //     },
+    //     duration: dur,
+    //     complete(stop) {
+    //       if(name === 'cards') return self.trigger('cardPartEnd', stop);
+    //       self.trigger('comicsPartEnd', stop);
+    //     }
+    //     // pause(start) {
+    //     //   c.startDate = start;
+    //     //   return s.comics.paused;
+    //     // }
+    //   });
+    // }
+    // skipSlide() {
+    //   let s = this.setts,
+    //       c = s.comics;
+    //
+    //   if(c.paused) this.toggleComics();
+    //
+    //   c.skip = c.stop = true;
+    // }
+    //
+    // skipAll() {
+    //   let s = this.setts,
+    //       c = s.comics;
+    //
+    //   if(c.paused) this.toggleComics();
+    //
+    //   c.skipAll = c.stop = true;
+    // }
+    // toggleComics() {
+    //   let s = this.setts,
+    //       c = s.comics,
+    //       start = c.startDate-(c.pauseDate-performance.now());
+    //
+    //   c.paused = !c.paused;
+    //
+    //   if(c.paused) return;
+    //
+    //   // if(name === 'cards') return this.animCard({
+    //   //   start: c.startDate-(c.pauseDate-performance.now()),
+    //   //   dur: 2000
+    //   // });
+    //
+    //   // console.log(name);
+    //
+    //   this.animComics({
+    //     start: c.startDate-(c.pauseDate-performance.now()),
+    //     dur: s.curDur
+    //   });
+    //
+    // };
+
   }, {
     key: "closeComics",
-    value: function closeComics(name) {
+    value: function closeComics() {
       var s = this.setts,
-          c = s.comics,
-          comics = c[name];
-      this.trigger('comicsEnd', comics);
+          c = s.comics; // this.trigger('comicsEnd', c.name);
+      // console.log('COMICS END CLOSE');
+
+      s.animOff = true;
     }
   }, {
     key: "animate",
-    value: function animate(_ref4) {
-      var start = _ref4.start,
-          timing = _ref4.timing,
-          draw = _ref4.draw,
-          duration = _ref4.duration,
-          complete = _ref4.complete,
-          pause = _ref4.pause;
+    value: function animate(_ref) {
+      var start = _ref.start,
+          timing = _ref.timing,
+          draw = _ref.draw,
+          duration = _ref.duration,
+          complete = _ref.complete,
+          pause = _ref.pause;
       var s = this.setts,
           c = s.comics;
       requestAnimationFrame(function animate(time) {
@@ -321,59 +360,72 @@ var CaminoClass = /*#__PURE__*/function () {
         var dur = performance.now() - start,
             tf = dur / duration;
         if (tf > 1) tf = 1;
-        var progress = timing(tf);
-        var paused = pause(start);
+        var progress = timing(tf); // let paused = pause(start);
+
         draw(progress);
-        if (tf >= 1 || c.stop) complete(c.skip);else if (tf < 1 && !paused) {
-          requestAnimationFrame(animate);
-        }
-        ;
+        if (tf >= 1 || c.stop || s.animOff) complete(c.skip); // else if (tf < 1 && !paused) {
+        else if (tf < 1) requestAnimationFrame(animate);
       });
-    }
+    } // extend(out) {
+    //   out = out || {};
+    //
+    //   for (var i = 1; i < arguments.length; i++) {
+    //     if (!arguments[i])
+    //       continue;
+    //
+    //     for (var key in arguments[i]) {
+    //       if (arguments[i].hasOwnProperty(key))
+    //         out[key] = arguments[i][key];
+    //     }
+    //   }
+    //
+    //   return out;
+    // };
+
   }, {
-    key: "extend",
-    value: function extend(out) {
-      out = out || {};
+    key: "shuffle",
+    value: function shuffle(array) {
+      var counter = array.length;
 
-      for (var i = 1; i < arguments.length; i++) {
-        if (!arguments[i]) continue;
-
-        for (var key in arguments[i]) {
-          if (arguments[i].hasOwnProperty(key)) out[key] = arguments[i][key];
-        }
+      while (counter > 0) {
+        var index = Math.floor(Math.random() * counter);
+        counter--;
+        var temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
       }
 
-      return out;
-    }
-  }, {
-    key: "activeRandIcons",
-    value: function activeRandIcons() {
-      var _this4 = this;
-
-      var s = this.setts,
-          int = function int(i) {
-        var cur;
-
-        for (var j = 0; j < s.els.fIcons.length; j++) {
-          var item = s.els.fIcons[j];
-          if (item.classList.contains('ec-footer__icon_active')) item.classList.remove('ec-footer__icon_active');else if (i === j) {
-            item.classList.add('ec-footer__icon_active');
-            cur = item;
-          }
-        }
-
-        setTimeout(function () {
-          cur.classList.remove('ec-footer__icon_active');
-        }, _this4.getRand(5000, 8000));
-        setTimeout(function () {
-          int(_this4.getRand(0, 2));
-        }, _this4.getRand(8000, 15000));
-      };
-
-      int(this.getRand(0, 2));
+      return array;
     }
   }, {
     key: "getRand",
+    // activeRandIcons() {
+    //   let s = this.setts,
+    //       icons = this.page.querySelectorAll('.ec-footer__icon'),
+    //       int = (i) => {
+    //         let cur;
+    //
+    //         for (var j = 0; j < s.els.fIcons.length; j++) {
+    //           let item = s.els.fIcons[j];
+    //
+    //           if(item.classList.contains('ec-footer__icon_active')) item.classList.remove('ec-footer__icon_active');
+    //           else if(i === j) {
+    //             item.classList.add('ec-footer__icon_active');
+    //             cur = item;
+    //           }
+    //         }
+    //
+    //         setTimeout(() => {
+    //           cur.classList.remove('ec-footer__icon_active');
+    //         }, this.getRand(5000, 8000));
+    //
+    //         setTimeout(() => {
+    //           int(this.getRand(0, 2));
+    //         }, this.getRand(8000, 15000));
+    //       }
+    //
+    //   int(this.getRand(0, 2));
+    // }
     value: function getRand(min, max) {
       var rand = min - 0.5 + Math.random() * (max - min + 1);
       rand = Math.round(rand);

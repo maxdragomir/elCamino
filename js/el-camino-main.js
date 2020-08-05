@@ -351,7 +351,7 @@ const page = document.querySelector('.ec-page'),
           c.name = 'border';
           c.cur = g.way+'-border';
           this.modalShow(c.cur);
-        }, 2000);
+        }, 4000);
       },
       bCardsClose() {
         let g = this.game,
@@ -449,6 +449,7 @@ const page = document.querySelector('.ec-page'),
       closeCards(name) {
         let g = this.game,
             cd = this.cards;
+            console.log(cd.cur);
         this.$modal.hide(cd.cur);
       },
       comicsOpened() {
@@ -594,7 +595,6 @@ const page = document.querySelector('.ec-page'),
 
         // this.cards.ways[g.way+'Clone'] = cards;
         let id = this.Game.shuffle(cardIds)[0];
-        console.log(id);
         cardIds.shift();
         return {
           id: id,
@@ -620,7 +620,7 @@ const page = document.querySelector('.ec-page'),
             cf = this.coefs;
 
         this.onButtonClick();
-        this.modalHide('modal-'+(g.win ? 'win' : 'lose'));
+        this.modalHide('modal-win');
 
         cf.cur = '';
 
@@ -666,18 +666,27 @@ const page = document.querySelector('.ec-page'),
           this.modalShow(c.cur);
 
         }
-        else if (hash.split('-')[0] === 'modal') this.modalShow(hash);
+        else if (hash.split('-')[0] === 'modal') {
+          this.body.classList.add('ec-no-scroll');
+          g.started = this.static.day = true;
+          g.way = 'track';
+          this.modalShow(hash);
+        }
         else if(hash.split('-')[1] === 'way') {
           g.prevStatus = g.status;
           g.status = 'dir';
           this.showSection(g.status);
           g.way = hash.split('-')[0];
+          let cards = this.cards.ways[g.way];
+          this.cards.ways[g.way+'Ids'] = [];
+          for (var key in cards) this.cards.ways[g.way+'Ids'].push(key);
           g.started = this.static.day = true;
           this.static.toggle = false;
           g.roadActive = g.stages[g.way].roadActive;
         } else if(hash.split('_').length === 3) {
           this.cards.situation = Number(hash.split('_')[2]);
-          this.modalShow(hash.split('_').slice(0,-1).join('_'));
+          this.cards.cur = hash.split('_').slice(0,-1).join('_');
+          this.modalShow(this.cards.cur);
         } else if (hash.split('_')[0].split('-')[1] === 'border') {
           this.border.situation = Number(hash.split('_')[1]);
           c.name = 'border';
