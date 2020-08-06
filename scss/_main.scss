@@ -20,6 +20,7 @@
     background-size: cover;
     box-sizing: border-box;
     transition: opacity 1s linear, visibility 1s linear;
+    transform: translateZ(0);
 
     &_hide {
       display: none;
@@ -76,13 +77,14 @@
       position: absolute;
       left: 0;
       transition: fill $sunRiseTime/2 0s linear;
-      transform: scale(0);
+      transform: scale(0)translate3d(0, 0, 0);
       opacity: 0;
       animation: opacity1 2s forwards,  transNone 1s forwards;
       fill: #2d2e2d;
 
       @include em((
         width: 400px,
+        height: 308px,
         top: 22px,
         left: 25px
       ), $mfs);
@@ -578,11 +580,10 @@
     width: 200%;
     height: 218%;
     z-index: 0;
-    transform: translateZ(0) scale(.5);
+    transform: translateZ(0) scale(.5) rotate(0.01deg);
     transition-duration: 1.5s;
     transition-timing-function: ease-out;
     transition-property: transform;
-    will-change: transform;
 
     .ec-section_static & {
       transition-duration: 1.5s;
@@ -591,19 +592,19 @@
     }
 
     &_2 {
-      transform: translateZ(0) scale(.2);
+      transform: translateZ(0) scale(.2) rotate(0.01deg);
     }
 
     &_3 {
-      transform: translateZ(0) scale(.3);
+      transform: translateZ(0) scale(.3) rotate(0.01deg);
     }
 
     &_7 {
-      transform: translateZ(0) scale(.7);
+      transform: translateZ(0) scale(.7) rotate(0.01deg);
     }
 
     &_9 {
-      transform: translateZ(0) scale(.9);
+      transform: translateZ(0) scale(.9) rotate(0.01deg);
     }
 
     &_turns {

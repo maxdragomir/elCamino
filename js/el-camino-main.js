@@ -334,6 +334,7 @@ const page = document.querySelector('.ec-page'),
             };load(audios);
       },
       beforeComicsOpen() {
+        this.popIn(true);
       },
       borderShow() {
         let g = this.game,
@@ -361,7 +362,7 @@ const page = document.querySelector('.ec-page'),
 
         this.cards.closed = true;
 
-        this.body.classList.remove('ec-no-scroll');
+        this.popIn(false);
 
         g.status = 'dir';
 
@@ -381,7 +382,7 @@ const page = document.querySelector('.ec-page'),
       bCardsOpen() {
         this.cards.closed = false;
 
-        this.body.classList.add('ec-no-scroll');
+        this.popIn(true);
       },
       beforeComicsClose() {
         let name = this.comics.beforeClose;
@@ -389,6 +390,7 @@ const page = document.querySelector('.ec-page'),
           this[name]();
         }
         this.comics.beforeClose = false;
+        this.popIn(false);
       },
       borderEnd() {
         let c = this.comics;
@@ -458,14 +460,11 @@ const page = document.querySelector('.ec-page'),
 
         setTimeout(() => {
           this.Game.showComics(c.name);
-          this.body.classList.add('ec-no-scroll');
         }, 300);
       },
       comicsClosed() {
         let c = this.comics;
         c.open = false;
-
-        this.body.classList.remove('ec-no-scroll');
       },
       chooseWay(name, dir) {
         let g = this.game,
@@ -667,7 +666,7 @@ const page = document.querySelector('.ec-page'),
 
         }
         else if (hash.split('-')[0] === 'modal') {
-          this.body.classList.add('ec-no-scroll');
+          this.popIn(true);
           g.started = this.static.day = true;
           g.way = 'track';
           this.modalShow(hash);
@@ -686,6 +685,7 @@ const page = document.querySelector('.ec-page'),
         } else if(hash.split('_').length === 3) {
           this.cards.situation = Number(hash.split('_')[2]);
           this.cards.cur = hash.split('_').slice(0,-1).join('_');
+          g.way = 'track';
           this.modalShow(this.cards.cur);
         } else if (hash.split('_')[0].split('-')[1] === 'border') {
           this.border.situation = Number(hash.split('_')[1]);
@@ -710,14 +710,22 @@ const page = document.querySelector('.ec-page'),
         this.showSection(g.status);
         // this.Game.nextSection(g.prevStatus, g.status);
       },
-      bModalOpen() {
-        this.body.classList.add('ec-no-scroll');
+      modalOpened() {
       },
-      modalClosed() {
-        this.body.classList.remove('ec-no-scroll');
+      bModalOpen() {
+        this.popIn(true);
+      },
+      bModalClose() {
+        this.popIn(false);
       },
       onButtonClick() {
         this.playAudio('click');
+      },
+      popIn(b) {
+        if(b) this.body.classList.add('ec-no-scroll');
+        else this.body.classList.remove('ec-no-scroll');
+
+        console.log(this.$modal);
       },
       playAudio(name, fn) {
         let s = this.sound,

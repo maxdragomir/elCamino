@@ -209,9 +209,9 @@ $dur: .2s;
       &_10 {
 
         &_1 {
-          -webkit-transform: translate(-5%, 20%);
-          -ms-transform: translate(-5%, 20%);
-          transform: translate(-5%, 20%);
+          -webkit-transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
+          -ms-transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
+          transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
         }
 
         @include em((
@@ -520,133 +520,133 @@ $dur: .2s;
         }
 
         &_ft {
-          transform: translate(0, 100%);
+          transform: translate3d(0, 100%, 0) rotate(0.01deg);
         }
 
         &_fr {
-          transform: translate(-100%, 0);
+          transform: translate3d(-100%, 0, 0) rotate(0.01deg);
         }
 
         &_fb {
-          transform: translate(0, -100%);
+          transform: translate3d(0, -100%, 0) rotate(0.01deg);
         }
 
         &_fl {
-          transform: translate(100%, 0);
+          transform: translate3d(100%, 0, 0) rotate(0.01deg);
         }
 
         &_tf {
-          transform: translate(0, 10%);
+          transform: translate3d(0, 10%, 0) rotate(0.01deg);
           opacity: 0;
         }
 
         &_rf {
-          transform: translate(-10%, 0);
+          transform: translate3d(-10%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
         &_rs {
-          transform: translate(-2%, 0);
+          transform: translate3d(-2%, 0, 0) rotate(0.01deg);
         }
 
         &_b {
-          transform: translate(0, -10%);
+          transform: translate3d(0, -10%, 0) rotate(0.01deg);
         }
 
         &_t {
-          transform: translate(0, 10%);
+          transform: translate3d(0, 10%, 0) rotate(0.01deg);
         }
 
         &_trl {
-          transform: translate(-2%, 8%);
+          transform: translate3d(-2%, 8%, 0) rotate(0.01deg);
         }
 
         &_bll {
-          transform: translate(2%, -8%);
+          transform: translate3d(2%, -8%, 0) rotate(0.01deg);
         }
 
         &_l {
-          transform: translate(10%, 0);
+          transform: translate3d(10%, 0, 0) rotate(0.01deg);
         }
 
         &_r {
-          transform: translate(-10%, 0);
+          transform: translate3d(-10%, 0, 0) rotate(0.01deg);
         }
 
         &_lf {
-          transform: translate(10%, 0);
+          transform: translate3d(10%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
         &_lfl {
-          transform: translate(2%, 0);
+          transform: translate3d(2%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
         &_bf {
-          transform: translate(0, 10%);
+          transform: translate3d(0, 10%, 0) rotate(0.01deg);
           opacity: 0;
         }
         &_bf_5 {
-          transform: translate(0, 5%);
+          transform: translate3d(0, 5%, 0) rotate(0.01deg);
           opacity: 0;
         }
 
         &_lt {
-          transform: translate(10%, 10%);
+          transform: translate3d(10%, 10%, 0) rotate(0.01deg);
         }
 
         &_rt {
-          transform: translate(-10%, 10%);
+          transform: translate3d(-10%, 10%, 0) rotate(0.01deg);
         }
 
         &_rt2 {
-          transform: translate(-10%, 15%);
+          transform: translate3d(-10%, 15%, 0) rotate(0.01deg);
         }
 
         &_rt20 {
-          transform: translate(-20%, 20%);
+          transform: translate3d(-20%, 20%, 0) rotate(0.01deg);
         }
 
         &_rb {
-          transform: translate(-10%, -10%);
+          transform: translate3d(-10%, -10%, 0) rotate(0.01deg);
         }
 
         &_r10b4 {
-          transform: translate(-10%, -4%);
+          transform: translate3d(-10%, -4%, 0) rotate(0.01deg);
         }
 
         &_rotr {
           transform: rotate(-5deg);
         }
         &_sct {
-          transform: translate(-5%, -5%) scale(1.1);
+          transform: translate3d(-5%, -5%, 0) scale(1.1) rotate(0.01deg);
         }
 
 
         &_sc {
-          transform: translate(0%, 0%) scale(1.1);
+          transform: translate3d(0%, 0%, 0) scale(1.1) rotate(0.01deg);
         }
 
 
         &_scr {
-          transform: translate(0%, 0%) scale(0.9);
+          transform: translate3d(0%, 0%, 0) scale(0.9) rotate(0.01deg);
         }
 
         &_tt {
-          transform: translateY(-5%);
+          transform: translate3d(0, -5%, 0) rotate(0.01deg);
         }
 
         &_tr {
-          transform: translateX(-5%);
+          transform: translate3d(-5%, 0, 0) rotate(0.01deg);
         }
 
         &_tl {
-          transform: translateX(5%);
+          transform: translate3d(5%, 0, 0) rotate(0.01deg);
         }
 
         &_tb {
-          transform: translateY(5%);
+          transform: translate3d(0, 5%, 0) rotate(0.01deg);
         }
 
         &_scale_8 {
@@ -655,29 +655,29 @@ $dur: .2s;
         }
 
         &_translate_0_m5Scale_8 {
-          transform: translate(0%, -5%) scale(.8);
+          transform: translate(0%, -5%) scale(.8) rotate(0.01deg);
         }
         &_translate_0_m5Scale_9 {
-          transform: translate(0%, -5%) scale(.9);
+          transform: translate(0%, -5%) scale(.9) rotate(0.01deg);
         }
         &_translate_m15_3Scale_1 {
-          transform: translate(-15%, 3%) scale(1);
+          transform: translate(-15%, 3%) scale(1) rotate(0.01deg);
         }
         &_translate_m13_5Scale_8 {
-          transform: translate(-13%, -5%) scale(.8);
+          transform: translate(-13%, -5%) scale(.8) rotate(0.01deg);
         }
 
         &_translate_5_10Scale_1 {
-          transform: translate(5%, 10%) scale(1);
+          transform: translate(5%, 10%) scale(1) rotate(0.01deg);
         }
         &_translate_m20_m5Scale_1 {
-          transform: translate(-20%, -5%) scale(1);
+          transform: translate(-20%, -5%) scale(1) rotate(0.01deg);
         }
         &_translate_m10_m15_rotate_m85 {
           transform: rotate(-85deg) translate(-10%, -15%);
         }
         &_translate_0_5Scale_1_1 {
-          transform: translate(0%, 5%) scale(1.1);
+          transform: translate(0%, 5%) scale(1.1) rotate(0.01deg);
         }
 
       }

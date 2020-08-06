@@ -107,7 +107,7 @@
       top: 0;
       background-image: url(../img/el-camino/static/night/moon.png);
       border-radius: 50%;
-      transform: translate(0%, 100%);
+      transform: translate3d(0%, 100%, 0);
 
       @include em((
         width: 186px,
@@ -126,7 +126,7 @@
       }
 
       .ec-static_night & {
-        transform: translate(400%, -100%);
+        transform: translate3d(400%, -100%, 0);
         opacity: 1;
         transition-duration: $timeDur*2;
       }
@@ -150,7 +150,7 @@
       background: url(../img/el-camino/static/day/sky.jpg);
       background-size: auto 100%;
       width: em(3000px, $mfs);
-      transform: translateX(-10%);
+      transform: translateX(-10%) rotate(0.01deg);
 
       .ec-static_day & {
         animation: transNone $timeDur*2 linear;
@@ -204,7 +204,7 @@
       left: 0;
       width: 200%;
       height: 60%;
-      transform: translateX(-100%);
+      transform: translateX(-100%) rotate(0.01deg);
       background-position: right top;
       background-size: auto 100%;
       animation-name: transNone;
@@ -247,7 +247,7 @@
         }
 
         &.ec-sky__cloud_once {
-          transform: translate(-100%);
+          transform: translate(-100%) rotate(0.01deg);
           animation-duration: 100s;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
@@ -270,7 +270,7 @@
         }
 
         &.ec-sky__cloud_once {
-          transform: translate(-60%);
+          transform: translate(-60%) rotate(0.01deg);
           animation-duration: 90s;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
@@ -395,7 +395,7 @@
         width: 266px,
         height: 141px,
         margin-left: -530px,
-        top: -50px
+        top: -35px
       ), $mfs);
     }
 

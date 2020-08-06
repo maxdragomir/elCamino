@@ -2335,7 +2335,8 @@
          height="auto"
          width="100%"
          @before-open="bModalOpen"
-         @closed="modalClosed"
+         @opened="modalOpened"
+         @before-close="bModalClose"
          :click-to-close="false">
 
       <div class="ec-modal ec-modal_safe ec-modal_size_m">
@@ -2355,6 +2356,9 @@
     <modal name="modal-win"
          :adaptive="true"
          height="auto"
+         @before-open="bModalOpen"
+         @opened="modalOpened"
+         @before-close="bModalClose"
          width="100%">
 
       <div class="ec-modal ec-modal_win ec-modal_size_m">
@@ -2370,7 +2374,8 @@
           <p class="ec-modal__win-txt">
             <span v-if="bet.val > bet.user">Ваш выигрыш: </span>
             <span v-else>Граница пройдена</span>
-            <span class="ec-modal__win-sum">{{val}} RUB</span></p>
+            <span class="ec-modal__win-sum">{{val}} RUB</span>
+          </p>
 
 
           <div class="ec-modal__foot">
@@ -2384,6 +2389,9 @@
     <modal name="modal-rules"
          :adaptive="true"
          height="auto"
+         @before-open="bModalOpen"
+         @opened="modalOpened"
+         @before-close="bModalClose"
          width="100%">
 
       <div class="ec-modal ec-modal_rules">

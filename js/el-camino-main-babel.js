@@ -322,7 +322,9 @@ var page = document.querySelector('.ec-page'),
 
       load(audios);
     },
-    beforeComicsOpen: function beforeComicsOpen() {},
+    beforeComicsOpen: function beforeComicsOpen() {
+      this.popIn(true);
+    },
     borderShow: function borderShow() {
       var _this = this;
 
@@ -346,7 +348,7 @@ var page = document.querySelector('.ec-page'),
           lvl = g.stages[g.way],
           b = lvl.curStage < lvl.length;
       this.cards.closed = true;
-      this.body.classList.remove('ec-no-scroll');
+      this.popIn(false);
       g.status = 'dir';
       this.updateCoef();
       this.showChangeVal();
@@ -358,7 +360,7 @@ var page = document.querySelector('.ec-page'),
     },
     bCardsOpen: function bCardsOpen() {
       this.cards.closed = false;
-      this.body.classList.add('ec-no-scroll');
+      this.popIn(true);
     },
     beforeComicsClose: function beforeComicsClose() {
       var name = this.comics.beforeClose;
@@ -368,6 +370,7 @@ var page = document.querySelector('.ec-page'),
       }
 
       this.comics.beforeClose = false;
+      this.popIn(false);
     },
     borderEnd: function borderEnd() {
       var c = this.comics;
@@ -432,14 +435,11 @@ var page = document.querySelector('.ec-page'),
       c.open = true;
       setTimeout(function () {
         _this3.Game.showComics(c.name);
-
-        _this3.body.classList.add('ec-no-scroll');
       }, 300);
     },
     comicsClosed: function comicsClosed() {
       var c = this.comics;
       c.open = false;
-      this.body.classList.remove('ec-no-scroll');
     },
     chooseWay: function chooseWay(name, dir) {
       var g = this.game,
@@ -615,7 +615,7 @@ var page = document.querySelector('.ec-page'),
         c.name = hash.split('-')[0];
         this.modalShow(c.cur);
       } else if (hash.split('-')[0] === 'modal') {
-        this.body.classList.add('ec-no-scroll');
+        this.popIn(true);
         g.started = this.static.day = true;
         g.way = 'track';
         this.modalShow(hash);
@@ -637,6 +637,7 @@ var page = document.querySelector('.ec-page'),
       } else if (hash.split('_').length === 3) {
         this.cards.situation = Number(hash.split('_')[2]);
         this.cards.cur = hash.split('_').slice(0, -1).join('_');
+        g.way = 'track';
         this.modalShow(this.cards.cur);
       } else if (hash.split('_')[0].split('-')[1] === 'border') {
         this.border.situation = Number(hash.split('_')[1]);
@@ -658,14 +659,19 @@ var page = document.querySelector('.ec-page'),
 
       this.showSection(g.status); // this.Game.nextSection(g.prevStatus, g.status);
     },
+    modalOpened: function modalOpened() {},
     bModalOpen: function bModalOpen() {
-      this.body.classList.add('ec-no-scroll');
+      this.popIn(true);
     },
-    modalClosed: function modalClosed() {
-      this.body.classList.remove('ec-no-scroll');
+    bModalClose: function bModalClose() {
+      this.popIn(false);
     },
     onButtonClick: function onButtonClick() {
       this.playAudio('click');
+    },
+    popIn: function popIn(b) {
+      if (b) this.body.classList.add('ec-no-scroll');else this.body.classList.remove('ec-no-scroll');
+      console.log(this.$modal);
     },
     playAudio: function playAudio(name, fn) {
       var s = this.sound,

@@ -689,6 +689,13 @@
       color: $mainc;
       font-style: italic;
 
+      &::-ms-clear,
+      &::-ms-reveal {
+        display: none;
+        width: 0;
+        height: 0;
+      }
+
       @include em((
         font-size: 20px,
         padding: 8px 10px
