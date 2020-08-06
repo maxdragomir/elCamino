@@ -110,12 +110,13 @@ var CaminoClass = /*#__PURE__*/function () {
           car = carW.querySelector('.ec-car'),
           sprite = carW.querySelector('.ec-car__sprite'),
           path = carW.querySelector(".ec-road_dir_".concat(dir)),
-          pathL = Math.floor(path.getTotalLength()),
+          pathL = Math.floor(path.getAttribute('l')),
           wh = {
         w: car.offsetWidth,
         h: car.offsetHeight
       },
           b = false;
+      console.log(pathL);
       s.animOff = false;
       self.animate({
         start: performance.now(),

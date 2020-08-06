@@ -334,20 +334,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <!-- <path class="ec-road_dir_left" d="M1136.4,161c0,0,4-3.2-125.8-42.8C840,63.2,605,13.2,497,17.7c0,0-293-4.5-497-4.5"/> -->
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <!-- <line class="ec-road_dir_mid" x1="1136.4" y1="161" x2="1005.7" y2="0.3"/> -->
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <!-- <path class="ec-road_dir_right" d="M1136.4,161c0,0-6.4-140.8,278.7-139.7c0,0,187.9-7.1,506.9-7.1"/> -->
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
+          <car></car>
           <div class="ec-scale ec-road__scale">
             <div class="ec-bg__bot ec-road__bot">
               <div class="ec-rock ec-rock_num1 ec-rock_img1"></div>
@@ -480,18 +467,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
-
+          <car></car>
         </div>
         <div class="ec-bg ec-bg_city" v-if="game.way == 'city'">
           <div class="ec-bg__top ec-road__top">
@@ -576,20 +552,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <!-- <path class="ec-road_dir_left" d="M1136.4,161c0,0,4-3.2-125.8-42.8C840,63.2,605,13.2,497,17.7c0,0-293-4.5-497-4.5"/> -->
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <!-- <line class="ec-road_dir_mid" x1="1136.4" y1="161" x2="1005.7" y2="0.3"/> -->
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <!-- <path class="ec-road_dir_right" d="M1136.4,161c0,0-6.4-140.8,278.7-139.7c0,0,187.9-7.1,506.9-7.1"/> -->
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
+          <car></car>
         </div>
         <div class="ec-bg ec-bg_village" v-if="game.way == 'village'">
           <div class="ec-scale ec-road__scale">
@@ -670,17 +633,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
+          <car></car>
         </div>
       </section>
     </transition>
@@ -735,20 +688,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <!-- <path class="ec-road_dir_left" d="M1136.4,161c0,0,4-3.2-125.8-42.8C840,63.2,605,13.2,497,17.7c0,0-293-4.5-497-4.5"/> -->
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <!-- <line class="ec-road_dir_mid" x1="1136.4" y1="161" x2="1005.7" y2="0.3"/> -->
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <!-- <path class="ec-road_dir_right" d="M1136.4,161c0,0-6.4-140.8,278.7-139.7c0,0,187.9-7.1,506.9-7.1"/> -->
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
+          <car></car>
 
           <div class="ec-scale ec-road__scale">
             <div class="ec-bg__bot ec-road__bot">
@@ -875,20 +815,7 @@
             </div>
           </div>
 
-          <div class="ec-car-wrap">
-             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             	 viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-               <!-- <path class="ec-road_dir_left" d="M1136.4,161c0,0,4-3.2-125.8-42.8C840,63.2,605,13.2,497,17.7c0,0-293-4.5-497-4.5"/> -->
-               <line class="ec-road_dir_mid" x1="437.9" y1="169" x2="329.2" y2="0.3"/>
-               <!-- <line class="ec-road_dir_mid" x1="1136.4" y1="161" x2="1005.7" y2="0.3"/> -->
-               <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3"/>
-               <!-- <path class="ec-road_dir_right" d="M1136.4,161c0,0-6.4-140.8,278.7-139.7c0,0,187.9-7.1,506.9-7.1"/> -->
-               <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3"/>
-            </svg>
-            <div class="ec-car ec-car_road">
-              <div class="ec-car__sprite"></div>
-            </div>
-          </div>
+          <car></car>
         </div>
 
       </section>

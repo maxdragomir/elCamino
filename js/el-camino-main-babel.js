@@ -12,7 +12,14 @@ Vue.use(window["vue-js-modal"].default, {
     duration: 50000
   }
 });
-console.log(window['vue-js-modal']);
+Vue.component('car', {
+  data: function data() {
+    return {
+      count: 0
+    };
+  },
+  template: "<div class=\"ec-car-wrap\">\n       <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n         viewBox=\"0 0 588.5 169.2\" style=\"enable-background:new 0 0 588.5 169.2;\" xml:space=\"preserve\" class=\"ec-car__svg\">\n         <line class=\"ec-road_dir_mid\" x1=\"437.9\" y1=\"169\" x2=\"329.2\" y2=\"0.3\" l=\"200\"/>\n         <path class=\"ec-road_dir_right\" d=\"M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3\" l='223'/>\n         <path xmlns=\"http://www.w3.org/2000/svg\" class=\"ec-road_dir_left\" d=\"M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3\" l=\"467\"/>\n      </svg>\n      <div class=\"ec-car ec-car_road\">\n        <div class=\"ec-car__sprite\"></div>\n      </div>\n    </div>"
+});
 var page = document.querySelector('.ec-page'),
     Camino = new Vue({
   el: '.ec-page',
