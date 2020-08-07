@@ -334,7 +334,6 @@
             </div>
           </div>
 
-          <car></car>
           <div class="ec-scale ec-road__scale">
             <div class="ec-bg__bot ec-road__bot">
               <div class="ec-rock ec-rock_num1 ec-rock_img1"></div>
@@ -347,6 +346,8 @@
               <div class="ec-rock ec-rock_num6 ec-rock_img5"></div>
             </div>
           </div>
+
+          <car></car>
 
           <div class="ec-scale ec-scale_2">
             <div class="ec-frame ec-bg__frame">
