@@ -1,8 +1,18 @@
 .ec {
 
+  &-scale--turns {
+
+    &-village {
+
+      .ec-road:before {
+        background-image: url(#{$imgDir}village/turns.png);
+      }
+    }
+  }
+
   &-bg {
 
-    &_village {
+    &--village {
       // background: url(#{$imgDir}village/grass.jpg) center bottom;
 
       & .ec-bg__top {
@@ -14,7 +24,7 @@
 
   &-sky {
 
-    &_village {
+    &--village {
       background: url(#{$imgDir}village/bg.jpg) center;
       background-size: auto 100%;
     }
@@ -22,15 +32,15 @@
     &__village {
       height: em(420px, $mfs);
 
-      & .ec-sky__cloud_one {
+      & .ec-sky__cloud--one {
         background-image: url(#{$imgDir}village/cloud1.png);
       }
 
-      & .ec-sky__cloud_two {
+      & .ec-sky__cloud--two {
         background-image: url(#{$imgDir}village/cloud2.png);
       }
 
-      & .ec-sky__cloud_three {
+      & .ec-sky__cloud--three {
         background-image: url(#{$imgDir}village/cloud3.png);
       }
     }
@@ -38,12 +48,11 @@
 
   &-road {
 
-    &_village {
+    &--village {
       background-image: url(#{$imgDir}village/road.png), url(#{$imgDir}village/grass.jpg);
-      // top: em(-100px, $mfs);
     }
 
-    &_stones {
+    &--stones {
 
       &:before {
         content: '';
@@ -62,20 +71,9 @@
     }
   }
 
-  &-village {
-
-    &_turns {
-
-      & .ec-road:before {
-        background-image: url(#{$imgDir}village/turns.png);
-        // height: em(200px, $mfs);
-      }
-    }
-  }
-
   &-build {
 
-    &_img7 {
+    &--img7 {
       background-image: url(#{$imgDir}village/build1.png);
       bottom: 100%;
 
@@ -87,7 +85,7 @@
       ), $mfs);
     }
 
-    &_img8 {
+    &--img8 {
       background-image: url(#{$imgDir}village/build2.png);
       bottom: 100%;
 
@@ -99,7 +97,7 @@
       ), $mfs);
     }
 
-    &_img9 {
+    &--img9 {
       background-image: url(#{$imgDir}village/build3.png);
       bottom: 100%;
 
@@ -111,7 +109,7 @@
       ), $mfs);
     }
 
-    &_img10 {
+    &--img10 {
       background-image: url(#{$imgDir}village/build4.png);
       bottom: 100%;
 
@@ -123,7 +121,7 @@
       ), $mfs);
     }
 
-    &_img11 {
+    &--img11 {
       background-image: url(#{$imgDir}village/build5.png);
       bottom: 100%;
 
@@ -135,7 +133,7 @@
       ), $mfs);
     }
 
-    &_img12 {
+    &--img12 {
       background-image: url(#{$imgDir}village/build6.png);
       bottom: 100%;
 
@@ -147,7 +145,7 @@
       ), $mfs);
     }
 
-    &_img13 {
+    &--img13 {
       background-image: url(#{$imgDir}village/build7.png);
       bottom: 100%;
 
@@ -159,7 +157,7 @@
       ), $mfs);
     }
 
-    &_img14 {
+    &--img14 {
       background-image: url(#{$imgDir}village/build8.png);
       bottom: 100%;
 

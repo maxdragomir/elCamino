@@ -24,53 +24,28 @@
             // bottom: em(172px, $mfs2);
           }
 
-          .ec-section_move & {
+          .ec-section--move & {
             transform: none;
           }
         }
-
-        // &:before {
-        //   right: 50%;
-        //   margin-right: em(200px, $mfs);
-        //
-        //   .ec-section_move & {
-        //     margin-right: em(106px, $mfs);
-        //   }
-        // }
-        //
-        // &:after {
-        //   background-image: url(../img/el-camino/road/road-right.png);
-        //   left: 50%;
-        //   margin-left: em(180px, $mfs);
-        //   top: em(103px, $mfs);
-        //
-        //   .ec-section_move & {
-        //     margin-left: em(101px, $mfs);
-        //   }
-        // }
       }
     }
   }
 
   &-section {
 
-    &_road {
+    &--road {
 
       //  & .ec-scale {
       //   transform: none;
       // }
 
-      & .ec-rock_num1 {
+      & .ec-rock--num1 {
         @include em((
           margin-left: -640px,
           top: -40px
         ), $mfs);
       }
-
-      // &.ec-section_move .ec-footer {
-      //   // bottom: 0;
-      //   transform: none;
-      // }
     }
   }
 }

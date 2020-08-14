@@ -49,9 +49,9 @@
     ), $mfs);
   }
 
-  &_size {
+  &--size {
 
-    &_m {
+    &-m {
 
       @include em((
         width: 820px,
@@ -61,7 +61,7 @@
     }
   }
 
-  &_safe {
+  &-safe {
     background-image: url(#{$imgDir}/modal/bg1.png);
     padding-top: em(340px, $mfs);
 
@@ -109,7 +109,7 @@
     ), 18px);
   }
 
-  &_win {
+  &-win {
     background-image: url(#{$imgDir}/modal/bg2.png);
     font-family: $robotoC;
     position: relative;
@@ -172,7 +172,7 @@
     }
   }
 
-  &_rules {
+  &-rules {
     background-color: #fff;
     background-image: url(#{$imgDir}modal/rules-bg.png);
     background-size: 100% 100%;
@@ -264,7 +264,7 @@
     }
   }
 
-  &_link {
+  &-link {
     text-transform: uppercase;
     color: #fff;
     text-decoration: underline;

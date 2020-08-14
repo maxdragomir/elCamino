@@ -89,7 +89,7 @@ var CaminoClass = /*#__PURE__*/function () {
       var s = this.setts,
           c = s.comics,
           comics = c.wrap = this.page.querySelector(".ec-comics"),
-          slides = c.slides = comics.querySelectorAll('.ec-comics__slide_anim'),
+          slides = c.slides = comics.querySelectorAll('.ec-comics__slide--anim'),
           l = slides.length - 1;
       c.curStep = 0; // c.fn = fn;
 
@@ -109,14 +109,13 @@ var CaminoClass = /*#__PURE__*/function () {
           carW = self.page.querySelector(".ec-section .ec-car-wrap"),
           car = carW.querySelector('.ec-car'),
           sprite = carW.querySelector('.ec-car__sprite'),
-          path = carW.querySelector(".ec-road_dir_".concat(dir)),
-          pathL = Math.floor(path.getAttribute('l')),
+          path = carW.querySelector(".ec-road-dir-".concat(dir)),
+          pathL = Math.floor(path.getTotalLength()),
           wh = {
         w: car.offsetWidth,
         h: car.offsetHeight
       },
           b = false;
-      console.log(pathL);
       s.animOff = false;
       self.animate({
         start: performance.now(),
@@ -204,7 +203,7 @@ var CaminoClass = /*#__PURE__*/function () {
           slides = c.slides,
           b = slides[c.curStep].getAttribute('data-dur');
       s.curDur = b ? b : c.dur;
-      slides[c.curStep].classList.add('ec-comics__slide_show');
+      slides[c.curStep].classList.add('ec-comics__slide--show');
       this.animate({
         start: performance.now(),
         timing: function timing(tf) {
@@ -225,7 +224,7 @@ var CaminoClass = /*#__PURE__*/function () {
       var self = this,
           s = self.setts,
           c = s.comics,
-          card = c.card = document.querySelector(".ec-comics_cards"),
+          card = c.card = document.querySelector(".ec-comics--cards"),
           round = card.querySelector('.ec-comics__round-path');
       s.curDur = dur;
       this.animate({
@@ -268,9 +267,9 @@ var CaminoClass = /*#__PURE__*/function () {
           sprite = carW.querySelector('.ec-car__sprite');
       car.removeAttribute('style');
       sprite.removeAttribute('style');
-      carW.classList.add('ec-car_back');
+      carW.classList.add('ec-car--back');
       carW.addEventListener("webkitAnimationEnd", function () {
-        carW.classList.remove('ec-car_back');
+        carW.classList.remove('ec-car--back');
       });
     } // animComics({start, dur}, name) {
     //   let self = this,

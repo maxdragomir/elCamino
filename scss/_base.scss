@@ -40,7 +40,7 @@
       height: 867px
     ), $mfs);
 
-    &.ec-bet-added {
+    &.ec-bet--added {
       overflow: hidden;
     }
   }
@@ -63,7 +63,7 @@
       position: relative;
       font-weight: 700;
 
-      .ec-static_toggle & {
+      .ec-static--toggle & {
         color: $mainc;
       }
 
@@ -98,50 +98,6 @@
     }
   }
 
-  &-scroll {
-
-    &.ps {
-
-      &-container {
-        & .ps {
-
-          &-scrollbar {
-
-            &-y {
-              width: 5px;
-              right: -1px;
-              border-radius: 0;
-
-              &-rail {
-                background-color: #515d56;
-                width: 3px;
-                opacity: 1;
-                cursor: pointer;
-              }
-
-              background-color: inherit;
-            }
-          }
-        }
-
-        &.ps-in-scrolling.ps-y {
-
-          .ps-scrollbar {
-
-            &-y-rail {
-              opacity: 1;
-              background-color: #515d56;
-            }
-
-            &-y {
-              background-color: inherit;
-            }
-          }
-        }
-      }
-    }
-  }
-
   &-btn {
     display: block;
     text-decoration: none;
@@ -166,7 +122,7 @@
       z-index: 1;
     }
 
-    &_theme_gray {
+    &--theme-gray {
       background-image: $grayGr;
 
       &:hover {
@@ -174,18 +130,18 @@
       }
 
       @media #{$ie} {
-        background: #9d9fa1;
+        background-image: $grayGrFix;
 
         &:hover {
-          background: #797979;
+          background-image: $grayGrFixHover;
         }
       }
 
       @supports #{$edge} {
-        background: #9d9fa1;
+        background-image: $grayGrFix;
 
         &:hover {
-          background: #797979;
+          background-image: $grayGrFixHover;
         }
       }
 
@@ -200,7 +156,7 @@
       }
     }
 
-    &_theme_grayB {
+    &--theme-grayB {
       background: linear-gradient(to bottom, #fff 0%, #2a333c 100%);
       font-family: $robotoC;
 
@@ -210,7 +166,7 @@
         position: absolute;
 
         @media #{$ie} {
-          background: #9d9fa1;
+          background: $grayGrFix;
         }
 
         @-moz-document url-prefix() {
@@ -220,7 +176,7 @@
         }
 
         @supports #{$edge} {
-          background: #9d9fa1;
+          background: $grayGrFix;
         }
 
         @include em((
@@ -239,7 +195,7 @@
           background: $grayGrHover;
 
           @media #{$ie} {
-            background: #747577;
+            background: $grayGrFixHover;
           }
 
           @-moz-document url-prefix() {
@@ -249,7 +205,7 @@
           }
 
           @supports #{$edge} {
-            background: #747577;
+            background: $grayGrFixHover;
           }
         }
 
@@ -259,7 +215,7 @@
       }
     }
 
-    &_theme_greenB {
+    &--theme-greenB {
       background: linear-gradient(to bottom, #a6e15d 0%, #2f4427 100%);
       font-family: $robotoC;
 
@@ -269,11 +225,11 @@
         position: absolute;
 
         @media #{$ie} {
-          background: #96c310;
+          background: $greenGrFix;
         }
 
         @supports #{$edge} {
-          background: #96c310;
+          background: $greenGrFix;
         }
 
         @-moz-document url-prefix() {
@@ -298,11 +254,11 @@
           background: $greenGrHover;
 
           @media #{$ie} {
-            background: #74980a;
+            background: $greenGrFixHover;
           }
 
           @supports #{$edge} {
-            background: #74980a;
+            background: $greenGrFixHover;
           }
 
           @-moz-document url-prefix() {
@@ -318,7 +274,7 @@
       }
     }
 
-    &_theme_blueB {
+    &--theme-blueB {
       background: linear-gradient(to bottom, #bfe2ff 0%, #063e6e 100%);
       font-family: $robotoC;
 
@@ -328,11 +284,11 @@
         position: absolute;
 
         @media #{$ie} {
-          background: #03569d;
+          background: $blueGrFix;
         }
 
         @supports #{$edge} {
-          background: #03569d;
+          background: $blueGrFix;
         }
 
         @-moz-document url-prefix() {
@@ -357,11 +313,11 @@
           background: $blueGrHover;
 
           @media #{$ie} {
-            background: #014580;
+            background: $blueGrFixHover;
           }
 
           @supports #{$edge} {
-            background: #014580;
+            background: $blueGrFixHover;
           }
 
           @-moz-document url-prefix() {
@@ -377,7 +333,7 @@
       }
     }
 
-    &_size_s {
+    &--size-s {
       font-size: 1em;
       @include em((
         min-height: 46px,
@@ -414,7 +370,7 @@
       // }
     }
 
-    &_size_m {
+    &--size-m {
       font-size: em(18px, $mfs);
       @include em((
         min-height: 60px,
@@ -431,11 +387,11 @@
           background: $grayGrHover;
 
           @media #{$ie} {
-            background: #646668;
+            background: $grayGrFixHover;
           }
 
           @supports #{$edge} {
-            background: #646668;
+            background: $grayGrFixHover;
           }
 
           @-moz-document url-prefix() {
@@ -466,7 +422,7 @@
         fill: #6a6a6a;
       }
 
-      &_active {
+      &--active {
         cursor: default;
       }
 
@@ -477,7 +433,7 @@
         }
       }
 
-      &_move {
+      &--move {
         position: absolute;
         transition: dir(left) .2s;
 
@@ -485,7 +441,7 @@
           left: 50%
         ));
 
-        .ec-btn-sound_muted & {
+        .ec-btn-sound--muted & {
           @include dir((
             left: em(1px, $mfs)
           ));
@@ -499,6 +455,10 @@
       display: flex;
       background: #312936;
       position: relative;
+    }
+
+    &-rules {
+      font-style: italic;
     }
 
   }
@@ -564,18 +524,18 @@
         }
 
         @media #{$ie} {
-          background: #9d9fa1;
+          background-image: $grayGrFix;
 
           &:hover {
-            background: #797979;
+            background-image: $grayGrFixHover;
           }
         }
 
         @supports #{$edge} {
-          background: #9d9fa1;
+          background-image: $grayGrFix;
 
           &:hover {
-            background: #797979;
+            background-image: $grayGrFixHover;
           }
         }
 
@@ -778,11 +738,11 @@
           background: $grayGrHover;
 
           @media #{$ie} {
-            background: #646668;
+            background: $grayGrFixHover;
           }
 
           @supports #{$edge} {
-            background: #646668;
+            background: $grayGrFixHover;
           }
 
           @-moz-document url-prefix() {
@@ -825,11 +785,11 @@
       justify-content: center;
     }
 
-    &.ec-hint_choose .ec-hint__choose {
-      position: relative;
-      opacity: 1;
-      visibility: visible;
-    }
+    // &.ec-hint--choose .ec-hint--choose {
+    //   position: relative;
+    //   opacity: 1;
+    //   visibility: visible;
+    // }
 
   }
 

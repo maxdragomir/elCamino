@@ -1,7 +1,7 @@
 .ec {
 
   &-bg {
-    &_city {
+    &--city {
       background: url(#{$imgDir}city/asphalt.jpg) center;
     }
   }
@@ -14,15 +14,15 @@
 
     &__city {
 
-      & .ec-sky__cloud_one {
+      & .ec-sky__cloud--one {
         background-image: url(#{$imgDir}city/cloud1.png);
       }
 
-      & .ec-sky__cloud_two {
+      & .ec-sky__cloud--two {
         background-image: url(#{$imgDir}city/cloud2.png);
       }
 
-      & .ec-sky__cloud_three {
+      & .ec-sky__cloud--three {
         background-image: url(#{$imgDir}city/cloud1.png);
       }
     }
@@ -59,12 +59,12 @@
       }
     }
 
-    &_back {
+    &--back {
       transform: translateY(15%);
       transition: transform 1.5s ease-out;
       image-rendering: -webkit-optimize-contrast;
 
-      .ec-section_move & {
+      .ec-section--move & {
         transform: none;
       }
 
@@ -79,7 +79,7 @@
 
   &-city {
 
-    &_back {
+    &--back {
       width: 100%;
       background: url(#{$imgDir}city/back.png) no-repeat center;
       background-size: auto 100%;
@@ -100,7 +100,7 @@
     position: absolute;
     left: 50%;
 
-    &_img1 {
+    &--img1 {
       background-image: url(#{$imgDir}city/build1.png);
       bottom: 100%;
 
@@ -112,7 +112,7 @@
       ), $mfs);
     }
 
-    &_img2 {
+    &--img2 {
       background-image: url(#{$imgDir}city/build2.png);
       bottom: 100%;
 
@@ -124,7 +124,7 @@
       ), $mfs);
     }
 
-    &_img3 {
+    &--img3 {
       background-image: url(#{$imgDir}city/build3.png);
 
       @include em((
@@ -135,7 +135,7 @@
       ), $mfs);
     }
 
-    &_img4 {
+    &--img4 {
       background-image: url(#{$imgDir}city/build4.png);
 
       @include em((
@@ -146,7 +146,7 @@
       ), $mfs);
     }
 
-    &_img5 {
+    &--img5 {
       background-image: url(#{$imgDir}city/build5.png);
 
       @include em((
@@ -157,7 +157,7 @@
       ), $mfs);
     }
 
-    &_img6 {
+    &--img6 {
       background-image: url(#{$imgDir}city/build6.png);
 
       @include em((

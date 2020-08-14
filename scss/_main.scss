@@ -22,7 +22,7 @@
     transition: opacity 1s linear, visibility 1s linear;
     transform: translateZ(0);
 
-    &_hide {
+    &--hide {
       display: none;
     }
 
@@ -39,13 +39,13 @@
 
     padding-top: em(24px, $mfs);
 
-    &_active {
+    &--active {
       position: relative;
       // visibility: visible;
       // opacity: 1;
     }
 
-    &_move {
+    &--move {
       overflow: hidden;
     }
   }
@@ -63,8 +63,9 @@
     transition: color $sunRiseTime/2 0s linear;
     font-weight: 900;
     position: relative;
+    left: em(9px, $mfs);
 
-    .ec-static_toggle & {
+    .ec-static--toggle & {
       color: #fff;
       transition-delay: $sunRiseTime/2;
     }
@@ -76,11 +77,14 @@
     &__triangle {
       position: absolute;
       left: 0;
-      transition: fill $sunRiseTime/2 0s linear;
-      transform: scale(0)translate3d(0, 0, 0);
-      opacity: 0;
-      animation: opacity1 2s forwards,  transNone 1s forwards;
+      transition: fill $sunRiseTime/2 0s linear, transform 1s ease-out;
+      transform: scale(0) translate3d(0, 0, 0);
+      // animation: opacity1 2s forwards, transNone 1s forwards;
       fill: #2d2e2d;
+
+      .ec-load-ready & {
+        transform: none;
+      }
 
       @include em((
         width: 400px,
@@ -89,9 +93,14 @@
         left: 25px
       ), $mfs);
 
-      .ec-static_toggle & {
+      .ec-static--toggle & {
         fill: #fff;
         transition-delay: $sunRiseTime/2;
+      }
+
+      &-bot {
+        top: auto;
+        bottom: em(-90px, $mfs);
       }
     }
 
@@ -121,16 +130,15 @@
       color: #c4c6ba;
       line-height: .95;
       font-size: em(140px, $mfs);
-      transition: color $sunRiseTime/2 0s linear;
+      transition: color 1s 0s linear;
 
-      .ec-static_toggle & {
+      .ec-static--toggle & {
         color: #3282e6;
         transition-delay: $sunRiseTime/2;
       }
 
       @include em((
-        margin: 30px 0 -15px,
-        margin-left: -30px
+        margin: 30px 0 -15px
       ), 140px);
     }
 
@@ -139,7 +147,139 @@
       text-align: center;
       font-weight: 700;
       font-size: em(24px, $mfs);
-      margin: em(5px 0 0, $mfs);
+      margin: em(12px 0 0, $mfs);
+      background-color: #3a3b3a;
+      color: #fff;
+      transition: 1s 0s linear;
+      transition-property: background, color;
+      padding: em(5px, 10px);
+      position: relative;
+      box-sizing: border-box;
+      height: em(74px, 24px);
+      transform: skewX(-20deg);
+
+      .ec-static-toggle & {
+        color: #00204e;
+        background-color: #fff;
+        transition-delay: $sunRiseTime/2;
+      }
+
+      &-txt {
+        transform: skew(20deg);
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        transition: 1s 0s linear;
+        transition-property: opacity, transform;
+
+        &--day {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+
+          .ec-static--toggle & {
+            transform: scale(.8) skew(20deg);
+            opacity: 0;
+            transition-delay: $sunRiseTime/2;
+          }
+        }
+
+        &--night {
+          transform: scale(.8) skew(20deg);
+          opacity: 0;
+
+          .ec-static--toggle & {
+            opacity: 1;
+            transform: skew(20deg);
+            transition-delay: $sunRiseTime/2;
+          }
+        }
+
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        border: em(5px, 24px) solid #3a3b3a;
+        transition: border 1s 0s linear;
+
+        .ec-static--toggle & {
+          border-color: #fff;
+          transition-delay: $sunRiseTime/2;
+        }
+
+        @include em((
+          left: -9px,
+          right: -9px,
+          bottom: -9px,
+          top: -9px
+        ), 24px);
+      }
+
+      &-border {
+        position: absolute;
+        background-color: #c4c6ba;
+        transition: background 1s 0s linear;
+
+        .ec-static--toggle & {
+          background-color: #00204e;
+          transition-delay: $sunRiseTime/2;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: em(-5px, 24px);
+          box-sizing: border-box;
+          transition: border 1s 0s linear;
+
+          .ec-static--toggle & {
+            border-color: #fff;
+            transition-delay: $sunRiseTime/2;
+          }
+
+          @include em((
+            width: 38px,
+            height: 44px
+          ), 24px);
+        }
+
+        @include em((
+          top: 9px,
+          width: 28px,
+          height: 52px
+        ), 24px);
+
+        &--left {
+          right: 100%;
+
+          &:before {
+            border-left: em(5px, 24px) solid #3a3b3a;
+            border-bottom: em(5px, 24px) solid #3a3b3a;
+            bottom: em(-5px, 24px);
+          }
+        }
+
+        &--right {
+          left: 100%;
+          // margin-left: -1px;
+
+          &:before {
+            border-right: em(5px, 24px) solid #3a3b3a;
+            border-top: em(5px, 24px) solid #3a3b3a;
+            top: em(-5px, 24px);
+          }
+        }
+      }
     }
 
     &__canvas {
@@ -153,16 +293,16 @@
         height: 164px
       ), $mfs);
 
-      &-white {
+      &--white {
         opacity: 0;
-        .ec-static_toggle & {
+        .ec-static--toggle & {
           opacity: 1;
           transition-delay: $sunRiseTime/2;
         };
       }
 
-      &-black {
-        .ec-static_toggle & {
+      &--black {
+        .ec-static--toggle & {
           opacity: 0;
           transition-delay: $sunRiseTime/2;
         };
@@ -232,7 +372,7 @@
       transition: .2s linear;
       overflow: visible;
 
-       * {
+      * {
         direction: dir(ltr);
       }
 
@@ -267,9 +407,9 @@
         ), $mfs);
       }
 
-      &_theme {
+      &--theme {
 
-        &_green {
+        &-green {
           background: linear-gradient(to right, #47834a 0%, #346c37 100%);
 
           &:hover {
@@ -281,7 +421,7 @@
           }
         }
 
-        &_blue {
+        &-blue {
           background: linear-gradient(to right, #1f93f7 0%, #1364f5 100%);
 
           &:hover {
@@ -293,7 +433,7 @@
           }
         }
 
-        &_orange {
+        &-orange {
           background: linear-gradient(to right, #fe9936 0%, #dd5e00 100%);
 
           &:hover {
@@ -346,7 +486,7 @@
           height: 88.92px
         ), $mfs);
 
-        &_mid {
+        &--mid {
           @include em((
             width: 44.89px,
             height: 88.88px
@@ -423,7 +563,7 @@
       background-size: 200% 100%;
       opacity: 0;
 
-      &.ec-turns__item_on {
+      &.ec-turns__item--on {
         animation: opacityHalf1 1s steps(1) infinite;
       }
 
@@ -432,7 +572,7 @@
         height: 40px
       ), $mfs);
 
-      &_right {
+      &--right {
         background-position: right center;
       }
     }
@@ -475,7 +615,7 @@
       top: 48%;
       width: em(588.5px, $mfs);
 
-      &.ec-car_back {
+      &.ec-car--back {
         transform: translateY(100%) scale(1.5);
         animation: transNone 1.5s ease-out forwards;
       }
@@ -490,7 +630,7 @@
       ), $mfs);
     }
 
-    &_static {
+    &--static {
 
       &:before {
         content: '';
@@ -499,17 +639,9 @@
         top: 0;
         right: 0;
         bottom: 0;
-        background: url(../img/el-camino/car/car.png) no-repeat center top;
-        background-size: 100% auto;
+        background: url(../img/el-camino/car/sprite.png) no-repeat 11.1111111111% top;
+        background-size: auto 500%;
         z-index: 1;
-
-        .ec-bg_transition & {
-          background-position: 0 50%;
-        }
-
-        .ec-bg_night & {
-          background-position: 0 100%;
-        }
       }
     }
 
@@ -518,7 +650,7 @@
       height: 320px
     ), $mfs);
 
-    &_road {
+    &--road {
       overflow: hidden;
 
       @include em((
@@ -544,7 +676,7 @@
       transition: opacity .1s $sunRiseTime/2 linear;
       opacity: 0;
 
-      &_front {
+      &--front {
         background-image: url(../img/el-camino/car/front-light.png);
         @include em((
           top: 80px,
@@ -554,7 +686,7 @@
         ), $mfs);
       }
 
-      &_back {
+      &--back {
         background-image: url(../img/el-camino/car/back-light.png);
         z-index: 2;
 
@@ -566,7 +698,7 @@
         ), $mfs);
       }
 
-      .ec-static_toggle & {
+      .ec-static--toggle & {
         opacity: 1;
       }
     }
@@ -585,37 +717,37 @@
     transition-timing-function: ease-out;
     transition-property: transform;
 
-    .ec-section_static & {
+    .ec-section--static & {
       transition-duration: 1.5s;
       transition-timing-function: ease-in;
       transition-property: transform;
     }
 
-    &_2 {
+    &--2 {
       transform: translateZ(0) scale(.2) rotate(0.01deg);
     }
 
-    &_3 {
+    &--3 {
       transform: translateZ(0) scale(.3) rotate(0.01deg);
     }
 
-    &_7 {
+    &--7 {
       transform: translateZ(0) scale(.7) rotate(0.01deg);
     }
 
-    &_9 {
+    &--9 {
       transform: translateZ(0) scale(.9) rotate(0.01deg);
     }
 
-    &_turns {
+    &--turns {
       margin-bottom: em(12px, $mfs);
     }
 
-    &_lights {
+    &--lights {
       margin-bottom: em(12px, $mfs);
     }
 
-    .ec-section_move & {
+    .ec-section--move & {
       transform: none;
     }
 
@@ -654,7 +786,7 @@
     height: em(477px, $mfs);
     width: 100%;
 
-    .ec-bg_night & {
+    .ec-bg--night & {
       background-image: url(../img/el-camino/static/night/road.png);
     }
   }
@@ -703,7 +835,7 @@
     //   }
     // }
 
-    &_rem {
+    &--rem {
 
       & .ec-bet__change {
         text-shadow: 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324, 0 0 2px #d72324,
@@ -720,7 +852,7 @@
       }
     }
 
-    &_add {
+    &--add {
 
       & .ec-bet__change {
         text-shadow: 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00, 0 0 2px #466e00,
@@ -759,12 +891,12 @@
       transition: .2s ease-out;
       margin-top: em(-44px, 16px);
 
-      .ec-bet_change & {
+      .ec-bet--change & {
         margin-top: 0;
       }
     }
 
-    &_change {
+    &--change {
 
       &:before {
         animation: pulse 1s 3 ease-in-out forwards;
@@ -811,19 +943,19 @@
 
 
 
-      &.ec-coef_change:before {
+      &.ec-coef--change:before {
         animation: pulse 1s 3 ease-in-out forwards;
       }
     }
 
-    &_up {
+    &--up {
 
       &:before {
         background-image: url(#{$imgDir}sum-add-bg.png);
       }
     }
 
-    &_down {
+    &--down {
 
       &:before {
         background-image: url(#{$imgDir}sum-rem-bg.png);
@@ -920,7 +1052,7 @@
 
     &__cel {
 
-      &_right {
+      &--right {
         align-items: center;
         display: -webkit-flex;
         display: -ms-flex;
@@ -957,7 +1089,7 @@
         }
       }
 
-      &_engine {
+      &--engine {
 
         @include em((
           left: 578px,
@@ -970,8 +1102,6 @@
             fill: #362736;
             stroke-width: 0;
           stroke-width: 1px;
-          animation-duration: 18s;
-          animation-delay: 10s;
 
           @include em((
             width: 32px,
@@ -989,7 +1119,7 @@
         // }
       }
 
-      &_fuel {
+      &--fuel {
 
         @include em((
           left: 578px,
@@ -997,8 +1127,6 @@
         ), $mfs);
 
         & svg {
-          animation-duration: 20s;
-          animation-delay: 5s;
 
           @include em((
             width: 22px,
@@ -1007,7 +1135,7 @@
         }
       }
 
-      &_warning {
+      &--warning {
 
         @include em((
           left: 664px,
@@ -1019,7 +1147,7 @@
         }
       }
 
-      &_active {
+      &--active {
 
         svg {
         }
@@ -1037,7 +1165,7 @@
     font-weight: 700;
     position: relative;
 
-    &_size_low {
+    &--size-low {
       font-size: em(18px, $mfs);
       margin-top: em(14px, 18px);
       flex-basis: em(270px, 18px);
@@ -1064,11 +1192,13 @@
 
     &:before {
       right: 100%;
+      margin-right: -1px;
       background-image: url(#{$imgDir}torpedo/top-left-border.png);
     }
 
     &:after {
       left: 100%;
+      margin-left: -1px;
       background-image: url(#{$imgDir}torpedo/top-right-border.png);
     }
 
@@ -1084,6 +1214,11 @@
         height: 80px,
         padding: 10px
       ), 24px);
+    }
+
+    span {
+      z-index: 1;
+      position: relative;
     }
   }
 
@@ -1119,21 +1254,21 @@
         background-color: #f70808;
         transition: dir(left) .5s;
 
-        &_count {
+        &--count {
 
-          &_1 {
+          &-1 {
             @include dir((
               left: 20%
             ));
           }
 
-          &_2 {
+          &-2 {
             @include dir((
               left: 50%
             ));
           }
 
-          &_3 {
+          &-3 {
             @include dir((
               left: 75%
             ));
@@ -1214,7 +1349,7 @@
           padding: 2px 0 1px,
         ), 14px);
 
-        &_active {
+        &--active {
           cursor: default;
         }
 
@@ -1232,8 +1367,8 @@
         }
 
         &:hover,
-        &_active,
-        &_active:disabled:hover {
+        &--active,
+        &--active:disabled:hover {
           background: linear-gradient(to bottom, #db2222 0%, #830606 100%);
           box-shadow: em(1px 1px 3px, 14px) #f70808;
           border-color: #db2222;
@@ -1259,11 +1394,11 @@
         top: 10px
       ), $mfs);
 
-      &_set_off {
+      &--set-off {
         right: em(-54px, $mfs);
       }
 
-      &_set_on {
+      &--set-on {
         left: em(-54px, $mfs);
       }
 
@@ -1300,7 +1435,7 @@
     position: absolute;
     transition: transform 1.5s ease-out;
 
-    &.ec-speedometer_start {
+    &.ec-speedometer--start {
       transform: rotate(100deg)
     }
 
@@ -1338,7 +1473,7 @@
     transition: transform 1.5s ease-out;
 
 
-    &.ec-tachometer_start {
+    &.ec-tachometer--start {
       transform: rotate(100deg)
     }
 
@@ -1377,7 +1512,7 @@
       direction: dir(ltr);
     }
 
-    .ec-bet-added & {
+    .ec-bet--added & {
       opacity: 1;
       visibility: visible;
       transform: none;

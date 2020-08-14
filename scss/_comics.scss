@@ -9,7 +9,7 @@ $dur: .2s;
     margin: 100px 0
   ), $mfs);
 
-  &_cards {
+  &-cards {
     width: 100%;
     height: auto;
     margin: em(80px 0, $mfs);
@@ -41,7 +41,7 @@ $dur: .2s;
   //   transition-duration: .2s;
   // }
 
-  &_money {
+  &-money {
     font-size: em(15px, $mfs);
 
     @media #{$d1600} {
@@ -61,7 +61,7 @@ $dur: .2s;
     }
   }
 
-  &_border {
+  &-border {
     @include em((
       width: 1612px,
       height: 740px
@@ -79,7 +79,7 @@ $dur: .2s;
     width: 100%;
     height: 100%;
 
-    .ec-comics_money & {
+    .ec-comics-money & {
       height: em(782px, $mfs);
     }
   }
@@ -105,13 +105,13 @@ $dur: .2s;
       height: 100%;
     }
 
-    &_end {
+    &--end {
       transform: none;
     }
 
-    .ec-comics_start & {
+    .ec-comics-start & {
 
-      &_1 {
+      &--1 {
         @include em((
           width: 257px,
           height: 196px,
@@ -126,7 +126,7 @@ $dur: .2s;
         }
       }
 
-      &_2 {
+      &--2 {
 
         @include em((
           width: 386px,
@@ -136,7 +136,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_3 {
+      &--3 {
 
         @include em((
           width: 493px,
@@ -146,7 +146,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_4 {
+      &--4 {
 
         @include em((
           width: 488px,
@@ -156,7 +156,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_5 {
+      &--5 {
 
         @include em((
           width: 527px,
@@ -166,7 +166,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_6 {
+      &--6 {
 
         @include em((
           width: 265px,
@@ -176,7 +176,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_7 {
+      &--7 {
 
         @include em((
           width: 338px,
@@ -186,7 +186,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_8 {
+      &--8 {
 
         @include em((
           width: 388px,
@@ -196,7 +196,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_9 {
+      &--9 {
 
         @include em((
           width: 657px,
@@ -206,9 +206,9 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_10 {
+      &--10 {
 
-        &_1 {
+        &-1 {
           -webkit-transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
           -ms-transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
           transform: translate3d(-5%, 20%, 0) rotate(0.01deg);
@@ -223,9 +223,9 @@ $dur: .2s;
       }
     }
 
-    .ec-comics_money & {
+    .ec-comics-money & {
 
-      &_1 {
+      &--1 {
         @include em((
           width: 667px,
           height: 231px,
@@ -234,7 +234,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_2 {
+      &--2 {
 
         @include em((
           width: 555px,
@@ -244,7 +244,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_3 {
+      &--3 {
 
         @include em((
           width: 242px,
@@ -254,7 +254,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_4 {
+      &--4 {
 
         @include em((
           width: 324px,
@@ -264,7 +264,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_5 {
+      &--5 {
 
         @include em((
           width: 320px,
@@ -275,7 +275,7 @@ $dur: .2s;
 
       }
 
-      &_6 {
+      &--6 {
 
         @include em((
           width: 350px,
@@ -285,7 +285,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_7 {
+      &--7 {
 
         @include em((
           width: 256px,
@@ -295,7 +295,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_8 {
+      &--8 {
 
         @include em((
           width: 460px,
@@ -306,7 +306,7 @@ $dur: .2s;
 
       }
 
-      &_9, &_12 {
+      &--9, &--12 {
 
         @include em((
           width: 410px,
@@ -316,7 +316,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_10 {
+      &--10 {
 
         @include em((
           width: 225px,
@@ -326,7 +326,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_11 {
+      &--11 {
 
         @include em((
           width: 224px,
@@ -337,7 +337,7 @@ $dur: .2s;
 
       }
 
-      &_13 {
+      &--13 {
         @include em((
           width: 327px,
           height: 781px,
@@ -347,9 +347,9 @@ $dur: .2s;
       }
     }
 
-    .ec-comics_border & {
+    .ec-comics-border & {
 
-      &_1 {
+      &--1 {
         @include em((
           width: 451px,
           height: 232px,
@@ -359,7 +359,7 @@ $dur: .2s;
 
       }
 
-      &_2 {
+      &--2 {
 
         @include em((
           width: 515px,
@@ -369,7 +369,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_3 {
+      &--3 {
 
         @include em((
           width: 328px,
@@ -379,7 +379,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_4 {
+      &--4 {
 
         @include em((
           width: 334px,
@@ -389,7 +389,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_5 {
+      &--5 {
 
         @include em((
           width: 273px,
@@ -399,7 +399,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_6 {
+      &--6 {
         left: 0;
 
         @include em((
@@ -410,7 +410,7 @@ $dur: .2s;
 
       }
 
-      &_7 {
+      &--7 {
 
         @include em((
           width: 920px,
@@ -420,7 +420,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_8 {
+      &--8 {
         left: 0;
 
         @include em((
@@ -430,7 +430,7 @@ $dur: .2s;
         ), $mfs);
       }
 
-      &_9 {
+      &--9 {
 
         @include em((
           width: 755px,
@@ -441,13 +441,13 @@ $dur: .2s;
       }
 
 
-      &_group1{
-        &_4 {
+      &--group1{
+        &-4 {
           @include em((
             width: 512px,
           ), $mfs);
         }
-        &_5 {
+        &-5 {
           left: 0;
 
           @include em((
@@ -456,7 +456,7 @@ $dur: .2s;
             top: 220px
           ), $mfs);
         }
-        &_6 {
+        &-6 {
           @include em((
             width: 686px,
             height: 254px,
@@ -465,7 +465,7 @@ $dur: .2s;
           ), $mfs);
 
         }
-        &_7 {
+        &-7 {
           @include em((
             width: 455px,
             height: 254px,
@@ -473,12 +473,12 @@ $dur: .2s;
             left: 1155px
           ), $mfs)
         }
-        &_8 {
+        &-8 {
           @include em((
             width: 1050px,
           ), $mfs);
         }
-        &_9 {
+        &-9 {
           @include em((
             width: 578px,
             left: 1030px
@@ -492,131 +492,131 @@ $dur: .2s;
       transition-timing-function: linear;
       transition-delay: $dur;
 
-      .ec-comics__slide_show &,
-      .ec-slider__item_anim & {
+      .ec-comics__slide--show &,
+      .ec-slider__item--anim & {
         // transition: -name: moveComicsPart;
         transform: none;
         opacity: 1;
       }
-      &_easing {
+      &-easing {
 
-        &_out {
+        &-out {
           transition-timing-function: ease-out;
         }
 
-        &_in {
+        &-in {
           transition-timing-function: ease-in;
         }
 
-        &_steps {
+        &-steps {
           transition-timing-function: steps(3);
         }
       }
 
-      &_anim {
+      &--anim {
 
-        &_f {
+        &-f {
           opacity: 0;
         }
 
-        &_ft {
+        &-ft {
           transform: translate3d(0, 100%, 0) rotate(0.01deg);
         }
 
-        &_fr {
+        &-fr {
           transform: translate3d(-100%, 0, 0) rotate(0.01deg);
         }
 
-        &_fb {
+        &-fb {
           transform: translate3d(0, -100%, 0) rotate(0.01deg);
         }
 
-        &_fl {
+        &-fl {
           transform: translate3d(100%, 0, 0) rotate(0.01deg);
         }
 
-        &_tf {
+        &-tf {
           transform: translate3d(0, 10%, 0) rotate(0.01deg);
           opacity: 0;
         }
 
-        &_rf {
+        &-rf {
           transform: translate3d(-10%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
-        &_rs {
+        &-rs {
           transform: translate3d(-2%, 0, 0) rotate(0.01deg);
         }
 
-        &_b {
+        &-b {
           transform: translate3d(0, -10%, 0) rotate(0.01deg);
         }
 
-        &_t {
+        &-t {
           transform: translate3d(0, 10%, 0) rotate(0.01deg);
         }
 
-        &_trl {
+        &-trl {
           transform: translate3d(-2%, 8%, 0) rotate(0.01deg);
         }
 
-        &_bll {
+        &-bll {
           transform: translate3d(2%, -8%, 0) rotate(0.01deg);
         }
 
-        &_l {
+        &-l {
           transform: translate3d(10%, 0, 0) rotate(0.01deg);
         }
 
-        &_r {
+        &-r {
           transform: translate3d(-10%, 0, 0) rotate(0.01deg);
         }
 
-        &_lf {
+        &-lf {
           transform: translate3d(10%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
-        &_lfl {
+        &-lfl {
           transform: translate3d(2%, 0, 0) rotate(0.01deg);
           opacity: 0;
         }
 
-        &_bf {
+        &-bf {
           transform: translate3d(0, 10%, 0) rotate(0.01deg);
           opacity: 0;
         }
-        &_bf_5 {
+        &-bf-5 {
           transform: translate3d(0, 5%, 0) rotate(0.01deg);
           opacity: 0;
         }
 
-        &_lt {
+        &-lt {
           transform: translate3d(10%, 10%, 0) rotate(0.01deg);
         }
 
-        &_rt {
+        &-rt {
           transform: translate3d(-10%, 10%, 0) rotate(0.01deg);
         }
 
-        &_rt2 {
+        &-rt2 {
           transform: translate3d(-10%, 15%, 0) rotate(0.01deg);
         }
 
-        &_rt20 {
+        &-rt20 {
           transform: translate3d(-20%, 20%, 0) rotate(0.01deg);
         }
 
-        &_rb {
+        &-rb {
           transform: translate3d(-10%, -10%, 0) rotate(0.01deg);
         }
 
-        &_r10b4 {
+        &-r10b4 {
           transform: translate3d(-10%, -4%, 0) rotate(0.01deg);
         }
 
-        &_rotr {
+        &-rotr {
           transform: rotate(-5deg);
         }
         &_sct {
@@ -629,158 +629,158 @@ $dur: .2s;
         }
 
 
-        &_scr {
+        &-scr {
           transform: translate3d(0%, 0%, 0) scale(0.9) rotate(0.01deg);
         }
 
-        &_tt {
+        &-tt {
           transform: translate3d(0, -5%, 0) rotate(0.01deg);
         }
 
-        &_tr {
+        &-tr {
           transform: translate3d(-5%, 0, 0) rotate(0.01deg);
         }
 
-        &_tl {
+        &-tl {
           transform: translate3d(5%, 0, 0) rotate(0.01deg);
         }
 
-        &_tb {
+        &-tb {
           transform: translate3d(0, 5%, 0) rotate(0.01deg);
         }
 
-        &_scale_8 {
+        &-scale-8 {
           transform: scale(.8);
           transform-origin: center;
         }
 
-        &_translate_0_m5Scale_8 {
+        &-translate-0-m5Scale-8 {
           transform: translate(0%, -5%) scale(.8) rotate(0.01deg);
         }
-        &_translate_0_m5Scale_9 {
+        &-translate-0-m5Scale-9 {
           transform: translate(0%, -5%) scale(.9) rotate(0.01deg);
         }
-        &_translate_m15_3Scale_1 {
+        &-translate-m15-3Scale-1 {
           transform: translate(-15%, 3%) scale(1) rotate(0.01deg);
         }
-        &_translate_m13_5Scale_8 {
+        &-translate-m13-5Scale-8 {
           transform: translate(-13%, -5%) scale(.8) rotate(0.01deg);
         }
 
-        &_translate_5_10Scale_1 {
+        &-translate-5-10Scale-1 {
           transform: translate(5%, 10%) scale(1) rotate(0.01deg);
         }
-        &_translate_m20_m5Scale_1 {
+        &-translate-m20-m5Scale-1 {
           transform: translate(-20%, -5%) scale(1) rotate(0.01deg);
         }
-        &_translate_m10_m15_rotate_m85 {
+        &-translate-m10-m15-rotate-m85 {
           transform: rotate(-85deg) translate(-10%, -15%);
         }
-        &_translate_0_5Scale_1_1 {
+        &-translate-0-5Scale-1-1 {
           transform: translate(0%, 5%) scale(1.1) rotate(0.01deg);
         }
 
       }
 
 
-      &_dur {
+      &--dur {
 
-        &_2 {
+        &-2 {
           transition-duration: .2s;
         }
 
-        &_4 {
+        &-4 {
           transition-duration: .4s;
         }
 
-        &_6 {
+        &-6 {
           transition-duration: .6s;
         }
 
-        &_8 {
+        &-8 {
           transition-duration: .6s;
         }
 
-        &_10 {
+        &-10 {
           transition-duration: 1s;
         }
 
-        &_12 {
+        &-12 {
           transition-duration: 1.2s;
         }
 
-        &_15 {
+        &-15 {
           transition-duration: 1.5s;
         }
 
-        &_16 {
+        &-16 {
           transition-duration: 1.6s;
         }
 
-        &_20 {
+        &-20 {
           transition-duration: 2s;
         }
 
-        &_22 {
+        &-22 {
           transition-duration: 2.2s;
         }
 
-        &_30 {
+        &-30 {
           transition-duration: 3s;
         }
 
-        &_32 {
+        &-32 {
           transition-duration: 3.2s;
         }
 
-        &_34 {
+        &-34 {
           transition-duration: 3.4s;
         }
 
-        &_36 {
+        &-36 {
           transition-duration: 3.6s;
         }
 
-        &_40 {
+        &-40 {
           transition-duration: 4s;
         }
 
-        &_44 {
+        &-44 {
           transition-duration: 4s;
         }
 
-        &_60 {
+        &-60 {
           transition-duration: 6s;
         }
       }
 
-      &_delay {
+      &--delay {
 
-        &_2 {
+        &-2 {
           transition-delay: $dur+.2s;
         }
 
-        &_4 {
+        &-4 {
           transition-delay: $dur+.4s;
         }
 
-        &_6 {
+        &-6 {
           transition-delay: $dur+.6s;
         }
 
-        &_8 {
+        &-8 {
           transition-delay: $dur+.6s;
         }
 
-        &_10 {
+        &-10 {
           transition-delay: $dur+1s;
         }
 
-        &_16 {
+        &-16 {
           transition-delay: $dur+1.6s;
         }
 
-        &_20 {
+        &-20 {
           transition-delay: $dur+2s;
         }
       }
@@ -798,14 +798,14 @@ $dur: .2s;
       font-weight: 900;
       color: #000;
       font-size: em(20px, $mfs);
-      &_7 {
+      &--7 {
         width: em(250px, $mfs);
         top: em(25px, $mfs);
         left: auto;
         right: em(50px, $mfs);
         font-size: em(18px, $mfs);
       }
-      &_9 {
+      &--9 {
         top: em(15px, $mfs);
         left: em(15px, $mfs);
         color: #d1c7bd;
@@ -827,7 +827,7 @@ $dur: .2s;
         display: block;
       }
 
-      &_2 {
+      &--2 {
         transform: translate3d(em(-88px, $mfs), em(28px, $mfs), 0) skewY(-24deg) scale(1, 1);
         width: em(70px, $mfs);
         span {
@@ -835,7 +835,7 @@ $dur: .2s;
           line-height: 1.6;
         }
       }
-      &_8 {
+      &--8 {
         transform: translate3d(em(-45px, $mfs), em(135px, $mfs), 0) skewY(-4.3deg) scale(1, 1);
         width: em(120px, $mfs);
         span {
@@ -877,8 +877,8 @@ $dur: .2s;
       padding-left: 7px
     ), $mfs);
 
-    &_pause,
-    &_close {
+    &--pause,
+    &--close {
       border: none;
 
       & svg {
@@ -916,7 +916,7 @@ $dur: .2s;
       }
     }
 
-    &_round {
+    &-round {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -929,7 +929,7 @@ $dur: .2s;
       }
     }
 
-    &_end {
+    &--end {
       svg {
         width: em(27px, $mfs);
       }
@@ -948,22 +948,22 @@ $dur: .2s;
     font-family: $chalkB;
     max-width: 60%;
 
-    &_rt {
+    &--rt {
       right: 8%;
       top: 4%;
     }
 
-    &_br {
+    &--br {
       right: 8%;
       bottom: 4%;
     }
 
-    &_bl {
+    &--bl {
       left: 8%;
       bottom: 8%;
     }
 
-    &_br2 {
+    &--br2 {
       right: 16%;
       bottom: 4%;
     }
@@ -1299,7 +1299,7 @@ $dur: .2s;
     background-repeat: no-repeat;
     background-size: cover;
 
-    &_text {
+    &-text {
       text-align: center;
       background: #89898a;
       border: 1px solid #000;
@@ -1310,7 +1310,7 @@ $dur: .2s;
       font-size: em(15px, $mfs);
       direction: dir(ltr);
 
-      &_bl {
+      &--bl {
         left: 19%;
         bottom: 26%;
         top: auto;
@@ -1324,24 +1324,24 @@ $dur: .2s;
         background-color: #bababa;
       }
 
-      &-cop1 {
+      &--cop-1 {
         top: em(90px, $mfs);
         left: auto;
         right: em(60px, $mfs);
       }
-      &-cop2 {
+      &--cop-2 {
         top: auto;
         bottom: em(200px, $mfs);
         left: em(90px, $mfs);
       }
-      &-cop3 {
+      &--cop-3 {
         top: em(110px, $mfs);
         left: auto;
         right: em(60px, $mfs);
       }
     }
 
-    &_sign {
+    &-sign {
       position: absolute;
       top: em(270px, $mfs);
       right: em(51px, $mfs);

@@ -16,10 +16,9 @@ Vue.component('car', {
   data: function data() {
     return {};
   },
-  template: "<div class=\"ec-car-wrap\">\n       <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n         viewBox=\"0 0 588.5 169.2\" style=\"enable-background:new 0 0 588.5 169.2;\" xml:space=\"preserve\" class=\"ec-car__svg\">\n         <path class=\"ec-road_dir_mid\" d=\"M437.9,169c0,0-3.2-5.7-13.1-21.9S329.2,0.3,329.2,0.3\" l=\"200\"/>\n         <path class=\"ec-road_dir_right\" d=\"M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3\" l='223'/>\n         <path xmlns=\"http://www.w3.org/2000/svg\" class=\"ec-road_dir_left\" d=\"M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3\" l=\"467\"/>\n       </svg>\n      <div class=\"ec-car ec-car_road\">\n        <div class=\"ec-car__sprite\"></div>\n      </div>\n    </div>"
+  template: "<div class=\"ec-car-wrap\">\n       <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\n         viewBox=\"0 0 588.5 169.2\" style=\"enable-background:new 0 0 588.5 169.2;\" xml:space=\"preserve\" class=\"ec-car__svg\">\n         <path class=\"ec-road-dir-mid\" d=\"M437.9,169c0,0-3.2-5.7-13.1-21.9S329.2,0.3,329.2,0.3\" l=\"200\"/>\n         <path class=\"ec-road-dir-right\" d=\"M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3\" l='223'/>\n         <path xmlns=\"http://www.w3.org/2000/svg\" class=\"ec-road-dir-left\" d=\"M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3\" l=\"467\"/>\n       </svg>\n      <div class=\"ec-car ec-car--road\">\n        <div class=\"ec-car__sprite\"></div>\n      </div>\n    </div>"
 });
-var page = document.querySelector('.ec-page'),
-    Camino = new Vue({
+var Camino = new Vue({
   el: '.ec-page',
   components: {
     Multiselect: window.VueMultiselect.default
@@ -38,6 +37,7 @@ var page = document.querySelector('.ec-page'),
       value: 'Основной',
       options: ['Основной', 'Бонусный 1xGames']
     },
+    hint: false,
     sound: {
       muted: false,
       radio: 1,
@@ -229,8 +229,7 @@ var page = document.querySelector('.ec-page'),
     static: {
       toggle: false,
       day: true
-    },
-    hint: 'choose'
+    }
   },
   computed: {
     val: function val() {
@@ -338,7 +337,7 @@ var page = document.querySelector('.ec-page'),
           br = this.border,
           b = this.bet,
           win = this.Game.getRand(0, 1),
-          lose = b.safe ? this.Game.getRand(1, 2) : 2;
+          lose = b.safe ? 1 : 2;
       g.win = win;
       br.situation = win ? 0 : lose;
       setTimeout(function () {
@@ -357,7 +356,13 @@ var page = document.querySelector('.ec-page'),
       g.status = 'dir';
       this.updateCoef();
       this.showChangeVal();
-      if (b) return this.Game.backCar();
+
+      if (b) {
+        this.hint = true;
+        this.Game.backCar();
+        return;
+      }
+
       lvl.curStage = 0;
       g.prevStatus = g.status;
       g.status = 'coef';
@@ -430,7 +435,6 @@ var page = document.querySelector('.ec-page'),
     closeCards: function closeCards(name) {
       var g = this.game,
           cd = this.cards;
-      console.log(cd.cur);
       this.$modal.hide(cd.cur);
     },
     comicsOpened: function comicsOpened() {
@@ -473,6 +477,7 @@ var page = document.querySelector('.ec-page'),
           a = this.sound.audios;
       g.stages[g.way].curStage += 1;
       g.prevStatus = g.status;
+      this.hint = false;
       this.car.dir = dir;
       g.status = 'dirChoosed';
       this.hideChangeVal();
@@ -503,9 +508,9 @@ var page = document.querySelector('.ec-page'),
         gutter: 0
       });
       var slides = cardsSlider.getInfo().container.querySelectorAll('.ec-slider__item');
-      slides[0].classList.add('ec-slider__item_anim');
+      slides[0].classList.add('ec-slider__item--anim');
       cardsSlider.events.on('transitionStart', function (info, eventName) {
-        slides[info.index].classList.add('ec-slider__item_anim');
+        slides[info.index].classList.add('ec-slider__item--anim');
       });
     },
     cardsClosed: function cardsClosed() {
@@ -517,11 +522,7 @@ var page = document.querySelector('.ec-page'),
       var b = this.bet,
           cf = this.coefs,
           g = this.game;
-      if (g.win) b.val = b.val * cf.cur;else {
-        b.val /= 2;
-        console.log(b.val, b.safe);
-      }
-      ; // b.val = b.val*cf.cur;
+      if (g.win) b.val = b.val * cf.cur;else b.val /= 2; // b.val = b.val*cf.cur;
 
       if (b.safe) b.val += +b.safe;
     },
@@ -651,7 +652,7 @@ var page = document.querySelector('.ec-page'),
         this.modalShow(hash.split('_')[0]);
       }
     },
-    modalShow: function modalShow(name) {
+    modalShow: function modalShow(name, e) {
       this.$modal.show(name);
     },
     modalHide: function modalHide(name) {
@@ -676,7 +677,6 @@ var page = document.querySelector('.ec-page'),
     },
     popIn: function popIn(b) {
       if (b) this.body.classList.add('ec-no-scroll');else this.body.classList.remove('ec-no-scroll');
-      console.log(this.$modal);
     },
     playAudio: function playAudio(name, fn) {
       var s = this.sound,
@@ -737,7 +737,7 @@ var page = document.querySelector('.ec-page'),
     sectionBefore: function sectionBefore(el) {
       var _this7 = this;
 
-      this.game.dirReady = false;
+      this.game.dirReady = this.hint = false;
       setTimeout(function () {
         _this7.car.end = true;
         _this7.car.dir = '';
@@ -751,7 +751,7 @@ var page = document.querySelector('.ec-page'),
       // }, 200);
 
       setTimeout(function () {
-        _this8.game.dirReady = true;
+        _this8.game.dirReady = _this8.hint = true;
       }, 800); // el.classList.add('ec-section_move');
     },
     soundMute: function soundMute(b, f) {
@@ -900,15 +900,15 @@ var page = document.querySelector('.ec-page'),
         cd = this.cards;
 
     window.onload = function () {
-      _this10.load.images = true;
-      console.log('IMAGES LOADED ', _this10.load.audios);
+      _this10.load.images = true; // console.log('IMAGES LOADED ', this.load.audios);
+
       if (_this10.load.audios) _this10.loadReady();
     };
 
     this.Game = new CaminoClass();
     this.audiosLoad(function () {
-      _this10.load.audios = true;
-      console.log('AUDIO LOADED ', _this10.load.images);
+      _this10.load.audios = true; // console.log('AUDIO LOADED ', this.load.images);
+
       if (_this10.load.images) _this10.loadReady();
     }); // s.curBack = s.audios.radio[0][0];
 

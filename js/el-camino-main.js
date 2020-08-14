@@ -19,11 +19,11 @@ Vue.component('car', {
   template: `<div class="ec-car-wrap">
        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 588.5 169.2" style="enable-background:new 0 0 588.5 169.2;" xml:space="preserve" class="ec-car__svg">
-         <path class="ec-road_dir_mid" d="M437.9,169c0,0-3.2-5.7-13.1-21.9S329.2,0.3,329.2,0.3" l="200"/>
-         <path class="ec-road_dir_right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3" l='223'/>
-         <path xmlns="http://www.w3.org/2000/svg" class="ec-road_dir_left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3" l="467"/>
+         <path class="ec-road-dir-mid" d="M437.9,169c0,0-3.2-5.7-13.1-21.9S329.2,0.3,329.2,0.3" l="200"/>
+         <path class="ec-road-dir-right" d="M436.9,168c0,0,0.1-21,17.2-38.1S588.2,9.3,588.2,9.3" l='223'/>
+         <path xmlns="http://www.w3.org/2000/svg" class="ec-road-dir-left" d="M436.9,168c0,0-18.6-23.9-90.9-48C308.6,107.6,0.2,8.3,0.2,8.3" l="467"/>
        </svg>
-      <div class="ec-car ec-car_road">
+      <div class="ec-car ec-car--road">
         <div class="ec-car__sprite"></div>
       </div>
     </div>`
@@ -48,6 +48,7 @@ const Camino = new Vue({
       	value: 'Основной',
       	options: ['Основной', 'Бонусный 1xGames']
       },
+      hint: false,
       sound: {
         muted: false,
         radio: 1,
@@ -253,8 +254,7 @@ const Camino = new Vue({
       static: {
         toggle: false,
         day: true
-      },
-      hint: 'choose'
+      }
     },
     computed: {
       val() {
@@ -356,7 +356,7 @@ const Camino = new Vue({
             br = this.border,
             b = this.bet,
             win = this.Game.getRand(0,1),
-            lose = b.safe ? this.Game.getRand(1,2) : 2;
+            lose = b.safe ? 1 : 2;
 
         g.win = win;
 
@@ -384,7 +384,11 @@ const Camino = new Vue({
 
         this.showChangeVal();
 
-        if(b) return this.Game.backCar();
+        if(b)  {
+          this.hint = true;
+          this.Game.backCar();
+          return
+        }
 
         lvl.curStage = 0;
 
@@ -465,7 +469,6 @@ const Camino = new Vue({
       closeCards(name) {
         let g = this.game,
             cd = this.cards;
-            console.log(cd.cur);
         this.$modal.hide(cd.cur);
       },
       comicsOpened() {
@@ -510,6 +513,7 @@ const Camino = new Vue({
 
         g.stages[g.way].curStage += 1;
         g.prevStatus = g.status;
+        this.hint = false;
 
         this.car.dir = dir;
         g.status = 'dirChoosed';
@@ -547,10 +551,10 @@ const Camino = new Vue({
 
         let slides = cardsSlider.getInfo().container.querySelectorAll('.ec-slider__item');
 
-        slides[0].classList.add('ec-slider__item_anim');
+        slides[0].classList.add('ec-slider__item--anim');
 
         cardsSlider.events.on('transitionStart', (info, eventName) => {
-          slides[info.index].classList.add('ec-slider__item_anim');
+          slides[info.index].classList.add('ec-slider__item--anim');
         });
 
       },
@@ -566,10 +570,7 @@ const Camino = new Vue({
             g = this.game;
 
         if(g.win) b.val = b.val*cf.cur;
-        else {
-          b.val /=2
-          console.log(b.val, b.safe);
-        };
+        else b.val /=2;
 
         // b.val = b.val*cf.cur;
 
@@ -708,7 +709,7 @@ const Camino = new Vue({
           this.modalShow(hash.split('_')[0]);
         }
       },
-      modalShow(name) {
+      modalShow(name, e) {
        this.$modal.show(name);
       },
       modalHide(name) {
@@ -738,8 +739,6 @@ const Camino = new Vue({
       popIn(b) {
         if(b) this.body.classList.add('ec-no-scroll');
         else this.body.classList.remove('ec-no-scroll');
-
-        console.log(this.$modal);
       },
       playAudio(name, fn) {
         let s = this.sound,
@@ -803,7 +802,7 @@ const Camino = new Vue({
         // this.Game.nextSection(g.prevStatus, g.status);
       },
       sectionBefore(el) {
-         this.game.dirReady = false;
+         this.game.dirReady = this.hint = false;
          setTimeout(() => {
            this.car.end = true;
            this.car.dir = '';
@@ -816,7 +815,7 @@ const Camino = new Vue({
         //   g.move = g.next;
         // }, 200);
         setTimeout( () => {
-          this.game.dirReady = true;
+          this.game.dirReady = this.hint = true;
         }, 800);
        // el.classList.add('ec-section_move');
       },
@@ -968,14 +967,14 @@ const Camino = new Vue({
 
       window.onload = () => {
         this.load.images = true;
-        console.log('IMAGES LOADED ', this.load.audios);
+        // console.log('IMAGES LOADED ', this.load.audios);
         if(this.load.audios) this.loadReady();
       }
       this.Game = new CaminoClass();
 
       this.audiosLoad(() => {
         this.load.audios = true;
-        console.log('AUDIO LOADED ', this.load.images);
+        // console.log('AUDIO LOADED ', this.load.images);
         if(this.load.images) this.loadReady();
       });
       // s.curBack = s.audios.radio[0][0];
